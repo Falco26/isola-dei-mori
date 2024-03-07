@@ -1,0 +1,55 @@
+/* CustomCarouselStyles.css */
+
+/* Customize the container of the carousel */
+.control-dots {
+  display: none;
+}
+
+.carousel-status {
+  display: none;
+}
+.custom-carousel-arrow-prev {
+  position: absolute;
+  right: 7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 25px;
+}
+
+/* Custom style for the next (right) arrow button */
+.custom-carousel-arrow-next {
+  position: absolute;
+  right: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 25px;
+}
+
+.carousel-container {
+  margin-left: 6.25rem;
+
+  @media (max-width: 1200px) {
+    margin-left: 6.25rem;
+  }
+}
+
+/* CSS */
+.button-81 {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 25%;
+  width: 4rem;
+  height: 4rem;
+  box-sizing: border-box;
+  color: #0d172a;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-81:disabled {
+  /* Add styles for the disabled state */
+  opacity: 0.5; /* You can adjust the opacity or add other styles */
+  cursor: not-allowed;
+}
