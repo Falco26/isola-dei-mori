@@ -3,6 +3,8 @@ import {
   ArrowForwardIosRounded,
   ArrowBackIosNew,
   ArrowBackIosRounded,
+  MenuRounded,
+  CloseRounded,
 } from "@mui/icons-material";
 
 export const IconsList = {
@@ -10,4 +12,6 @@ export const IconsList = {
   ArrowForwardIosRounded,
   ArrowBackIosNew,
   ArrowBackIosRounded,
+  MenuRounded,
+  CloseRounded,
 };

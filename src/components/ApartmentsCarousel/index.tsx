@@ -1,16 +1,15 @@
-// ApartmentsCarousel.tsx
-
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Carousel as ResponsiveCarousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Apartment } from "../../api/endpoints";
 import { HouseCard } from "../HouseCard";
 import "./style.css";
-import { Button } from "../Button";
 import { Stack } from "../Stack";
 import { calculateItemsPerSlide, groupApartmentsBySlide } from "../../utils";
 import { Icon } from "../Icon/Index";
 import { theme } from "../../style/theme";
+import { useNavigate } from "react-router-dom";
+import { appRoutes } from "../../routes";
 
 type Props = {
   apartmentList: Apartment[];
@@ -20,6 +19,8 @@ export const ApartmentsCarousel = ({ apartmentList }: Props) => {
   const [itemsPerSlide, setItemsPerSlide] = useState(
     calculateItemsPerSlide(window.innerWidth)
   );
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleResize = () => {
@@ -89,6 +90,11 @@ export const ApartmentsCarousel = ({ apartmentList }: Props) => {
               key={innerIndex}
               houseName={apartment.name}
               services={[]}
+              onClick={() => {
+                navigate(
+                  `${appRoutes.APARTMENTS}/${apartment.name.toLowerCase()}`
+                );
+              }}
             />
           ))}
         </Stack>

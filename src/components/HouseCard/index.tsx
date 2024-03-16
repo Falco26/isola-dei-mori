@@ -7,11 +7,12 @@ import { StyledCardImageContainer, StyledHouseCard } from "./styled";
 type Props = {
   houseName: string;
   services: any[];
+  onClick: () => void;
 };
 
-export const HouseCard = ({ houseName }: Props) => {
+export const HouseCard = ({ houseName, onClick }: Props) => {
   return (
-    <StyledHouseCard>
+    <StyledHouseCard onClick={onClick}>
       <Stack
         flexDirection="column"
         alignitems="flex-start"
@@ -32,7 +33,11 @@ export const HouseCard = ({ houseName }: Props) => {
           gap={10}
         >
           <Text fontSize="l">{houseName}</Text>
-          <Button buttonTitle="Scopri" icon="ArrowForwardIos" />
+          <Button
+            buttonTitle="Scopri"
+            icon="ArrowForwardIos"
+            onClick={onClick}
+          />
         </Stack>
       </Stack>
     </StyledHouseCard>

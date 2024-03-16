@@ -50,3 +50,9 @@ export const apartments: Apartment[] = [
       "Homesteady Housing in Chicago, Illinois, provides a homely atmosphere with 1 available unit. Offering WiFi connectivity and excluding laundry facilities, it is an ideal place for those seeking a cozy home with modern amenities and a supportive community.",
   },
 ];
+
+export const homeCarouselDescription = {
+  title: "I nostri appartamenti",
+  subtitle:
+    "Comode e riservate, le case sono dotate di posto auto privato, di una bella terrazza panoramica e di spazi esterni in comune attrezzati con barbecue e doccia. Comode e riservate, le case sono dotate di posto auto privato, di una bella terrazza panoramica e di spazi esterni in comune attrezzati con barbecue e doccia.",
+};

@@ -6,6 +6,7 @@ type Props = PropsWithChildren<{
   fontSize: FontSize;
   color?: string;
   bold?: boolean;
+  className?: string;
 }>;
 
 export const Text = ({
@@ -13,9 +14,15 @@ export const Text = ({
   color = "primary",
   bold = false,
   children,
+  className,
 }: Props) => {
   return (
-    <StyledText size={theme.fontSizes[fontSize]} color={color} bold={bold}>
+    <StyledText
+      size={theme.fontSizes[fontSize]}
+      color={color}
+      bold={bold}
+      className={className}
+    >
       {children}
     </StyledText>
   );

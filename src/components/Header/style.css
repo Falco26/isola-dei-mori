@@ -1,0 +1,26 @@
+.header-container {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.header-button {
+  border: 1px white solid;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  filter: brightness(0) /* Increase brightness to lighten the color */
+    saturate(0%) /* Desaturate to remove color */ invert(100%)
+    /* Invert the color */ sepia(0%); /* Remove any sepia tones */
+
+  width: 10.625rem;
+}

@@ -9,6 +9,7 @@ import {
 } from "./styled";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Header } from "../Header";
 
 type Props = {
   imgSrc: string;
@@ -37,6 +38,7 @@ export const HeroHeader = ({ title, imgSrc }: Props) => {
   return (
     <StyledHeroContainer className="hero-text-container">
       <StyledImageContainer className="hero-image" src={imgSrc} />
+
       <StyledHeroGradient className="hero-image" />
       <StyledHeroTextContainer>
         <Stack flexDirection="column" gap={15}>

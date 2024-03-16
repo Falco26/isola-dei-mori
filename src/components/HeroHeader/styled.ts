@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledImageContainer = styled.img`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: absolute;
   max-height: 100%;
@@ -10,19 +10,19 @@ export const StyledImageContainer = styled.img`
 `;
 
 export const StyledHeroContainer = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: relative;
 `;
 
 export const StyledHeroGradient = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   z-index: 0;
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.20073967086834732) 100%
+    rgba(0, 0, 0, 0.4) 100%
   );
 `;
 

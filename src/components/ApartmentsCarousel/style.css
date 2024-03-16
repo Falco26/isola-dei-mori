@@ -49,7 +49,6 @@
 }
 
 .button-81:disabled {
-  /* Add styles for the disabled state */
-  opacity: 0.5; /* You can adjust the opacity or add other styles */
+  opacity: 0.5;
   cursor: not-allowed;
 }
