@@ -6,3 +6,39 @@
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
 }
+
+.first-home {
+  background-color: white;
+  padding: 5rem 5rem 5rem 5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+
+  @media screen and (max-width: 786px) {
+    padding: 1rem 1rem 1rem 1rem;
+  }
+}
+
+.text-container-centered {
+  text-align: center;
+  width: 40vw;
+
+  @media screen and (max-width: 1024px) {
+    width: 60vw;
+  }
+
+  @media screen and (max-width: 786px) {
+    width: 80vw;
+  }
+}
+
+.description-first-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  line-height: 1.3rem;
+}

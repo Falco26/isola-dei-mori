@@ -7,6 +7,9 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import "./style.css";
 import { TextSection } from "../../components/TextSection";
+import { Button } from "../../components/Button";
+import { initFadeInAnimation } from "../../animation";
+import { Header } from "../../components/Header";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,35 +48,77 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const HomePage = () => {
   useEffect(() => {
-    fadeInAnimation(".carousel-in");
+    initFadeInAnimation(".fade-in");
   });
   return (
     <>
+      <Header
+        navLink="https://wubook.net/nneb/bk/?ep=8c0ed861&lang=it&c=EUR&f=29%2F03%2F2024&t=30%2F03%2F2024&o=2.0.0.0"
+        buttonTitle="Prenota ora"
+      />
       <HeroHeader
         title=""
         imgSrc="http://www.isoladeimori.it/idm/images/slide/struttura2.jpg?1709153506378"
+        className="fade-in"
       />
-      <div
-        className="apartments-carousel"
-        style={{ backgroundColor: "#f0ebe5" }}
-      >
-        <Stack flexDirection="column">
-          <Stack
-            flex={1}
-            justifycontent="flex-start"
-            alignitems="flex-start"
-            flexDirection="column"
-            className="carousel-in"
-          >
-            <TextSection
-              title={homeCarouselDescription.title}
-              subtitle={homeCarouselDescription.subtitle}
+      <Stack flexDirection="column">
+        <div className="first-home">
+          <div className="text-container-centered">
+            <h1 className="fade-in">Immergiti nella vera Sardegna</h1>
+            <div className="description-first-home ">
+              <span className="fade-in">
+                Il complesso residenziale dell’Isola dei Mori è situato in
+                località Calasapone, sulla costa occidentale dell’Isola di
+                Sant’Antioco. Immersi nei tipici profumi della macchia
+                mediterranea e circondati da un gradito silenzio e dalla
+                musicalità dei movimenti del mare, si possono ammirare
+                meravigliosi tramonti.
+              </span>
+              <span className="fade-in">
+                Il complesso è pienamente con vista sul meraviglioso mare di
+                Calasapone, è stato ricavato da una grande villa circondata da
+                giardino e suddiviso in sette unità abitative indipendenti che
+                distano solo un chilometro dalla bellissima spiaggia di
+                Calasapone e dalle sue scogliere; inoltre pochi minuti in auto,
+                lo separano dalle pittoresche insenature di Cala Lunga, Cala
+                della Signora, Co’ de Quaddus e Maladroxia e dalla cittadina di
+                Sant’Antioco.
+              </span>
+            </div>
+          </div>
+          <Stack className="button-group">
+            <Button
+              buttonTitle="Prenota ora"
+              icon="ArrowForwardIosRounded"
+              fontSize="md"
+              className="button-home-book fade-in"
             />
-
-            <ApartmentsCarousel apartmentList={apartments} />
           </Stack>
-        </Stack>
-      </div>
+        </div>
+
+        <div
+          className="apartments-carousel "
+          style={{ backgroundColor: "#f0ebe5" }}
+          id="ref-carousel"
+        >
+          <Stack flexDirection="column">
+            <Stack
+              flex={1}
+              justifycontent="flex-start"
+              alignitems="flex-start"
+              flexDirection="column"
+              className="carousel-in fade-in"
+            >
+              <TextSection
+                title={homeCarouselDescription.title}
+                subtitle={homeCarouselDescription.subtitle}
+              />
+
+              <ApartmentsCarousel apartmentList={apartments} />
+            </Stack>
+          </Stack>
+        </div>
+      </Stack>
     </>
   );
 };

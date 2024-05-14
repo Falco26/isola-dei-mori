@@ -1,0 +1,26 @@
+.contact-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.main-container-contact {
+  background-color: antiquewhite;
+  width: 100vw;
+  height: 100%;
+}
+
+.info-button-group {
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+    display: flex;
+  }
+}

@@ -8,20 +8,20 @@ import { Route, Routes } from "react-router-dom";
 import { appRoutes } from "./routes";
 import { Home } from "@mui/icons-material";
 import { ApartmentPage } from "./pages/ApartmentPage";
+import { ContactPage } from "./pages/Contact";
+import { AboutUs } from "./pages/AboutUs";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   return (
     <div className="App">
-      <Header />
       <Routes>
-        <Route path={"/"}>
+        <Route path={appRoutes.HOME}>
           <Route index element={<HomePage />} />
-          <Route
-            path={`${appRoutes.APARTMENTS}/:id`}
-            element={<ApartmentPage />}
-          />
+          <Route path={`/:id`} element={<ApartmentPage />} />
+          <Route path={appRoutes.CONTACT} element={<ContactPage />} />
+          <Route path={appRoutes.ABOUT} element={<AboutUs />} />
         </Route>
       </Routes>
     </div>

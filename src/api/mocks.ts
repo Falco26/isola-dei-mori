@@ -5,8 +5,59 @@ export const apartments: Apartment[] = [
     id: "0",
     type: "bilocale",
     name: "Bilocali",
-    photo:
-      "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+    images: [
+      {
+        id: 1,
+        source:
+          "https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=612x612&w=0&k=20&c=8clwg8hTpvoEwL7253aKdYAUuAp1-usFOacNR5qX-Rg=",
+      },
+      {
+        id: 2,
+        source:
+          "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      },
+      {
+        id: 3,
+        source:
+          "https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=612x612&w=0&k=20&c=8clwg8hTpvoEwL7253aKdYAUuAp1-usFOacNR5qX-Rg=",
+      },
+      {
+        id: 4,
+        source:
+          "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      },
+      {
+        id: 5,
+        source:
+          "https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=612x612&w=0&k=20&c=8clwg8hTpvoEwL7253aKdYAUuAp1-usFOacNR5qX-Rg=",
+      },
+      {
+        id: 6,
+        source:
+          "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      },
+      {
+        id: 7,
+        source:
+          "https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=612x612&w=0&k=20&c=8clwg8hTpvoEwL7253aKdYAUuAp1-usFOacNR5qX-Rg=",
+      },
+      {
+        id: 8,
+        source:
+          "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      },
+      {
+        id: 9,
+        source:
+          "https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=612x612&w=0&k=20&c=8clwg8hTpvoEwL7253aKdYAUuAp1-usFOacNR5qX-Rg=",
+      },
+      {
+        id: 10,
+        source:
+          "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      },
+    ],
+
     beds: 4,
     wifi: true,
     laundry: true,
@@ -17,20 +68,133 @@ export const apartments: Apartment[] = [
     id: "1",
     type: "monolocale",
     name: "Monolocali",
-    photo:
-      "https://angular.io/assets/images/tutorials/faa/brandon-griggs-wR11KBaB86U-unsplash.jpg",
+
+    images: [
+      {
+        id: 1,
+        source:
+          "https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=612x612&w=0&k=20&c=8clwg8hTpvoEwL7253aKdYAUuAp1-usFOacNR5qX-Rg=",
+      },
+      {
+        id: 2,
+        source:
+          "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      },
+      {
+        id: 3,
+        source:
+          "https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=612x612&w=0&k=20&c=8clwg8hTpvoEwL7253aKdYAUuAp1-usFOacNR5qX-Rg=",
+      },
+      {
+        id: 4,
+        source:
+          "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      },
+      {
+        id: 5,
+        source:
+          "https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=612x612&w=0&k=20&c=8clwg8hTpvoEwL7253aKdYAUuAp1-usFOacNR5qX-Rg=",
+      },
+      {
+        id: 6,
+        source:
+          "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      },
+      {
+        id: 7,
+        source:
+          "https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=612x612&w=0&k=20&c=8clwg8hTpvoEwL7253aKdYAUuAp1-usFOacNR5qX-Rg=",
+      },
+      {
+        id: 8,
+        source:
+          "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      },
+      {
+        id: 9,
+        source:
+          "https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=612x612&w=0&k=20&c=8clwg8hTpvoEwL7253aKdYAUuAp1-usFOacNR5qX-Rg=",
+      },
+      {
+        id: 10,
+        source:
+          "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      },
+    ],
     beds: 0,
     wifi: false,
     laundry: true,
-    description:
-      "A113 Transitional Housing in Santa Monica, California, provides a supportive transition for residents. Though currently at full capacity, the facility offers laundry services. While WiFi is not available, the compassionate atmosphere makes it a place of hope and transition for those in need.",
+    description: `La casa più piccola, denominata Corbezzolo, ha una superficie
+                  di 55 mq. e si compone di zona giorno con angolo cottura
+                  attrezzato (piano cottura 4 fuochi, cappa, forno, lavello 2
+                  vasche, lavastoviglie e frigo-congelatore) e zona pranzo con
+                  un divano letto matrimoniale, tavolo allungabile con 6 sedie,
+                  mobile basso allestito con le stoviglie e tv con antenna
+                  satellitare; camera matrimoniale con letto a due piazze,
+                  comodini, ripiano con specchio e armadio; disimpegno con
+                  armadio a muro nel quale trovano ricovero le scope, secchi e
+                  stracci oltre all’ombrellone e le sedie a sdraio. Il bagno
+                  attrezzato con wc, bidet, lavabo, specchio e doccia con il
+                  box. Inoltre all’esterno la casa è dotata di un’ampia veranda
+                  esclusiva coperta di circa mq. 15 arredata con due
+                  poltroncine, un divano ed un tavolino tutto in vimini.`,
   },
   {
     id: "2",
     type: "trilocale",
     name: "Doppia Matrimoniale",
-    photo:
-      "https://angular.io/assets/images/tutorials/faa/i-do-nothing-but-love-lAyXdl1-Wmc-unsplash.jpg",
+    images: [
+      {
+        id: 1,
+        source:
+          "https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=612x612&w=0&k=20&c=8clwg8hTpvoEwL7253aKdYAUuAp1-usFOacNR5qX-Rg=",
+      },
+      {
+        id: 2,
+        source:
+          "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      },
+      {
+        id: 3,
+        source:
+          "https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=612x612&w=0&k=20&c=8clwg8hTpvoEwL7253aKdYAUuAp1-usFOacNR5qX-Rg=",
+      },
+      {
+        id: 4,
+        source:
+          "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      },
+      {
+        id: 5,
+        source:
+          "https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=612x612&w=0&k=20&c=8clwg8hTpvoEwL7253aKdYAUuAp1-usFOacNR5qX-Rg=",
+      },
+      {
+        id: 6,
+        source:
+          "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      },
+      {
+        id: 7,
+        source:
+          "https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=612x612&w=0&k=20&c=8clwg8hTpvoEwL7253aKdYAUuAp1-usFOacNR5qX-Rg=",
+      },
+      {
+        id: 8,
+        source:
+          "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      },
+      {
+        id: 9,
+        source:
+          "https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=612x612&w=0&k=20&c=8clwg8hTpvoEwL7253aKdYAUuAp1-usFOacNR5qX-Rg=",
+      },
+      {
+        id: 10,
+        source:
+          "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      },
+    ],
     beds: 1,
     wifi: false,
     laundry: false,
@@ -41,13 +205,62 @@ export const apartments: Apartment[] = [
     id: "3",
     type: "trilocale",
     name: "Trilocali",
-    photo:
-      "https://angular.io/assets/images/tutorials/faa/ian-macdonald-W8z6aiwfi1E-unsplash.jpg",
+    images: [
+      {
+        id: 1,
+        source:
+          "https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=612x612&w=0&k=20&c=8clwg8hTpvoEwL7253aKdYAUuAp1-usFOacNR5qX-Rg=",
+      },
+      {
+        id: 2,
+        source:
+          "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      },
+      {
+        id: 3,
+        source:
+          "https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=612x612&w=0&k=20&c=8clwg8hTpvoEwL7253aKdYAUuAp1-usFOacNR5qX-Rg=",
+      },
+      {
+        id: 4,
+        source:
+          "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      },
+      {
+        id: 5,
+        source:
+          "https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=612x612&w=0&k=20&c=8clwg8hTpvoEwL7253aKdYAUuAp1-usFOacNR5qX-Rg=",
+      },
+      {
+        id: 6,
+        source:
+          "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      },
+      {
+        id: 7,
+        source:
+          "https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=612x612&w=0&k=20&c=8clwg8hTpvoEwL7253aKdYAUuAp1-usFOacNR5qX-Rg=",
+      },
+      {
+        id: 8,
+        source:
+          "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      },
+      {
+        id: 9,
+        source:
+          "https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=612x612&w=0&k=20&c=8clwg8hTpvoEwL7253aKdYAUuAp1-usFOacNR5qX-Rg=",
+      },
+      {
+        id: 10,
+        source:
+          "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      },
+    ],
     beds: 1,
     wifi: true,
     laundry: false,
-    description:
-      "Homesteady Housing in Chicago, Illinois, provides a homely atmosphere with 1 available unit. Offering WiFi connectivity and excluding laundry facilities, it is an ideal place for those seeking a cozy home with modern amenities and a supportive community.",
+    description: `La casa Lavanda ha una superficie di mq. 60, ha al suo inerno, due belle camere da lettoa due piazze arredate con tende e copriletti sardi, un disimpegno alle camere, un ampio soggiorno nel quale trova spazio l'angolo cottura e la zona pranzo, divano letto singolo e mobile con tv, oltre al disimpegno al bagno ed un bel bagno con doccia incassata , tutto piastrellato con piastrelle di colore azzurro mare della Cerasarda. Ogni casa è dotata di phon, ferro da stiro e stendino.`,
   },
 ];
 

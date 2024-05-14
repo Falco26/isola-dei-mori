@@ -1,12 +1,16 @@
 body {
   margin: 0;
-  font-family: "Taviraj", sans-serif;
+  font-family: "Domine", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
 }
 
-code {
+bod {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+canvas {
+  display: none;
 }

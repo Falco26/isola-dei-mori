@@ -1,15 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { apartments } from "../../api/mocks";
+import { ApartmentState } from "./types";
+import { Apartment } from "../../api/endpoints";
 
-const initialState: any = {
+const initialState: ApartmentState = {
   apartmentsList: apartments,
-  currentApartment: null,
 };
 
 const apartmentsSlice = createSlice({
   name: "apartments",
   initialState,
-  reducers: {},
+  reducers: {
+    setCurrentApartment: (state, { payload }: PayloadAction<Apartment>) => {
+      state.currentApartment = payload;
+    },
+  },
 });
 
 export const apartmentActions = {

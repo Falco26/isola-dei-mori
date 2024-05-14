@@ -10,19 +10,26 @@
 }
 .custom-carousel-arrow-prev {
   position: absolute;
-  right: 7rem;
+  left: 3rem;
   top: 50%;
   transform: translateY(-50%);
   max-width: 25px;
+  @media (max-width: 768px) {
+    left: 1rem;
+  }
 }
 
 /* Custom style for the next (right) arrow button */
 .custom-carousel-arrow-next {
   position: absolute;
-  right: 3rem;
+  left: 7rem;
   top: 50%;
   transform: translateY(-50%);
   max-width: 25px;
+
+  @media (max-width: 768px) {
+    left: 5rem;
+  }
 }
 
 .carousel-container {
@@ -46,6 +53,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 600px) {
+    width: 3rem;
+    height: 3rem;
+  }
 }
 
 .button-81:disabled {

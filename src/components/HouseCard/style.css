@@ -1,0 +1,11 @@
+.title-house-card {
+  font-weight: bold;
+  font-size: x-large;
+  text-align: left;
+}
+.desc-house-card {
+  overflow: hidden;
+  -webkit-line-clamp: 2; /* Limiting to 2 lines */
+  text-overflow: ellipsis;
+  text-align: left;
+}

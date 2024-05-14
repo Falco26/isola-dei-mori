@@ -10,6 +10,8 @@ import { Icon } from "../Icon/Index";
 import { theme } from "../../style/theme";
 import { useNavigate } from "react-router-dom";
 import { appRoutes } from "../../routes";
+import { apartmentActions } from "../../features/apartments/reducer";
+import { useDispatch } from "react-redux";
 
 type Props = {
   apartmentList: Apartment[];
@@ -21,6 +23,7 @@ export const ApartmentsCarousel = ({ apartmentList }: Props) => {
   );
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const handleResize = () => {
@@ -89,11 +92,12 @@ export const ApartmentsCarousel = ({ apartmentList }: Props) => {
             <HouseCard
               key={innerIndex}
               houseName={apartment.name}
-              services={[]}
+              wifi={apartment.wifi}
+              beds={apartment.beds}
+              laundry={apartment.laundry}
               onClick={() => {
-                navigate(
-                  `${appRoutes.APARTMENTS}/${apartment.name.toLowerCase()}`
-                );
+                dispatch(apartmentActions.setCurrentApartment(apartment));
+                navigate(`/${apartment.name.toLowerCase()}`);
               }}
             />
           ))}

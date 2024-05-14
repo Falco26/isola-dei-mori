@@ -3,9 +3,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  height: 0;
-  background-color: rgba(0, 0, 0, 1);
+  height: 80vh;
+  background-color: rgb(72, 70, 65, 1);
   overflow: hidden;
   transition: height 0.3s ease-in-out;
   border-bottom-left-radius: 20px;
@@ -13,7 +12,42 @@
 }
 
 .menu.open {
-  height: 200px; /* Adjust height as needed */
+  height: 0px; /* Adjust height as needed */
+  overflow: scroll;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  margin-left: 4rem;
+  gap: 8.25rem;
+  padding: 5rem;
+  flex-wrap: wrap;
+}
+/* style.css */
+.menu-container {
+  position: relative; /* Ensure the container is positioned relatively */
+}
+
+.image-container {
+  width: 25rem;
+  height: 31.25rem;
+  overflow: hidden; /* Hide overflow */
+  position: relative; /* Position relative for absolute positioning of image */
+  border-radius: 0.7rem;
+  @media screen {
+  }
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Set width to fill container */
+  height: 100%; /* Set height to fill container */
+  object-fit: cover; /* Maintain aspect ratio and cover the entire container */
 }
 
 .menu ul {
@@ -22,10 +56,71 @@
   margin: 0;
   text-align: center;
   padding-top: 50px; /* Adjust top padding to center vertically */
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .menu ul li {
-  margin-bottom: 20px;
+  margin-bottom: 3rem;
+  position: relative;
+  cursor: pointer;
+  color: white;
+  font-size: 2.3rem;
+  transition: color 0.3s ease-in-out; /* Add transition for color change */
+}
+
+.list-element {
+  position: relative;
+}
+
+.list-element:hover {
+  color: rgb(128, 128, 128); /* Change text color on hover */
+}
+
+.list-element::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -20px; /* Adjust the distance from text */
+  width: 4px; /* Width of the line */
+  height: 50%; /* Height of the line */
+  background-color: white; /* Color of the line */
+  transition: transform 0.3s ease-in-out; /* Add transition for sliding effect */
+  transform: translateY(-50%) scaleX(0); /* Initially hidden */
+}
+
+.list-element:hover::before {
+  transform: translateY(-50%) scaleX(1); /* Slide line to the right on hover */
+}
+
+.menu ul li:hover .sub-menu {
+  display: block;
+}
+
+.menu ul li .sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: transparent;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.menu ul li .sub-menu li {
+  /*CHILDS*/
+  margin-bottom: 10px;
+  font-size: medium;
+  text-align: start;
+  color: white;
+}
+
+.menu ul li .sub-menu li:hover {
+  color: rgb(128, 128, 128); /* Change text color of child links on hover */
 }
 
 .menu-toggle {
@@ -34,4 +129,45 @@
   right: 20px;
   cursor: pointer;
   color: white;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .menu ul {
+    padding-top: 20px;
+  }
+
+  .menu-toggle {
+    top: 10px;
+    right: 10px;
+  }
+
+  .menu-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+    margin-left: 4rem;
+    gap: 6rem;
+    padding: 5rem;
+    flex-wrap: wrap;
+  }
+
+  .image-container {
+    display: none;
+  }
+
+  .image-container img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .image-container {
+    display: none;
+  }
+
+  .image-container img {
+    display: none;
+  }
 }

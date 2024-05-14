@@ -1,0 +1,59 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+.form-container input {
+  border-width: 0;
+  height: 2.6rem;
+  width: 26rem;
+  text-align: left;
+  font-size: 1.2rem;
+  border-radius: 0.3rem;
+}
+.form-container input[type="submit"] {
+  height: 2.6rem;
+  width: 10rem;
+  text-align: center;
+  font-size: 1.2rem;
+  background-color: transparent;
+  cursor: pointer;
+  border-width: 1;
+  border-color: black;
+
+  &:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(234, 233, 233);
+    transition: 0.2s;
+    border-color: white;
+    border-width: 1;
+  }
+}
+
+.form-container textarea {
+  border-width: 0;
+  height: 15rem;
+  width: 26rem;
+  text-align: left;
+  font-size: 1.1rem;
+  border-radius: 0.3rem;
+}
+
+.form-container input:focus,
+textarea:focus {
+  outline: none; /* Remove default focus outline */
+  border-color: #007bff; /* Change border color when focused */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Add box shadow when focused */
+}
+
+.form-container input::placeholder {
+  color: #999; /* Change color of placeholder text */
+}

@@ -1,4 +1,4 @@
-import { PropsWithChildren } from "react";
+import { CSSProperties, PropsWithChildren } from "react";
 import { StyledText } from "./styled";
 import { FontSize, theme } from "../../style/theme";
 
@@ -7,6 +7,7 @@ type Props = PropsWithChildren<{
   color?: string;
   bold?: boolean;
   className?: string;
+  fontWeight?: CSSProperties["fontWeight"];
 }>;
 
 export const Text = ({
@@ -15,6 +16,7 @@ export const Text = ({
   bold = false,
   children,
   className,
+  fontWeight,
 }: Props) => {
   return (
     <StyledText
@@ -22,6 +24,7 @@ export const Text = ({
       color={color}
       bold={bold}
       className={className}
+      fontWeight={fontWeight}
     >
       {children}
     </StyledText>

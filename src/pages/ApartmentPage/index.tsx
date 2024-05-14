@@ -1,14 +1,75 @@
 import { useParams } from "react-router-dom";
-import { Text } from "../../components/Text";
+import { useSelector } from "react-redux";
+import { makeSelectApartment } from "../../features/apartments/selectors";
+import { HeroHeader } from "../../components/HeroHeader";
+import { Stack } from "../../components/Stack";
+import "./style.css";
+import { ImageCarousel } from "../../components/ImageCarousel";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Button } from "../../components/Button";
+import { useGSAP } from "@gsap/react";
+import { useEffect } from "react";
+import { initFadeInAnimation } from "../../animation";
+import { Header } from "../../components/Header";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const ApartmentPage = () => {
   const params = useParams();
   const { id } = params;
-  console.log("🚀 ~ ApartmentPage ~ id:", id);
+  const apartment = useSelector(makeSelectApartment(id ?? "monolocali"));
+  const imageList = apartment?.images.slice(2, 9);
+
+  useEffect(() => {
+    initFadeInAnimation(".fade-in");
+  });
 
   return (
     <>
-      <Text fontSize="md">{id}</Text>
+      <Header
+        buttonTitle="Prenota ora"
+        navLink="https://wubook.net/nneb/bk/?ep=8c0ed861&lang=it&c=EUR&f=29%2F03%2F2024&t=30%2F03%2F2024&o=2.0.0.0"
+      />
+
+      {apartment && (
+        <Stack flexDirection="column">
+          <HeroHeader
+            title={apartment?.name}
+            imgSrc="http://www.isoladeimori.it/idm/images/slide/ingresso.jpg?1710616009801"
+            className="parallax"
+          />
+          <Stack className="main-content" flexDirection="column">
+            <div className="first-content fade-in ">
+              <div className="description-container">
+                <span className="desctiption">{apartment.description}</span>
+                <Stack flex={1} justifycontent="center" paddingvertical={20}>
+                  <Button buttonTitle="Prenota Ora" icon="ArrowForwardIos" />
+                </Stack>
+              </div>
+              <Stack gap={40}>
+                <div className="image1-container">
+                  <img
+                    src={apartment.images[0].source}
+                    alt="Apartment Front"
+                    style={{ opacity: 1 }}
+                  />
+                </div>
+                <div className="image1-container">
+                  <img
+                    src={apartment.images[1].source}
+                    alt="Apartment Front"
+                    style={{ opacity: 1 }}
+                  />
+                </div>
+              </Stack>
+            </div>
+            <div className="carousel-content ">
+              {imageList && <ImageCarousel imageList={imageList} />}
+            </div>
+          </Stack>
+        </Stack>
+      )}
     </>
   );
 };

@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export const parallaxAnimation = (className: string, yOffset: string) => {
   return gsap.to(className, {
@@ -18,39 +19,21 @@ export const parallaxAnimation = (className: string, yOffset: string) => {
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const fadeInAnimation = (className: string) => {
-  gsap.from(className, {
-    y: -100,
-    opacity: 0,
-    duration: 1,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: className,
-      start: "top 80%",
-      end: "bottom top",
-      scrub: true,
-      onEnter: () => {
-        gsap.to(className, {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power3.out",
-        });
+export const initFadeInAnimation = (className: string) => {
+  const fadeElements = document.querySelectorAll(className);
+  fadeElements.forEach((element) => {
+    gsap.set(element, { opacity: 0, y: 100 }); // Set initial opacity to 0
+
+    gsap.to(element, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: element,
+        start: "top 80%",
+        end: "bottom 80%",
+        toggleActions: "play none none reverse",
       },
-      onLeave: () => {
-        return;
-      },
-      onEnterBack: () => {
-        gsap.to(className, {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power2.out",
-        });
-      },
-      onLeaveBack: () => {
-        return;
-      },
-    },
+    });
   });
 };

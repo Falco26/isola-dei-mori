@@ -14,11 +14,12 @@ import { Header } from "../Header";
 type Props = {
   imgSrc: string;
   title: string;
+  className?: string;
 };
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const HeroHeader = ({ title, imgSrc }: Props) => {
+export const HeroHeader = ({ title, imgSrc, className }: Props) => {
   useEffect(() => {
     // Parallax effect for the overlaying div
 
@@ -36,12 +37,12 @@ export const HeroHeader = ({ title, imgSrc }: Props) => {
     });
   }, []);
   return (
-    <StyledHeroContainer className="hero-text-container">
+    <StyledHeroContainer className={`hero-text-container ${className}`}>
       <StyledImageContainer className="hero-image" src={imgSrc} />
 
       <StyledHeroGradient className="hero-image" />
       <StyledHeroTextContainer>
-        <Stack flexDirection="column" gap={15}>
+        <Stack flexDirection="column" gap={15} className="fade-in">
           <StyledHeroTitle>{title}</StyledHeroTitle>
         </Stack>
       </StyledHeroTextContainer>

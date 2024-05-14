@@ -3,4 +3,5 @@ export const appRoutes = {
   ABOUT: "about-us",
   SUSTENIBILITY: "sustenibility",
   APARTMENTS: "apartments",
+  CONTACT: "contact-us",
 };

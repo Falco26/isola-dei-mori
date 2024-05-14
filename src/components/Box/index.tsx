@@ -7,12 +7,14 @@ type Props = PropsWithChildren<{
   bordercolor: string;
   borderwidth: number;
   borderstyle: CSSProperties["borderStyle"];
+  className?: string;
 }>;
 
 export const Box = ({
   bordercolor,
   borderstyle,
   borderwidth,
+  className,
   children,
 }: Props) => {
   return (
@@ -20,6 +22,7 @@ export const Box = ({
       bordercolor={bordercolor}
       borderstyle={borderstyle}
       borderwidth={borderwidth}
+      className={className}
     >
       {children}
     </StyledBox>

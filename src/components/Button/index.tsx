@@ -13,11 +13,13 @@ type Props = PropsWithChildren<{
   fontSize?: FontSize;
   hovercolor?: string;
   icon?: IconsName;
+  iconSize?: number;
   className?: string;
 }>;
 
 export const Button = ({
   icon,
+  iconSize = 15,
   buttonTitle,
   fontSize,
   onClick,
@@ -36,8 +38,8 @@ export const Button = ({
           justifycontent="center"
           alignitems="center"
           gap={10}
-          paddinghorizontal={20}
-          paddingvertical={15}
+          paddinghorizontal={30 * theme.fontSizes[fontSize ?? "sm"]}
+          paddingvertical={20 * theme.fontSizes[fontSize ?? "sm"]}
         >
           {buttonTitle && (
             <Text color={color} fontSize={fontSize ?? "sm"}>
@@ -48,7 +50,7 @@ export const Button = ({
             <Icon
               iconName={icon}
               iconColor={theme.colors.black}
-              iconSize={15}
+              iconSize={iconSize}
             />
           )}
         </Stack>

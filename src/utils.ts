@@ -1,4 +1,4 @@
-import { Apartment } from "./api/endpoints";
+import { Apartment, Image } from "./api/endpoints";
 
 export function groupApartmentsBySlide(
   apartments: Apartment[],
@@ -11,6 +11,19 @@ export function groupApartmentsBySlide(
   }
 
   return groupedApartments;
+}
+
+export function groupImagesBySlide(
+  images: Image[],
+  itemsPerSlide: number
+): Image[][] {
+  const groupedImages: Image[][] = [];
+
+  for (let i = 0; i < images.length; i += itemsPerSlide) {
+    groupedImages.push(images.slice(i, i + itemsPerSlide));
+  }
+
+  return groupedImages;
 }
 
 export function calculateItemsPerSlide(windowWidth: number): number {

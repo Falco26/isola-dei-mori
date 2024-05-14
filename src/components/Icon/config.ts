@@ -5,6 +5,13 @@ import {
   ArrowBackIosRounded,
   MenuRounded,
   CloseRounded,
+  Instagram,
+  WifiRounded,
+  LocalLaundryServiceRounded,
+  BedRounded,
+  MapRounded,
+  MailRounded,
+  PhoneRounded,
 } from "@mui/icons-material";
 
 export const IconsList = {
@@ -14,4 +21,11 @@ export const IconsList = {
   ArrowBackIosRounded,
   MenuRounded,
   CloseRounded,
+  Instagram,
+  MailRounded,
+  MapRounded,
+  PhoneRounded,
+  WifiRounded,
+  BedRounded,
+  LocalLaundryServiceRounded,
 };
