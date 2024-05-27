@@ -9,7 +9,6 @@ import { calculateItemsPerSlide, groupApartmentsBySlide } from "../../utils";
 import { Icon } from "../Icon/Index";
 import { theme } from "../../style/theme";
 import { useNavigate } from "react-router-dom";
-import { appRoutes } from "../../routes";
 import { apartmentActions } from "../../features/apartments/reducer";
 import { useDispatch } from "react-redux";
 
@@ -91,13 +90,16 @@ export const ApartmentsCarousel = ({ apartmentList }: Props) => {
           {apartmentGroup.map((apartment, innerIndex) => (
             <HouseCard
               key={innerIndex}
-              houseName={apartment.name}
-              wifi={apartment.wifi}
-              beds={apartment.beds}
-              laundry={apartment.laundry}
+              houseName={apartment.appartmentType}
+              wifi={apartment.hasWifi}
+              singleBeds={apartment.singleBed}
+              doubleBeds={apartment.doubleBed}
+              sofaBeds={apartment.sofaBed}
+              laundry={apartment.hasAirConditioning}
+              imageSrc={apartment.photos[0].url}
               onClick={() => {
                 dispatch(apartmentActions.setCurrentApartment(apartment));
-                navigate(`/${apartment.name.toLowerCase()}`);
+                navigate(`/${apartment.appartmentType.toLowerCase()}`);
               }}
             />
           ))}

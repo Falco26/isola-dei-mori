@@ -1,4 +1,4 @@
-import { Image } from "../../api/types";
+import { Photo } from "../../api/types";
 import { Carousel as ResponsiveCarousel } from "react-responsive-carousel";
 import { groupImagesBySlide } from "../../utils";
 import { useEffect, useState } from "react";
@@ -8,7 +8,7 @@ import "./style.css";
 import { Stack } from "../Stack";
 
 type Props = {
-  imageList: Image[];
+  imageList: Photo[];
 };
 
 export const ImageCarousel = ({ imageList }: Props) => {
@@ -77,7 +77,7 @@ export const ImageCarousel = ({ imageList }: Props) => {
         >
           {imageGroup.map((image, innerIndex) => (
             <div className="apartment-image" key={image.id}>
-              <img src={image.source} />
+              <img src={image.url} alt={image.id} />
             </div>
           ))}
         </Stack>

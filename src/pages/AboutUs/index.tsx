@@ -1,6 +1,4 @@
 import { useEffect } from "react";
-import { apartments, homeCarouselDescription } from "../../api/mocks";
-import { ApartmentsCarousel } from "../../components/ApartmentsCarousel";
 import { HeroHeader } from "../../components/HeroHeader";
 import { Stack } from "../../components/Stack";
 import gsap from "gsap";

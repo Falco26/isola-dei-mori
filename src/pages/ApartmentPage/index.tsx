@@ -19,7 +19,7 @@ export const ApartmentPage = () => {
   const params = useParams();
   const { id } = params;
   const apartment = useSelector(makeSelectApartment(id ?? "monolocali"));
-  const imageList = apartment?.images.slice(2, 9);
+  const imageList = apartment?.photos.slice(2, 9);
 
   useEffect(() => {
     initFadeInAnimation(".fade-in");
@@ -35,7 +35,7 @@ export const ApartmentPage = () => {
       {apartment && (
         <Stack flexDirection="column">
           <HeroHeader
-            title={apartment?.name}
+            title={apartment?.appartmentType}
             imgSrc="http://www.isoladeimori.it/idm/images/slide/ingresso.jpg?1710616009801"
             className="parallax"
           />
@@ -50,14 +50,14 @@ export const ApartmentPage = () => {
               <Stack gap={40}>
                 <div className="image1-container">
                   <img
-                    src={apartment.images[0].source}
+                    src={apartment.photos[0].url}
                     alt="Apartment Front"
                     style={{ opacity: 1 }}
                   />
                 </div>
                 <div className="image1-container">
                   <img
-                    src={apartment.images[1].source}
+                    src={apartment.photos[1].url}
                     alt="Apartment Front"
                     style={{ opacity: 1 }}
                   />

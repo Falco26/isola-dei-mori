@@ -1,13 +1,13 @@
 import { axiosApi } from "./client";
-import { Apartment } from "./types";
+import { Apartment, Photo } from "./types";
 
 export const getApartments = () => {
   console.log("Calling");
   axiosApi.get<Apartment[]>("/appartment/index");
 };
-export const getVideos = () => {
+export const getVideo = () => {
   axiosApi.get<string>("media/get-outdoor-video");
 };
 export const getPhotos = () => {
-  axiosApi.get<string>("media/get-outdoor-photo");
+  axiosApi.get<Photo[]>("media/get-outdoor-photo");
 };

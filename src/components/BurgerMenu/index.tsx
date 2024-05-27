@@ -15,6 +15,7 @@ type Props = {
 export const BurgerMenu = ({ isOpen, toggleMenu }: Props) => {
   const menuRef = useRef(null);
   const apartmentLinks: ApartmentLink[] = useSelector(selectApartmentsLink);
+  console.log("🚀 ~ BurgerMenu ~ apartmentLinks:", apartmentLinks);
 
   const menuOptions: MenuOption[] = [
     {

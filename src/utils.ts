@@ -1,4 +1,4 @@
-import { Apartment, Image } from "./api/types";
+import { Apartment, Photo } from "./api/types";
 
 export function groupApartmentsBySlide(
   apartments: Apartment[],
@@ -14,10 +14,10 @@ export function groupApartmentsBySlide(
 }
 
 export function groupImagesBySlide(
-  images: Image[],
+  images: Photo[],
   itemsPerSlide: number
-): Image[][] {
-  const groupedImages: Image[][] = [];
+): Photo[][] {
+  const groupedImages: Photo[][] = [];
 
   for (let i = 0; i < images.length; i += itemsPerSlide) {
     groupedImages.push(images.slice(i, i + itemsPerSlide));

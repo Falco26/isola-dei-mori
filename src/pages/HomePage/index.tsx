@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { apartments, homeCarouselDescription } from "../../api/mocks";
+import { homeCarouselDescription } from "../../api/mocks";
 import { ApartmentsCarousel } from "../../components/ApartmentsCarousel";
 import { HeroHeader } from "../../components/HeroHeader";
 import { Stack } from "../../components/Stack";
@@ -10,6 +10,7 @@ import { TextSection } from "../../components/TextSection";
 import { Button } from "../../components/Button";
 import { initFadeInAnimation } from "../../animation";
 import { Header } from "../../components/Header";
+import { apartmentResponse, videoLink } from "../../api/responses";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,11 +57,7 @@ export const HomePage = () => {
         navLink="https://wubook.net/nneb/bk/?ep=8c0ed861&lang=it&c=EUR&f=29%2F03%2F2024&t=30%2F03%2F2024&o=2.0.0.0"
         buttonTitle="Prenota ora"
       />
-      <HeroHeader
-        title=""
-        imgSrc="http://www.isoladeimori.it/idm/images/slide/struttura2.jpg?1709153506378"
-        className="fade-in"
-      />
+      <HeroHeader title="" imgSrc={videoLink} className="fade-in" />
       <Stack flexDirection="column">
         <div className="first-home">
           <div className="text-container-centered">
@@ -114,7 +111,7 @@ export const HomePage = () => {
                 subtitle={homeCarouselDescription.subtitle}
               />
 
-              <ApartmentsCarousel apartmentList={apartments} />
+              <ApartmentsCarousel apartmentList={apartmentResponse} />
             </Stack>
           </Stack>
         </div>

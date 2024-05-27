@@ -9,9 +9,17 @@ import {
   WifiRounded,
   LocalLaundryServiceRounded,
   BedRounded,
+  SingleBedRounded,
+  ChairRounded,
   MapRounded,
   MailRounded,
   PhoneRounded,
+  BedroomChildRounded,
+  LivingRounded,
+  SingleBed,
+  Living,
+  Chair,
+  ChairOutlined,
 } from "@mui/icons-material";
 
 export const IconsList = {
@@ -27,5 +35,10 @@ export const IconsList = {
   PhoneRounded,
   WifiRounded,
   BedRounded,
+  SingleBedRounded,
+  ChairRounded,
   LocalLaundryServiceRounded,
+  Sofa: ChairOutlined,
+  DoubleBed: BedRounded,
+  SingleBed: SingleBed,
 };

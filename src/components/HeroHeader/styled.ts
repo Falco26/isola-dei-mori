@@ -48,3 +48,12 @@ export const StyledHeroTitle = styled.h1`
     font-size: 7vw;
   }
 `;
+
+export const StyledVideoContainer = styled.video`
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  max-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+`;

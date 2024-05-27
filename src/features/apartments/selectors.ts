@@ -15,17 +15,21 @@ export const selectCurrentApartment = createSelector(
 
 export const selectApartmentsLink = createSelector(
   selectAllApartments,
-  (apartments) =>
-    apartments.map((apartment) => ({
-      name: apartment.name,
-      picture: apartment.images[0].source,
-      navLink: `/${apartment.name}`,
-    }))
+  (apartments) => {
+    console.log("🚀 ~ apartments:", apartments);
+    return apartments.map((apartment) => ({
+      name: apartment.appartmentType,
+      picture: apartment.photos[0].url,
+      navLink: `/${apartment.appartmentType}`,
+    }));
+  }
 );
 
 export const makeSelectApartment = (name: string) => {
   return createSelector(selectAllApartments, (apartments) => {
-    const apartment = apartments.find((ap) => ap.name.toLowerCase() === name);
+    const apartment = apartments.find(
+      (ap) => ap.appartmentType.toLowerCase() === name
+    );
     return apartment;
   });
 };

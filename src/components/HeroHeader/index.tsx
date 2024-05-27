@@ -6,6 +6,7 @@ import {
   StyledHeroTextContainer,
   StyledHeroTitle,
   StyledImageContainer,
+  StyledVideoContainer,
 } from "./styled";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -15,11 +16,17 @@ type Props = {
   imgSrc: string;
   title: string;
   className?: string;
+  isVideo?: boolean;
 };
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const HeroHeader = ({ title, imgSrc, className }: Props) => {
+export const HeroHeader = ({
+  title,
+  imgSrc,
+  className,
+  isVideo = false,
+}: Props) => {
   useEffect(() => {
     // Parallax effect for the overlaying div
 
@@ -38,7 +45,11 @@ export const HeroHeader = ({ title, imgSrc, className }: Props) => {
   }, []);
   return (
     <StyledHeroContainer className={`hero-text-container ${className}`}>
-      <StyledImageContainer className="hero-image" src={imgSrc} />
+      {isVideo ? (
+        <StyledVideoContainer className="hero-image" src={imgSrc} autoPlay />
+      ) : (
+        <StyledImageContainer className="hero-image" src={imgSrc} />
+      )}
 
       <StyledHeroGradient className="hero-image" />
       <StyledHeroTextContainer>
