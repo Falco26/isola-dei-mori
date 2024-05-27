@@ -1,4 +1,4 @@
-import { Apartment } from "./endpoints";
+import { Apartment } from "./types";
 
 export const apartments: Apartment[] = [
   {

@@ -1,4 +1,4 @@
-import { Image } from "../../api/endpoints";
+import { Image } from "../../api/types";
 import { Carousel as ResponsiveCarousel } from "react-responsive-carousel";
 import { groupImagesBySlide } from "../../utils";
 import { useEffect, useState } from "react";

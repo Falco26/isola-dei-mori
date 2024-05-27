@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Carousel as ResponsiveCarousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Apartment } from "../../api/endpoints";
+import { Apartment } from "../../api/types";
 import { HouseCard } from "../HouseCard";
 import "./style.css";
 import { Stack } from "../Stack";

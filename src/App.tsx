@@ -10,10 +10,15 @@ import { Home } from "@mui/icons-material";
 import { ApartmentPage } from "./pages/ApartmentPage";
 import { ContactPage } from "./pages/Contact";
 import { AboutUs } from "./pages/AboutUs";
+import { useDispatch } from "react-redux";
+import { apartmentActions } from "./features/apartments/reducer";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+  const dispatch = useDispatch();
+
+  dispatch(apartmentActions.initApp());
   return (
     <div className="App">
       <Routes>

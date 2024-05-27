@@ -1,15 +1,13 @@
-export type Apartment = {
-  type: "monolocale" | "bilocale" | "trilocale";
-  id: string;
-  name: string;
-  description: string;
-  images: Image[];
-  beds: number;
-  wifi: boolean;
-  laundry: boolean;
-};
+import { axiosApi } from "./client";
+import { Apartment } from "./types";
 
-export type Image = {
-  id: number;
-  source: string;
+export const getApartments = () => {
+  console.log("Calling");
+  axiosApi.get<Apartment[]>("/appartment/index");
+};
+export const getVideos = () => {
+  axiosApi.get<string>("media/get-outdoor-video");
+};
+export const getPhotos = () => {
+  axiosApi.get<string>("media/get-outdoor-photo");
 };

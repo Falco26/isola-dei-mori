@@ -1,4 +1,4 @@
-import { Apartment, Image } from "./api/endpoints";
+import { Apartment, Image } from "./api/types";
 
 export function groupApartmentsBySlide(
   apartments: Apartment[],

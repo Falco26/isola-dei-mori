@@ -17,6 +17,7 @@
     "@types/node": "^16.18.82",
     "@types/react": "^18.2.57",
     "@types/react-dom": "^18.2.19",
+    "axios": "^1.7.2",
     "mapbox-gl": "^3.2.0",
     "maplibre-gl": "^4.1.2",
     "react": "^18.2.0",

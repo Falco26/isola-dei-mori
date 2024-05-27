@@ -1,4 +1,4 @@
-import { Apartment } from "../../api/endpoints";
+import { Apartment } from "../../api/types";
 export type Nullable<T> = T | null;
 
 export type ApartmentState = {
