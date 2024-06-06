@@ -29,7 +29,7 @@ export const ContactForm = () => {
 
     const { name, email, subject, message } = formData;
 
-    const mailtoLink = `mailto:virgilio.difalco@gmail.com?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:info@isoladeimori.it?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(
       "Name: " + name + "\nEmail: " + email + "\n\n" + message

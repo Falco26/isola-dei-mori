@@ -46,7 +46,12 @@ export const HeroHeader = ({
   return (
     <StyledHeroContainer className={`hero-text-container ${className}`}>
       {isVideo ? (
-        <StyledVideoContainer className="hero-image" src={imgSrc} autoPlay />
+        <StyledVideoContainer
+          className="hero-image"
+          src={imgSrc}
+          autoPlay
+          loop
+        />
       ) : (
         <StyledImageContainer className="hero-image" src={imgSrc} />
       )}
