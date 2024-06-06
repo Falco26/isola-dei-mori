@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectAllContent } from "../../features/apartments/selectors";
 import { ContactForm } from "../../components/ContactForm";
-import { Header } from "../../components/Header"; // Import Header component
 import {
   StyledImageContainer,
   StyledHeroGradient,

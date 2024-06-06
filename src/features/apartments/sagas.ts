@@ -2,13 +2,11 @@ import { call, put, takeLatest } from "redux-saga/effects";
 import { apartmentActions } from "./reducer";
 import { Apartment, Photo } from "../../api/types";
 import { getApartments, getPhotos, getVideo } from "../../api/endpoints";
-import { apartmentResponse } from "../../api/responses";
 
 function* getApartmentsSaga() {
   try {
     const res: Apartment[] = yield call(getApartments);
     yield put(apartmentActions.setApartments(res));
-    console.log("Merda");
   } catch (error) {
     console.log("🚀 ~ function*getApartments ~ error:", error);
   }
@@ -32,9 +30,9 @@ function* getPhotosSaga() {
 }
 
 function* initSaga() {
-  //   yield call(getApartments);
-  //   yield call(getPhotosSaga);
-  //   yield call(getVideosSaga);
+  yield call(getApartmentsSaga);
+  yield call(getPhotosSaga);
+  yield call(getVideosSaga);
 }
 
 export function* homeSaga() {

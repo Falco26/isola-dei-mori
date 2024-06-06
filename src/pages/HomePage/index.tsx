@@ -10,7 +10,6 @@ import { TextSection } from "../../components/TextSection";
 import { Button } from "../../components/Button";
 import { initFadeInAnimation } from "../../animation";
 import { Header } from "../../components/Header";
-import { apartmentResponse, videoLink } from "../../api/responses";
 import { useSelector } from "react-redux";
 import {
   selectAllApartments,

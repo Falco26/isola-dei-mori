@@ -3,11 +3,15 @@ import { Apartment, Photo } from "./types";
 
 export const getApartments = () => {
   console.log("Calling");
-  axiosApi.get<Apartment[]>("/appartment/index");
+  return axiosApi.get<Apartment[]>("/appartment/index").then((res) => res.data);
 };
 export const getVideo = () => {
-  axiosApi.get<string>("media/get-outdoor-video");
+  return axiosApi
+    .get<string>("media/get-outdoor-video")
+    .then((res) => res.data);
 };
 export const getPhotos = () => {
-  axiosApi.get<Photo[]>("media/get-outdoor-photo");
+  return axiosApi
+    .get<Photo[]>("media/get-outdoor-photo")
+    .then((res) => res.data);
 };
