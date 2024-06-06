@@ -11,6 +11,7 @@ import { AboutUs } from "./pages/AboutUs";
 import { useDispatch } from "react-redux";
 import { apartmentActions } from "./features/apartments/reducer";
 import Footer from "./components/Footer";
+import { Sustainability } from "./pages/Sustainability";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,6 +27,7 @@ function App() {
           <Route path={`/:id`} element={<ApartmentPage />} />
           <Route path={appRoutes.CONTACT} element={<ContactPage />} />
           <Route path={appRoutes.ABOUT} element={<AboutUs />} />
+          <Route path={appRoutes.SUSTENIBILITY} element={<Sustainability />} />
         </Route>
       </Routes>
       <Footer />

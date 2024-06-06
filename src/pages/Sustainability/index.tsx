@@ -14,12 +14,11 @@ import { selectAllContent } from "../../features/apartments/selectors";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const AboutUs = () => {
+export const Sustainability = () => {
   useEffect(() => {
     initFadeInAnimation(".fade-in");
   });
   const content = useSelector(selectAllContent);
-
   return (
     <>
       <Header
@@ -27,8 +26,8 @@ export const AboutUs = () => {
         buttonTitle="Prenota ora"
       />
       <HeroHeader
-        title="About Us"
-        imgSrc={content[2].url}
+        title="Sostenibilità"
+        imgSrc={content[5].url}
         className="fade-in"
       />
       <Stack flexDirection="column">

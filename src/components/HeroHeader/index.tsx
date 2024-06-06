@@ -10,7 +10,6 @@ import {
 } from "./styled";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Header } from "../Header";
 
 type Props = {
   imgSrc: string;

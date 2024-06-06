@@ -8,7 +8,6 @@ import { ImageCarousel } from "../../components/ImageCarousel";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "../../components/Button";
-import { useGSAP } from "@gsap/react";
 import { useEffect } from "react";
 import { initFadeInAnimation } from "../../animation";
 import { Header } from "../../components/Header";

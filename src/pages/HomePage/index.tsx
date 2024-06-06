@@ -11,6 +11,11 @@ import { Button } from "../../components/Button";
 import { initFadeInAnimation } from "../../animation";
 import { Header } from "../../components/Header";
 import { apartmentResponse, videoLink } from "../../api/responses";
+import { useSelector } from "react-redux";
+import {
+  selectAllApartments,
+  selectVideoContent,
+} from "../../features/apartments/selectors";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -51,13 +56,23 @@ export const HomePage = () => {
   useEffect(() => {
     initFadeInAnimation(".fade-in");
   });
+  const videoLink = useSelector(selectVideoContent);
+  const apartments = useSelector(selectAllApartments);
   return (
     <>
       <Header
         navLink="https://wubook.net/nneb/bk/?ep=8c0ed861&lang=it&c=EUR&f=29%2F03%2F2024&t=30%2F03%2F2024&o=2.0.0.0"
         buttonTitle="Prenota ora"
       />
-      <HeroHeader title="" imgSrc={videoLink} className="fade-in" isVideo />
+      <HeroHeader
+        title=""
+        imgSrc={
+          videoLink ||
+          "http://www.isoladeimori.it/idm/images/slide/struttura2.jpg?1709153506378"
+        }
+        className="fade-in"
+        isVideo
+      />
       <Stack flexDirection="column">
         <div className="first-home">
           <div className="text-container-centered">
@@ -111,7 +126,7 @@ export const HomePage = () => {
                 subtitle={homeCarouselDescription.subtitle}
               />
 
-              <ApartmentsCarousel apartmentList={apartmentResponse} />
+              <ApartmentsCarousel apartmentList={apartments} />
             </Stack>
           </Stack>
         </div>

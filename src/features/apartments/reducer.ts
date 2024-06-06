@@ -1,6 +1,6 @@
 import { PayloadAction, createAction, createSlice } from "@reduxjs/toolkit";
 import { ApartmentState } from "./types";
-import { Apartment } from "../../api/types";
+import { Apartment, Photo } from "../../api/types";
 import {
   apartmentResponse,
   imagesResponse,
@@ -22,6 +22,12 @@ const apartmentsSlice = createSlice({
     },
     setCurrentApartment: (state, { payload }: PayloadAction<Apartment>) => {
       state.currentApartment = payload;
+    },
+    setVideoLink: (state, { payload }: PayloadAction<string>) => {
+      state.videoLink = payload;
+    },
+    setPhotoContent: (state, { payload }: PayloadAction<Photo[]>) => {
+      state.photos = payload;
     },
   },
 });

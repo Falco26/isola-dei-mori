@@ -10,17 +10,7 @@ import {
 import "./style.css";
 
 export const ContactPage = () => {
-  const phoneNumber = "+393457717855";
   const content = useSelector(selectAllContent);
-
-  const handleCallButtonClick = () => {
-    window.open(`tel:${phoneNumber}`);
-  };
-
-  const handleMailClik = () => {
-    const mailtoLink = `mailto:info@isoladeimori.it`;
-    window.location.href = mailtoLink;
-  };
 
   return (
     <div className="main-container-contacts">
