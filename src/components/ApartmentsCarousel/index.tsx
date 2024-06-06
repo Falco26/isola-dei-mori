@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { Carousel as ResponsiveCarousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Apartment } from "../../api/types";
@@ -16,7 +16,7 @@ type Props = {
   apartmentList: Apartment[];
 };
 
-export const ApartmentsCarousel = ({ apartmentList }: Props) => {
+export const ApartmentsCarousel = memo(({ apartmentList }: Props) => {
   const [itemsPerSlide, setItemsPerSlide] = useState(
     calculateItemsPerSlide(window.innerWidth)
   );
@@ -107,4 +107,4 @@ export const ApartmentsCarousel = ({ apartmentList }: Props) => {
       ))}
     </ResponsiveCarousel>
   );
-};
+});

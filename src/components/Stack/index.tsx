@@ -13,6 +13,7 @@ type Props = PropsWithChildren<{
   wrap?: boolean;
   gap?: number;
   className?: string;
+  onClick?: (params?: any) => void;
 }>;
 
 export const Stack = ({
@@ -26,6 +27,7 @@ export const Stack = ({
   paddinghorizontal = 0,
   className,
   children,
+  onClick,
 }: Props) => {
   return (
     <StyledStack
@@ -38,6 +40,7 @@ export const Stack = ({
       gap={gap}
       paddinghorizontal={paddinghorizontal}
       paddingvertical={paddingvertical}
+      onClick={onClick}
     >
       {children}
     </StyledStack>

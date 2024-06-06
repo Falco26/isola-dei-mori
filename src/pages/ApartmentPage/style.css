@@ -46,6 +46,9 @@
   border-radius: 0.5rem;
   box-shadow: rgba(156, 156, 156, 0.4) 5px 5px,
     rgba(196, 192, 182, 0.3) 10px 10px;
+  @media screen and (max-width: 1024px) {
+    width: 70vw;
+  }
 }
 
 .image1-container img {

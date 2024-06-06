@@ -75,7 +75,7 @@ export const HouseCard = ({
             )}
 
             {doubleBeds > 0 && (
-              <Stack alignitems="center">
+              <Stack alignitems="center" justifycontent="center" gap={5}>
                 <Icon
                   iconName="DoubleBed"
                   iconColor={theme.colors.black}
@@ -87,7 +87,7 @@ export const HouseCard = ({
               </Stack>
             )}
             {singleBeds > 0 && (
-              <Stack alignitems="center">
+              <Stack alignitems="center" justifycontent="center" gap={5}>
                 <Icon
                   iconName="SingleBed"
                   iconColor={theme.colors.black}
@@ -99,7 +99,7 @@ export const HouseCard = ({
               </Stack>
             )}
             {sofaBeds > 0 && (
-              <Stack alignitems="center">
+              <Stack alignitems="center" justifycontent="center" gap={5}>
                 <Icon
                   iconName="Sofa"
                   iconColor={theme.colors.black}

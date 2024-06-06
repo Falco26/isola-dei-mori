@@ -13,10 +13,19 @@ export const selectCurrentApartment = createSelector(
   (state) => state.currentApartment
 );
 
+export const selectAllContent = createSelector(
+  apartmentsState,
+  (state) => state.photos
+);
+
+export const selectVideoContent = createSelector(
+  apartmentsState,
+  (state) => state.videoLink
+);
+
 export const selectApartmentsLink = createSelector(
   selectAllApartments,
   (apartments) => {
-    console.log("🚀 ~ apartments:", apartments);
     return apartments.map((apartment) => ({
       name: apartment.appartmentType,
       picture: apartment.photos[0].url,

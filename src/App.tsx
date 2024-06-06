@@ -10,6 +10,7 @@ import { ContactPage } from "./pages/Contact";
 import { AboutUs } from "./pages/AboutUs";
 import { useDispatch } from "react-redux";
 import { apartmentActions } from "./features/apartments/reducer";
+import Footer from "./components/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,6 +28,7 @@ function App() {
           <Route path={appRoutes.ABOUT} element={<AboutUs />} />
         </Route>
       </Routes>
+      <Footer />
     </div>
   );
 }

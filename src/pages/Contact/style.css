@@ -1,10 +1,29 @@
+.header-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  background-color: transparent;
+  z-index: 1000; /* Ensure the header is on top of other elements */
+}
+
+.logo-white {
+  max-width: 150px; /* Adjust the size of the logo */
+}
+
 .contact-box {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  justify-content: flex-start;
   gap: 1rem;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 }
 
 a {
@@ -12,15 +31,50 @@ a {
   color: black;
 }
 
-.main-container-contact {
-  background-color: antiquewhite;
-  width: 100vw;
-  height: 100%;
-}
-
 .info-button-group {
   @media (max-width: 768px) {
     justify-content: flex-start;
     display: flex;
   }
+}
+
+.form-container {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.85
+  ); /* Adjusted background color with transparency */
+  width: 30vw;
+  min-width: 300px; /* Ensure a minimum width for smaller screens */
+  height: auto;
+  padding: 3rem; /* Adjusted padding */
+  border-radius: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-container-contacts {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-image-contacts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }

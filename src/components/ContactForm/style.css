@@ -1,59 +1,77 @@
-.form-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+/* Paper Input Style with All Borders */
+.contact-form {
+  font-family: "Roboto", sans-serif;
+  width: 80%;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+}
+
+.contact-form .form-group {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-size: 1rem;
   width: 100%;
-  gap: 1rem;
-
-  @media (max-width: 768px) {
-    padding-right: 1rem;
-    padding-left: 1rem;
-  }
+  padding: 10px;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background: transparent;
+  outline: none;
+  border-radius: 4px; /* Add a slight border radius */
+  background-color: white;
+  margin-bottom: 8px;
 }
 
-.form-container input {
-  border-width: 0;
-  height: 2.6rem;
-  width: 26rem;
-  text-align: left;
-  font-size: 1.2rem;
-  border-radius: 0.3rem;
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #393939;
+  box-shadow: 0 0 5px rgba(102, 204, 255, 0.5);
 }
-.form-container input[type="submit"] {
-  height: 2.6rem;
-  width: 10rem;
-  text-align: center;
-  font-size: 1.2rem;
+
+.contact-form label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: #aaa;
+  pointer-events: none;
+  transition: all 0.3s;
+  background: white; /* Background color to hide overlap */
+  padding: 0 5px; /* Padding to avoid text overlap */
+}
+
+.contact-form input:focus + label,
+.contact-form textarea:focus + label,
+.contact-form input:not(:placeholder-shown) + label,
+.contact-form textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 10px;
+  font-size: 1rem;
+  color: #393939;
   background-color: transparent;
-  cursor: pointer;
-  border-width: 1;
-  border-color: black;
-
-  &:hover {
-    background-color: rgb(0, 0, 0);
-    color: rgb(234, 233, 233);
-    transition: 0.2s;
-    border-color: white;
-    border-width: 1;
-  }
 }
 
-.form-container textarea {
-  border-width: 0;
-  height: 15rem;
-  width: 26rem;
-  text-align: left;
+.contact-form input[type="submit"] {
+  height: 3rem;
+  width: 100%;
+  text-align: center;
   font-size: 1.1rem;
-  border-radius: 0.3rem;
+  background-color: #393939;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.form-container input:focus,
-textarea:focus {
-  outline: none; /* Remove default focus outline */
-  border-color: #007bff; /* Change border color when focused */
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Add box shadow when focused */
-}
-
-.form-container input::placeholder {
-  color: #999; /* Change color of placeholder text */
+.contact-form input[type="submit"]:hover {
+  background-color: #33bbff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

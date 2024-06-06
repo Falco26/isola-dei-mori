@@ -1,0 +1,58 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 3.125rem;
+  background-color: white;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.footer-column a:hover {
+  text-decoration: none;
+}
+
+.booking-logo {
+  width: 15rem;
+  @media (max-width: 500px) {
+    width: 8.625rem;
+  }
+}
+
+.logo-sulky {
+  width: 300px;
+  height: 102px;
+}
+
+.contacts-footer {
+  align-items: flex-end;
+  @media (max-width: 768px) {
+    align-items: center;
+  }
+}
+
+.contact-square {
+  width: auto;
+  height: auto;
+  border: 1px solid black;
+  cursor: pointer;
+
+  :hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
+}
+
+.link-reference {
+  background-color: transparent;
+  border: transparent;
+  padding: 0;
+}
+
+.line-gray {
+  margin-top: 0.938rem;
+  margin-bottom: 0.938rem;
+  border: 1px solid grey;
+  width: 18.75rem;
+  z-index: 100;
+}

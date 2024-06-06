@@ -1,5 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
-import "./style.css";
+import "./style.css"; // Make sure this includes the Paper Input Style CSS
+import { Stack } from "../Stack";
 
 type FormData = {
   name: string;
@@ -38,46 +39,60 @@ export const ContactForm = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} className="form-container">
-        <label htmlFor="name">Nome:</label>
+    <form onSubmit={handleSubmit} className="contact-form">
+      <div className="form-group">
         <input
           type="text"
           id="name"
           name="name"
+          placeholder=" " /* Necessary for floating label */
           value={formData.name}
           onChange={handleChange}
           required
         />
-        <label htmlFor="email">La tua mail:</label>
+        <label htmlFor="name">Nome</label>
+      </div>
+
+      <div className="form-group">
         <input
           type="email"
           id="email"
           name="email"
+          placeholder=" "
           value={formData.email}
           onChange={handleChange}
           required
         />
-        <label htmlFor="subject">Oggetto:</label>
+        <label htmlFor="email">Email</label>
+      </div>
+
+      <div className="form-group">
         <input
           type="text"
           id="subject"
           name="subject"
+          placeholder=" "
           value={formData.subject}
           onChange={handleChange}
           required
         />
-        <label htmlFor="message">Contenuto:</label>
+        <label htmlFor="subject">Oggetto</label>
+      </div>
+
+      <div className="form-group">
         <textarea
           id="message"
           name="message"
           rows={4}
+          placeholder=" "
           value={formData.message}
           onChange={handleChange}
           required
         ></textarea>
-        <input type="submit" value="Send Email" />
-      </form>
-    </div>
+        <label htmlFor="message">Messaggio</label>
+      </div>
+
+      <input type="submit" value="Send Email" />
+    </form>
   );
 };

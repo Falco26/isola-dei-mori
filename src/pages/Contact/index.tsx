@@ -1,15 +1,17 @@
-import { Box } from "../../components/Box";
+import React from "react";
+import { useSelector } from "react-redux";
+import { selectAllContent } from "../../features/apartments/selectors";
 import { ContactForm } from "../../components/ContactForm";
-import { Header } from "../../components/Header";
-import { Icon } from "../../components/Icon/Index";
-import { Stack } from "../../components/Stack";
-import { Text } from "../../components/Text";
-import { theme } from "../../style/theme";
-import { GoogleMapsButton } from "../Map";
+import { Header } from "../../components/Header"; // Import Header component
+import {
+  StyledImageContainer,
+  StyledHeroGradient,
+} from "../../components/HeroHeader/styled";
 import "./style.css";
 
 export const ContactPage = () => {
   const phoneNumber = "+393457717855";
+  const content = useSelector(selectAllContent);
 
   const handleCallButtonClick = () => {
     window.open(`tel:${phoneNumber}`);
@@ -19,83 +21,27 @@ export const ContactPage = () => {
     const mailtoLink = `mailto:info@isoladeimori.it`;
     window.location.href = mailtoLink;
   };
+
   return (
-    <>
-      <Header
-        logoClass="logo-dark"
-        headerButtonClass="header-button-dark"
-        mainColor="dark"
-        headerClass="header-not-absolute"
-        buttonTitle="Prenota ora"
-        navLink="https://wubook.net/nneb/bk/?ep=8c0ed861&lang=it&c=EUR&f=29%2F03%2F2024&t=30%2F03%2F2024&o=2.0.0.0"
-      />
+    <div className="main-container-contacts">
+      {/* Floating transparent header */}
+      <div className="header-content">
+        <a href="/">
+          <img
+            className="logo-white"
+            src="http://www.isoladeimori.it/idm/templates/shape5_vertex/images/s5_logo.png"
+            alt="logo isola dei mori"
+          />
+        </a>
+      </div>
+      {/* Hero image */}
+      <StyledImageContainer src={content[0].url} />
+      <StyledHeroGradient className="hero-image-contacts" />
 
-      <Stack
-        flexDirection="row"
-        className="main-container-contact"
-        alignitems="center"
-        justifycontent="space-around"
-        wrap
-        gap={30}
-        paddingvertical={100}
-      >
-        <div>
-          <ContactForm />
-        </div>
-        <Stack flexDirection="column" gap={20}>
-          <Box
-            bordercolor={theme.colors.black}
-            borderstyle="solid"
-            borderwidth={1}
-            className="contact-box"
-          >
-            <Icon
-              iconName="Instagram"
-              iconColor={theme.colors.black}
-              iconSize={50}
-            />
-            <Text bold fontSize="md">
-              @isoladeimori
-            </Text>
-          </Box>
-          <a href={`tel:${phoneNumber}`} onClick={handleMailClik}>
-            <Box
-              bordercolor={theme.colors.black}
-              borderstyle="solid"
-              borderwidth={1}
-              className="contact-box"
-            >
-              <Icon
-                iconName="MailRounded"
-                iconColor={theme.colors.black}
-                iconSize={50}
-              />
-              <Text bold fontSize="md">
-                info@isoladeimori.it
-              </Text>
-            </Box>
-          </a>
-          <a href={`tel:${phoneNumber}`} onClick={handleCallButtonClick}>
-            <Box
-              bordercolor={theme.colors.black}
-              borderstyle="solid"
-              borderwidth={1}
-              className="contact-box"
-            >
-              <Icon
-                iconName="PhoneRounded"
-                iconColor={theme.colors.black}
-                iconSize={50}
-              />
-              <Text bold fontSize="md">
-                +39 3457717855
-              </Text>
-            </Box>
-          </a>
-
-          <GoogleMapsButton themeButtons="black" />
-        </Stack>
-      </Stack>
-    </>
+      {/* Contact form */}
+      <div className="form-container">
+        <ContactForm />
+      </div>
+    </div>
   );
 };

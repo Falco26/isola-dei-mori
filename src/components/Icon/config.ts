@@ -17,9 +17,11 @@ import {
   BedroomChildRounded,
   LivingRounded,
   SingleBed,
+  AcUnitRounded,
   Living,
   Chair,
   ChairOutlined,
+  FacebookRounded,
 } from "@mui/icons-material";
 
 export const IconsList = {
@@ -41,4 +43,6 @@ export const IconsList = {
   Sofa: ChairOutlined,
   DoubleBed: BedRounded,
   SingleBed: SingleBed,
+  AirConditioning: AcUnitRounded,
+  Facebook: FacebookRounded,
 };

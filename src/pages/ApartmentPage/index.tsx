@@ -12,6 +12,7 @@ import { useGSAP } from "@gsap/react";
 import { useEffect } from "react";
 import { initFadeInAnimation } from "../../animation";
 import { Header } from "../../components/Header";
+import { HouseServices } from "../../components/HouseServices";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,6 +20,7 @@ export const ApartmentPage = () => {
   const params = useParams();
   const { id } = params;
   const apartment = useSelector(makeSelectApartment(id ?? "monolocali"));
+  const imageCover = apartment?.photos[0].url;
   const imageList = apartment?.photos.slice(2, 9);
 
   useEffect(() => {
@@ -36,7 +38,10 @@ export const ApartmentPage = () => {
         <Stack flexDirection="column">
           <HeroHeader
             title={apartment?.appartmentType}
-            imgSrc="http://www.isoladeimori.it/idm/images/slide/ingresso.jpg?1710616009801"
+            imgSrc={
+              imageCover ||
+              "http://www.isoladeimori.it/idm/images/slide/ingresso.jpg?1710616009801"
+            }
             className="parallax"
           />
           <Stack className="main-content" flexDirection="column">
@@ -47,7 +52,7 @@ export const ApartmentPage = () => {
                   <Button buttonTitle="Prenota Ora" icon="ArrowForwardIos" />
                 </Stack>
               </div>
-              <Stack gap={40}>
+              <Stack gap={40} wrap className="image-wrap-width" flex={1}>
                 <div className="image1-container">
                   <img
                     src={apartment.photos[0].url}
@@ -63,6 +68,13 @@ export const ApartmentPage = () => {
                   />
                 </div>
               </Stack>
+              <HouseServices
+                doubleBeds={apartment.doubleBed}
+                singleBeds={apartment.singleBed}
+                sofaBeds={apartment.sofaBed}
+                wifi={apartment.hasWifi}
+                hasAirConditioning={apartment.hasAirConditioning}
+              />
             </div>
             <div className="carousel-content ">
               {imageList && <ImageCarousel imageList={imageList} />}

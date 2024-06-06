@@ -10,14 +10,14 @@ type Props = {
   themeButtons: "white" | "black";
 };
 
+export const phoneNumber = "+393457717855";
+
+export const handleCallButtonClick = () => {
+  window.open(`tel:${phoneNumber}`);
+};
 export const ContactGroup = ({ themeButtons }: Props) => {
-  const phoneNumber = "+393457717855";
   const mainColor =
     themeButtons === "black" ? theme.colors.black : theme.colors.white;
-
-  const handleCallButtonClick = () => {
-    window.open(`tel:${phoneNumber}`);
-  };
 
   const handleMailClik = () => {
     const mailtoLink = `mailto:info@isoladeimori.it`;
