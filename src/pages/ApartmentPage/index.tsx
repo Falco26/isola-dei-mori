@@ -48,20 +48,28 @@ export const ApartmentPage = () => {
               <div className="description-container">
                 <span className="desctiption">{apartment.description}</span>
                 <Stack flex={1} justifycontent="center" paddingvertical={20}>
-                  <Button buttonTitle="Prenota Ora" icon="ArrowForwardIos" />
+                  <Button
+                    buttonTitle="Prenota Ora"
+                    icon="ArrowForwardIos"
+                    onClick={() =>
+                      window.open(
+                        "https://wubook.net/nneb/bk/?ep=8c0ed861&lang=it&c=EUR&f=29%2F03%2F2024&t=30%2F03%2F2024&o=2.0.0.0"
+                      )
+                    }
+                  />
                 </Stack>
               </div>
               <Stack gap={40} wrap className="image-wrap-width" flex={1}>
                 <div className="image1-container">
                   <img
-                    src={apartment.photos[0].url}
+                    src={apartment?.photos[0]?.url}
                     alt="Apartment Front"
                     style={{ opacity: 1 }}
                   />
                 </div>
                 <div className="image1-container">
                   <img
-                    src={apartment.photos[1].url}
+                    src={apartment?.photos[1]?.url}
                     alt="Apartment Front"
                     style={{ opacity: 1 }}
                   />

@@ -1,11 +1,16 @@
 import { PayloadAction, createAction, createSlice } from "@reduxjs/toolkit";
 import { ApartmentState } from "./types";
 import { Apartment, Photo } from "../../api/types";
+import {
+  apartmentResponse,
+  imagesResponse,
+  videoLink,
+} from "../../api/responses";
 
 const initialState: ApartmentState = {
-  apartmentsList: [],
-  photos: [],
-  videoLink: null,
+  apartmentsList: apartmentResponse,
+  photos: imagesResponse,
+  videoLink: videoLink,
 };
 
 const apartmentsSlice = createSlice({

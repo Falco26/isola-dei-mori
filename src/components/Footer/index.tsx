@@ -64,8 +64,9 @@ const Footer = () => {
             paddinghorizontal={20}
             paddingvertical={20}
             onClick={() =>
-              (window.location.href =
-                "https://wwww.instagram.com/case_vacanza_isoladeimori/")
+              window.open(
+                "https://www.instagram.com/case_vacanza_isoladeimori/"
+              )
             }
           >
             <Icon
@@ -81,8 +82,7 @@ const Footer = () => {
             justifycontent="center"
             alignitems="center"
             onClick={() =>
-              (window.location.href =
-                "https://www.facebook.com/Isoladeimori?locale=it_IT")
+              window.open("https://www.facebook.com/Isoladeimori?locale=it_IT")
             }
           >
             <Icon

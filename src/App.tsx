@@ -12,6 +12,7 @@ import { useDispatch } from "react-redux";
 import { apartmentActions } from "./features/apartments/reducer";
 import Footer from "./components/Footer";
 import { Sustainability } from "./pages/Sustainability";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,6 +22,7 @@ function App() {
   dispatch(apartmentActions.initApp());
   return (
     <div className="App">
+      <ScrollToTop />
       <Routes>
         <Route path={appRoutes.HOME}>
           <Route index element={<HomePage />} />

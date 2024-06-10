@@ -30,9 +30,9 @@ function* getPhotosSaga() {
 }
 
 function* initSaga() {
-  yield call(getApartmentsSaga);
-  yield call(getPhotosSaga);
-  yield call(getVideosSaga);
+  // yield call(getApartmentsSaga);
+  // yield call(getPhotosSaga);
+  // yield call(getVideosSaga);
 }
 
 export function* homeSaga() {

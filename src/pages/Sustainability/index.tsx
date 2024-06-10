@@ -27,7 +27,7 @@ export const Sustainability = () => {
       />
       <HeroHeader
         title="Sostenibilità"
-        imgSrc={content[5].url}
+        imgSrc={content[5]?.url}
         className="fade-in"
       />
       <Stack flexDirection="column">

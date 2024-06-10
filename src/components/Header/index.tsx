@@ -59,7 +59,7 @@ export const Header = ({
   const handleNavigate = (navLink: string) => {
     appRoutes[navLink as keyof typeof appRoutes]
       ? navigate(appRoutes[navLink as keyof typeof appRoutes])
-      : (window.location.href = navLink);
+      : window.open(navLink);
   };
   return (
     <div className={`${headerClass} ${isSticky ? "sticky" : ""}`}>

@@ -24,7 +24,7 @@ export const ContactPage = () => {
         </a>
       </div>
       {/* Hero image */}
-      <StyledImageContainer src={content[0].url} />
+      <StyledImageContainer src={content[0]?.url} />
       <StyledHeroGradient className="hero-image-contacts" />
 
       {/* Contact form */}

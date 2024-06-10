@@ -28,7 +28,7 @@ export const AboutUs = () => {
       />
       <HeroHeader
         title="About Us"
-        imgSrc={content[2].url}
+        imgSrc={content[2]?.url}
         className="fade-in"
       />
       <Stack flexDirection="column">

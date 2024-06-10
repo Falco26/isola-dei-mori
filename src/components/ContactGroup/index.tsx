@@ -29,7 +29,7 @@ export const ContactGroup = ({ themeButtons }: Props) => {
         bordercolor={mainColor}
         borderstyle="solid"
         borderwidth={1}
-        className="contact-box"
+        className="contact-button"
       >
         <Icon iconName="Instagram" iconColor={mainColor} iconSize={50} />
         <Text bold fontSize="md" color={mainColor}>
@@ -45,7 +45,7 @@ export const ContactGroup = ({ themeButtons }: Props) => {
           bordercolor={mainColor}
           borderstyle="solid"
           borderwidth={1}
-          className="contact-box"
+          className="contact-button"
         >
           <Icon iconName="MailRounded" iconColor={mainColor} iconSize={50} />
           <Text bold fontSize="md">
@@ -62,7 +62,7 @@ export const ContactGroup = ({ themeButtons }: Props) => {
           bordercolor={mainColor}
           borderstyle="solid"
           borderwidth={1}
-          className="contact-box"
+          className="contact-button"
         >
           <Icon iconName="PhoneRounded" iconColor={mainColor} iconSize={50} />
           <Text bold fontSize="md">
