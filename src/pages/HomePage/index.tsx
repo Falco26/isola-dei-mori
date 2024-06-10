@@ -15,6 +15,7 @@ import {
   selectAllApartments,
   selectVideoContent,
 } from "../../features/apartments/selectors";
+import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,6 +53,8 @@ gsap.registerPlugin(ScrollTrigger);
 // };
 
 export const HomePage = () => {
+  const { t } = useTranslation();
+
   useEffect(() => {
     initFadeInAnimation(".fade-in");
   });
@@ -77,14 +80,7 @@ export const HomePage = () => {
           <div className="text-container-centered">
             <h1 className="fade-in">Immergiti nella vera Sardegna</h1>
             <div className="description-first-home ">
-              <span className="fade-in">
-                Il complesso residenziale dell’Isola dei Mori è situato in
-                località Calasapone, sulla costa occidentale dell’Isola di
-                Sant’Antioco. Immersi nei tipici profumi della macchia
-                mediterranea e circondati da un gradito silenzio e dalla
-                musicalità dei movimenti del mare, si possono ammirare
-                meravigliosi tramonti.
-              </span>
+              <span className="fade-in">{t("home-1")}</span>
               <span className="fade-in">
                 Il complesso è pienamente con vista sul meraviglioso mare di
                 Calasapone, è stato ricavato da una grande villa circondata da

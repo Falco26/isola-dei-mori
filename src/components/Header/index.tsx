@@ -7,6 +7,7 @@ import "./style.css";
 import { BurgerMenu } from "../BurgerMenu";
 import { useNavigate } from "react-router-dom";
 import { appRoutes } from "../../routes";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   headerClass?: string;
@@ -29,6 +30,7 @@ export const Header = ({
   const navigate = useNavigate();
   const [isSticky, setIsSticky] = useState(false);
   const color = mainColor === "dark" ? theme.colors.black : theme.colors.white;
+  const { t, i18n } = useTranslation();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -61,6 +63,10 @@ export const Header = ({
       ? navigate(appRoutes[navLink as keyof typeof appRoutes])
       : window.open(navLink);
   };
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
   return (
     <div className={`${headerClass} ${isSticky ? "sticky" : ""}`}>
       <Stack
@@ -70,31 +76,41 @@ export const Header = ({
         className="header-container-padding"
         paddingvertical={70}
       >
-        <button
-          className={`${
-            menuOpen
-              ? "header-button"
-              : isSticky
-              ? "header-button-dark"
-              : headerButtonClass
-          }`}
-          onClick={toggleMenu}
-        >
-          {!menuOpen && (
-            <Icon
-              iconName="MenuRounded"
-              iconColor={isSticky ? theme.colors.black : color}
-              iconSize={25}
-            />
-          )}
-          {menuOpen && (
-            <Icon
-              iconName="CloseRounded"
-              iconColor={theme.colors.white}
-              iconSize={25}
-            />
-          )}
-        </button>
+        <Stack>
+          <button
+            className={`${
+              menuOpen
+                ? "header-button"
+                : isSticky
+                ? "header-button-dark"
+                : headerButtonClass
+            }`}
+            onClick={toggleMenu}
+          >
+            {!menuOpen && (
+              <Icon
+                iconName="MenuRounded"
+                iconColor={isSticky ? theme.colors.black : color}
+                iconSize={25}
+              />
+            )}
+            {menuOpen && (
+              <Icon
+                iconName="CloseRounded"
+                iconColor={theme.colors.white}
+                iconSize={25}
+              />
+            )}
+          </button>
+          <select
+            onChange={(e) => changeLanguage(e.target.value)}
+            value={i18n.language}
+          >
+            <option value="en">English</option>
+            <option value="it">Italiano</option>
+          </select>
+        </Stack>
+
         <a href="/">
           <img
             className={`${isSticky ? "logo-sticky" : logoClass}`}
