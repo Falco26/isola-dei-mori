@@ -1,5 +1,6 @@
 import { Stack } from "../Stack";
 import { Service } from "./Service";
+import "./style.css";
 
 type Services = {
   wifi?: boolean;
@@ -17,8 +18,16 @@ export const HouseServices = ({
   wifi,
 }: Services) => {
   return (
-    <Stack flexDirection="row" wrap flex={1} gap={20}>
-      {wifi && <Service iconName="WifiRounded" serviceDescription="WiFi" />}
+    <Stack
+      flexDirection="row"
+      wrap
+      flex={1}
+      justifycontent="center"
+      alignitems="center"
+      className="house-services"
+      gap={60}
+    >
+      {wifi && <Service iconName="WifiLucide" serviceDescription="WiFi" />}
       {hasAirConditioning && (
         <Service iconName="AirConditioning" serviceDescription="AC" />
       )}
@@ -38,7 +47,7 @@ export const HouseServices = ({
       )}
       {sofaBeds > 0 && (
         <Service
-          iconName="Sofa"
+          iconName="SofaLucide"
           serviceDescription="Divano Letto"
           quantity={sofaBeds}
         />

@@ -21,7 +21,7 @@ export const TextSection = ({ title, subtitle }: Props) => {
       <Text bold fontSize="xl" className="text-animation">
         {title}
       </Text>
-      <Text fontSize="xs" className="text-animation">
+      <Text fontSize="sm" className="text-animation">
         {subtitle}
       </Text>
     </Stack>

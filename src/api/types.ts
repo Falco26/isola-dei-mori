@@ -21,7 +21,8 @@ export interface Apartment {
     | "Bilocale"
     | "Trilocale"
     | "StandardAppartment";
-  description: string;
+  descriptionIT: string;
+  descriptionEN: string;
   doubleBed: number;
   singleBed: number;
   sofaBed: number;

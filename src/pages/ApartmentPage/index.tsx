@@ -12,6 +12,8 @@ import { useEffect } from "react";
 import { initFadeInAnimation } from "../../animation";
 import { Header } from "../../components/Header";
 import { HouseServices } from "../../components/HouseServices";
+import { useTranslation } from "react-i18next";
+import { Text } from "../../components/Text";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,6 +23,8 @@ export const ApartmentPage = () => {
   const apartment = useSelector(makeSelectApartment(id ?? "monolocali"));
   const imageCover = apartment?.photos[0].url;
   const imageList = apartment?.photos.slice(2, 9);
+
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     initFadeInAnimation(".fade-in");
@@ -46,7 +50,11 @@ export const ApartmentPage = () => {
           <Stack className="main-content" flexDirection="column">
             <div className="first-content fade-in ">
               <div className="description-container">
-                <span className="desctiption">{apartment.description}</span>
+                <span className="desctiption">
+                  {i18n.language === "it"
+                    ? apartment?.descriptionIT
+                    : apartment?.descriptionEN}
+                </span>
                 <Stack flex={1} justifycontent="center" paddingvertical={20}>
                   <Button
                     buttonTitle="Prenota Ora"
@@ -75,13 +83,23 @@ export const ApartmentPage = () => {
                   />
                 </div>
               </Stack>
-              <HouseServices
-                doubleBeds={apartment.doubleBed}
-                singleBeds={apartment.singleBed}
-                sofaBeds={apartment.sofaBed}
-                wifi={apartment.hasWifi}
-                hasAirConditioning={apartment.hasAirConditioning}
-              />
+              <Stack
+                flexDirection="column"
+                alignitems="center"
+                className="house-services"
+                gap={40}
+              >
+                <Text fontSize="lg" bold>
+                  Cosa Troverai
+                </Text>
+                <HouseServices
+                  doubleBeds={apartment.doubleBed}
+                  singleBeds={apartment.singleBed}
+                  sofaBeds={apartment.sofaBed}
+                  wifi={apartment.hasWifi}
+                  hasAirConditioning={apartment.hasAirConditioning}
+                />
+              </Stack>
             </div>
             <div className="carousel-content ">
               {imageList && <ImageCarousel imageList={imageList} />}

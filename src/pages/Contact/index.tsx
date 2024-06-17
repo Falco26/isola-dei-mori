@@ -7,6 +7,7 @@ import {
   StyledHeroGradient,
 } from "../../components/HeroHeader/styled";
 import "./style.css";
+import logoIsola from "../../assets/logo_isola_new.png";
 
 export const ContactPage = () => {
   const content = useSelector(selectAllContent);
@@ -18,7 +19,7 @@ export const ContactPage = () => {
         <a href="/">
           <img
             className="logo-white"
-            src="http://www.isoladeimori.it/idm/templates/shape5_vertex/images/s5_logo.png"
+            src={logoIsola}
             alt="logo isola dei mori"
           />
         </a>

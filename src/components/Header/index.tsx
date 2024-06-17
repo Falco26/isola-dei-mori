@@ -8,6 +8,7 @@ import { BurgerMenu } from "../BurgerMenu";
 import { useNavigate } from "react-router-dom";
 import { appRoutes } from "../../routes";
 import { useTranslation } from "react-i18next";
+import logoIsola from "../../assets/logo_isola_new.png";
 
 type Props = {
   headerClass?: string;
@@ -74,15 +75,15 @@ export const Header = ({
         alignitems="center"
         flex={1}
         className="header-container-padding"
-        paddingvertical={70}
+        paddingvertical={45}
       >
-        <Stack>
+        <Stack gap={15}>
           <button
             className={`${
               menuOpen
                 ? "header-button"
                 : isSticky
-                ? "header-button-dark"
+                ? "header-button"
                 : headerButtonClass
             }`}
             onClick={toggleMenu}
@@ -90,7 +91,7 @@ export const Header = ({
             {!menuOpen && (
               <Icon
                 iconName="MenuRounded"
-                iconColor={isSticky ? theme.colors.black : color}
+                iconColor={isSticky ? theme.colors.white : color}
                 iconSize={25}
               />
             )}
@@ -105,9 +106,10 @@ export const Header = ({
           <select
             onChange={(e) => changeLanguage(e.target.value)}
             value={i18n.language}
+            className={isSticky ? "language-select" : "language-select"}
           >
-            <option value="en">English</option>
-            <option value="it">Italiano</option>
+            <option value="en">EN 🇬🇧</option>
+            <option value="it">IT 🇮🇹</option>
           </select>
         </Stack>
 
@@ -121,7 +123,7 @@ export const Header = ({
 
         <Button
           buttonTitle={buttonTitle}
-          color={isSticky ? theme.colors.black : color}
+          color={isSticky ? theme.colors.white : color}
           hovercolor={
             isSticky ? theme.colors.grey[300] : theme.colors.grey[100]
           }

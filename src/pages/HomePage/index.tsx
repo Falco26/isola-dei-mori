@@ -16,6 +16,7 @@ import {
   selectVideoContent,
 } from "../../features/apartments/selectors";
 import { useTranslation } from "react-i18next";
+import { ScrollToTop } from "../../components/ScrollToTop";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,7 +54,7 @@ gsap.registerPlugin(ScrollTrigger);
 // };
 
 export const HomePage = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     initFadeInAnimation(".fade-in");
@@ -62,6 +63,7 @@ export const HomePage = () => {
   const apartments = useSelector(selectAllApartments);
   return (
     <>
+      <ScrollToTop />
       <Header
         navLink="https://wubook.net/nneb/bk/?ep=8c0ed861&lang=it&c=EUR&f=29%2F03%2F2024&t=30%2F03%2F2024&o=2.0.0.0"
         buttonTitle="Prenota ora"
@@ -72,7 +74,6 @@ export const HomePage = () => {
           videoLink ||
           "http://www.isoladeimori.it/idm/images/slide/struttura2.jpg?1709153506378"
         }
-        className="fade-in"
         isVideo
       />
       <Stack flexDirection="column">
@@ -81,16 +82,7 @@ export const HomePage = () => {
             <h1 className="fade-in">Immergiti nella vera Sardegna</h1>
             <div className="description-first-home ">
               <span className="fade-in">{t("home-1")}</span>
-              <span className="fade-in">
-                Il complesso è pienamente con vista sul meraviglioso mare di
-                Calasapone, è stato ricavato da una grande villa circondata da
-                giardino e suddiviso in sette unità abitative indipendenti che
-                distano solo un chilometro dalla bellissima spiaggia di
-                Calasapone e dalle sue scogliere; inoltre pochi minuti in auto,
-                lo separano dalle pittoresche insenature di Cala Lunga, Cala
-                della Signora, Co’ de Quaddus e Maladroxia e dalla cittadina di
-                Sant’Antioco.
-              </span>
+              <span className="fade-in">{t("home-2")}</span>
             </div>
           </div>
           <Stack className="button-group">
@@ -99,6 +91,11 @@ export const HomePage = () => {
               icon="ArrowForwardIosRounded"
               fontSize="md"
               className="button-home-book fade-in"
+              onClick={() =>
+                window.open(
+                  "https://wubook.net/nneb/bk/?ep=8c0ed861&lang=it&c=EUR&f=29%2F03%2F2024&t=30%2F03%2F2024&o=2.0.0.0"
+                )
+              }
             />
           </Stack>
         </div>
@@ -117,8 +114,8 @@ export const HomePage = () => {
               className="carousel-in fade-in"
             >
               <TextSection
-                title={homeCarouselDescription.title}
-                subtitle={homeCarouselDescription.subtitle}
+                title={t("home-carousel-title")}
+                subtitle={t("home-carousel-description")}
               />
 
               <ApartmentsCarousel apartmentList={apartments} />

@@ -29,15 +29,7 @@ const Footer = () => {
           <Text fontSize="xs">Copyright © 2024. Isola dei Mori.</Text>
         </Stack>
       </Stack>
-      <Stack>
-        <a href="https://www.welcometosantantioco.it/">
-          <img
-            src="https://welcometosantantioco.it/wp-content/uploads/2020/05/logo-welcome-to-sant-antioco.png"
-            alt="logo-sulki-ccn"
-            className="logo-sulky"
-          />
-        </a>
-      </Stack>
+
       <Stack
         flexDirection="column"
         justifycontent="center"
@@ -56,7 +48,16 @@ const Footer = () => {
           </Text>
         </button>
         <div className="line-gray"></div>
-        <Stack gap={10}>
+        <Stack gap={25} alignitems="center">
+          <Stack>
+            <a href="https://www.welcometosantantioco.it/">
+              <img
+                src="https://welcometosantantioco.it/wp-content/uploads/2020/05/logo-welcome-to-sant-antioco.png"
+                alt="logo-sulki-ccn"
+                className="logo-sulky"
+              />
+            </a>
+          </Stack>
           <Stack
             className="contact-square"
             justifycontent="center"

@@ -14,15 +14,14 @@ import {
   MapRounded,
   MailRounded,
   PhoneRounded,
-  BedroomChildRounded,
-  LivingRounded,
-  SingleBed,
+  BedroomParentOutlined,
+  BedroomChildOutlined,
   AcUnitRounded,
-  Living,
-  Chair,
   ChairOutlined,
   FacebookRounded,
 } from "@mui/icons-material";
+
+import { BedDouble, BedSingle, AirVent, Wifi, Sofa } from "lucide-react";
 
 export const IconsList = {
   ArrowForwardIos,
@@ -41,8 +40,10 @@ export const IconsList = {
   ChairRounded,
   LocalLaundryServiceRounded,
   Sofa: ChairOutlined,
-  DoubleBed: BedRounded,
-  SingleBed: SingleBed,
-  AirConditioning: AcUnitRounded,
+  DoubleBed: BedDouble,
+  SingleBed: BedSingle,
+  AirConditioning: AirVent,
   Facebook: FacebookRounded,
+  WifiLucide: Wifi,
+  SofaLucide: Sofa,
 };

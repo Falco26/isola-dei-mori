@@ -48,7 +48,7 @@ export const HeroHeader = ({
         <StyledVideoContainer
           className="hero-image"
           src={imgSrc}
-          autoPlay
+          autoPlay={true}
           loop
         />
       ) : (

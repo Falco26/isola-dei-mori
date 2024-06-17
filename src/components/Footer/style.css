@@ -5,7 +5,7 @@
   background-color: white;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
 
   @media (max-width: 768px) {
     justify-content: center !important;
@@ -27,8 +27,8 @@
 }
 
 .logo-sulky {
-  width: 15rem;
-  height: 5rem;
+  width: 10rem;
+  height: 3rem;
 }
 
 .contacts-footer {

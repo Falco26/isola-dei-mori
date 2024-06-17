@@ -15,10 +15,10 @@ export const GoogleMapsButton = ({ themeButtons }: Props) => {
     const longitude = -74.006;
 
     // Construct the Google Maps URL with the coordinates
-    const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
+    const googleMapsUrl = `https://maps.app.goo.gl/poAWqAyAbLFEbUkLA`;
 
     // Redirect to the Google Maps URL
-    window.location.href = googleMapsUrl;
+    window.open(googleMapsUrl);
   };
 
   return (

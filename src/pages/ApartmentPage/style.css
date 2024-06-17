@@ -9,6 +9,10 @@
   gap: 5rem;
 }
 
+.house-services {
+  width: 100%;
+}
+
 .description-container {
   width: 40%;
   min-width: 40vw;

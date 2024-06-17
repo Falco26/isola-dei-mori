@@ -16,15 +16,15 @@ export const Service = ({
 }: ServiceProps) => {
   return (
     <Stack
-      flexDirection="column"
-      gap={8}
+      flexDirection="row"
+      gap={15}
       alignitems="center"
       justifycontent="center"
     >
       <Stack alignitems="center" justifycontent="center" gap={16}>
         <Icon
           iconName={iconName}
-          iconSize={60}
+          iconSize={50}
           iconColor={theme.colors.black}
         />
         {quantity && (
@@ -34,7 +34,7 @@ export const Service = ({
         )}
       </Stack>
 
-      <Text fontSize="xs">{serviceDescription}</Text>
+      <Text fontSize="md">{serviceDescription}</Text>
     </Stack>
   );
 };

@@ -30,6 +30,9 @@ export const ContactGroup = ({ themeButtons }: Props) => {
         borderstyle="solid"
         borderwidth={1}
         className="contact-button"
+        onClick={() =>
+          window.open("https://www.instagram.com/case_vacanza_isoladeimori/")
+        }
       >
         <Icon iconName="Instagram" iconColor={mainColor} iconSize={50} />
         <Text bold fontSize="md" color={mainColor}>

@@ -61,12 +61,15 @@
 }
 
 .logo-white {
+  width: 12.625rem;
+  margin-right: 5rem;
   filter: brightness(0) /* Increase brightness to lighten the color */
     saturate(0%) /* Desaturate to remove color */ invert(100%)
     /* Invert the color */ sepia(0%); /* Remove any sepia tones */
-  width: 12.625rem;
-  @media (max-width: 500px) {
+
+  @media (max-width: 768px) {
     width: 8.625rem;
+    margin-right: 0;
   }
 }
 .logo-dark {
@@ -78,7 +81,11 @@
 }
 
 .logo-sticky {
-  width: 8.265rem;
+  width: 10.265rem;
+  margin-right: 5rem;
+  filter: brightness(0) /* Increase brightness to lighten the color */
+    saturate(0%) /* Desaturate to remove color */ invert(100%)
+    /* Invert the color */ sepia(0%); /* Remove any sepia tones */
 }
 
 .sticky {
@@ -87,8 +94,32 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: antiquewhite;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.35); /* More blurred shadow initially */
+  background-color: rgb(72, 70, 65, 0.8);
+
   z-index: 1000; /* Ensure it's above other content */
   padding-top: 5px !important;
+}
+
+.language-select {
+  padding: 8px 16px;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.language-select-dark {
+  border: 1px solid #000;
+  color: #000000;
+}
+
+.language-select:focus {
+  border: 1px solid #ccc !important;
+}
+.language-select::after {
+  border: 1px solid #ccc !important;
 }

@@ -4,8 +4,10 @@ export const apartmentResponse: Apartment[] = [
   {
     id: 1,
     appartmentType: "Monolocale",
-    description:
+    descriptionIT:
       "Il monolocale, con i suoi caratteristici arredi dalle tinte chiare, in tipico stile sardo, è composta da zona giorno con angolo cottura e zona notte con letto Queen size e bagno con doccia. All'esterno la casa ha una zona esclusivo con vista mare e antistante prato comune.Tutte le case condividono servizi comuni quali parcheggio esterno esclusivo, docce esterne, barbecue, lavatrice grande prato.",
+    descriptionEN:
+      "The studio apartment, with its characteristic light-colored furnishings in typical Sardinian style, consists of a living area with a kitchenette and a sleeping area with a queen-size bed and a bathroom with a shower. Outside, the house has an exclusive area with a sea view and a common lawn in front. All the houses share common services such as exclusive outdoor parking, outdoor showers, a barbecue, a washing machine, and a large lawn.",
     doubleBed: 1,
     singleBed: 0,
     sofaBed: 0,
@@ -88,8 +90,10 @@ export const apartmentResponse: Apartment[] = [
   {
     id: 2,
     appartmentType: "Bilocale",
-    description:
+    descriptionIT:
       "Il bilocale con i suoi caratteristici arredi dalle tinte chiare, in tipico stile sardo, è costituito da soggiorno con angolo cottura, disimpegno con armadio a muro, camera con letto Queen size vista mare, bagno con doccia. All'esterno la casa ha un patio coperto esclusivo con vista mare e antistante prato comune. Tutte le case condividono servizi comuni quali parcheggio esterno esclusivo, docce esterne, barbecue, lavatrice e grande prato.",
+    descriptionEN:
+      "The two-room apartment, with its characteristic light-colored furnishings in typical Sardinian style, consists of a living room with a kitchenette, a hallway with a built-in wardrobe, a bedroom with a queen-size bed and sea view, and a bathroom with a shower. Outside, the house has an exclusive covered patio with a sea view and a common lawn in front. All the houses share common services such as exclusive outdoor parking, outdoor showers, a barbecue, a washing machine, and a large lawn.",
     doubleBed: 1,
     singleBed: 0,
     sofaBed: 0,
@@ -172,8 +176,10 @@ export const apartmentResponse: Apartment[] = [
   {
     id: 3,
     appartmentType: "Trilocale",
-    description:
+    descriptionIT:
       "Il trilocale con i suoi caratteristici arredi dalle tinte chiare, in tipico stile sardo, è costituito da soggiorno con angolo cottura, camera con letto Queen size, camera con due letti singoli affiancabili, piccolo ripostiglio, bagno con doccia.All'esterno la casa ha un patio coperto esclusivo con vista mare e antistante prato comune.Tutte le case condividono servizi comuni quali parcheggio esterno esclusivo, docce esterne, barbecue, lavatrice e grande prato.",
+    descriptionEN:
+      "The three-room apartment, with its characteristic light-colored furnishings in typical Sardinian style, consists of a living room with a kitchenette, a bedroom with a queen-size bed, a bedroom with two single beds that can be joined, a small storage room, and a bathroom with a shower. Outside, the house has an exclusive covered patio with a sea view and a common lawn in front. All the houses share common services such as exclusive outdoor parking, outdoor showers, a barbecue, a washing machine, and a large lawn.",
     doubleBed: 1,
     singleBed: 2,
     sofaBed: 1,
@@ -256,8 +262,10 @@ export const apartmentResponse: Apartment[] = [
   {
     id: 4,
     appartmentType: "StandardAppartment",
-    description:
+    descriptionIT:
       "L'appartamento standard è un trilocale, con i suoi caratteristici arredi dalle tinte chiare, in tipico stile sardo, è costituito da soggiorno con angolo cottura, due camere matrimoniali con letto Queen size, bagno con doccia.All'esterno la casa ha una zona esclusiva all’ombra di un grande ulivo, immersa nella flora mediterranea.Tutte le case condividono servizi comuni quali parcheggio esterno esclusivo, docce esterne, barbecue, lavatrice e grande prato.",
+    descriptionEN:
+      "The standard apartment is a three-room apartment, with its characteristic light-colored furnishings in typical Sardinian style. It consists of a living room with a kitchenette, two double bedrooms with queen-size beds, and a bathroom with a shower. Outside, the house has an exclusive area in the shade of a large olive tree, surrounded by Mediterranean flora. All the houses share common services such as exclusive outdoor parking, outdoor showers, a barbecue, a washing machine, and a large lawn.",
     doubleBed: 2,
     singleBed: 0,
     sofaBed: 0,

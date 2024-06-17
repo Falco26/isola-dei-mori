@@ -8,6 +8,7 @@ type Props = PropsWithChildren<{
   borderwidth: number;
   borderstyle: CSSProperties["borderStyle"];
   className?: string;
+  onClick?: () => void;
 }>;
 
 export const Box = ({
@@ -15,6 +16,7 @@ export const Box = ({
   borderstyle,
   borderwidth,
   className,
+  onClick,
   children,
 }: Props) => {
   return (
@@ -23,6 +25,7 @@ export const Box = ({
       borderstyle={borderstyle}
       borderwidth={borderwidth}
       className={className}
+      onClick={onClick}
     >
       {children}
     </StyledBox>
