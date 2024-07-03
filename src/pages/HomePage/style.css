@@ -5,6 +5,8 @@
 .apartments-carousel {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
+  padding-bottom: 0px !important;
+  max-height: 900px;
 }
 
 .first-home {
@@ -41,4 +43,24 @@
   align-items: center;
   gap: 2rem;
   line-height: 1.3rem;
+}
+
+.rating-carousel {
+  background-color: white;
+  padding: 4.5rem;
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.line-gray-reviews {
+  width: 1px;
+  border-right: 1px solid rgb(127, 125, 125);
+
+  @media screen and (max-width: 786px) {
+    border-right: none;
+    height: 1px;
+    width: 100vw;
+    border-bottom: 1px solid black;
+  }
 }

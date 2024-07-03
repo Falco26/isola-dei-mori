@@ -62,7 +62,6 @@
 
 .logo-white {
   width: 12.625rem;
-  margin-right: 5rem;
   filter: brightness(0) /* Increase brightness to lighten the color */
     saturate(0%) /* Desaturate to remove color */ invert(100%)
     /* Invert the color */ sepia(0%); /* Remove any sepia tones */
@@ -82,10 +81,13 @@
 
 .logo-sticky {
   width: 10.265rem;
-  margin-right: 5rem;
   filter: brightness(0) /* Increase brightness to lighten the color */
     saturate(0%) /* Desaturate to remove color */ invert(100%)
     /* Invert the color */ sepia(0%); /* Remove any sepia tones */
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+  }
 }
 
 .sticky {
@@ -100,26 +102,24 @@
   padding-top: 5px !important;
 }
 
-.language-select {
-  padding: 8px 16px;
-  font-size: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: transparent;
-  color: #ffffff;
-  cursor: pointer;
-  font-weight: bold;
-  letter-spacing: 2px;
+.small-screen-select {
+  display: none !important;
 }
 
-.language-select-dark {
-  border: 1px solid #000;
-  color: #000000;
+.big-screen-select {
+  display: block !important;
 }
 
-.language-select:focus {
-  border: 1px solid #ccc !important;
-}
-.language-select::after {
-  border: 1px solid #ccc !important;
+@media (max-width: 768px) {
+  .small-screen-select {
+    display: block !important;
+  }
+
+  .big-screen-select {
+    display: none !important;
+  }
+
+  .book-now-button {
+    display: none !important;
+  }
 }

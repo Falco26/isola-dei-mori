@@ -30,9 +30,10 @@ export const initFadeInAnimation = (className: string) => {
       duration: 1,
       scrollTrigger: {
         trigger: element,
-        start: "top 80%",
-        end: "bottom 80%",
-        toggleActions: "play none none reverse",
+        start: "top 80%", // Adjust as necessary
+        end: "bottom 20%", // Adjust as necessary
+        toggleActions: "play none none none", // Only play the animation once
+        once: true, // Ensure it only triggers once
       },
     });
   });

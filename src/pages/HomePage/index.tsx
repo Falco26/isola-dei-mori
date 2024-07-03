@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { homeCarouselDescription } from "../../api/mocks";
 import { ApartmentsCarousel } from "../../components/ApartmentsCarousel";
 import { HeroHeader } from "../../components/HeroHeader";
 import { Stack } from "../../components/Stack";
@@ -17,6 +16,7 @@ import {
 } from "../../features/apartments/selectors";
 import { useTranslation } from "react-i18next";
 import { ScrollToTop } from "../../components/ScrollToTop";
+import { Review } from "../../components/Review";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -121,6 +121,29 @@ export const HomePage = () => {
               <ApartmentsCarousel apartmentList={apartments} />
             </Stack>
           </Stack>
+        </div>
+        <div className="rating-carousel">
+          <Review
+            description="Tutto bene, precisa descrizione degli alloggi, nessuna sorpresa negativa,check-in cordiale ed esaustivo.sig ra Cristina impeccabile.alla prossima"
+            title="Grande esperienza"
+            rating={4.5}
+            className="fade-in"
+          />
+          <div className="line-gray-reviews" />
+          <Review
+            description="Tutto bene, precisa descrizione degli alloggi, nessuna sorpresa negativa,check-in cordiale ed esaustivo.sig ra Cristina impeccabile.alla prossima"
+            title="Grande esperienza"
+            rating={4.5}
+            className="fade-in"
+          />
+          <div className="line-gray-reviews" />
+          <Review
+            description="Tutto bene, precisa descrizione degli alloggi, nessuna sorpresa negativa,check-in cordiale ed esaustivo.sig ra Cristina impeccabile.alla prossima"
+            title="Grande esperienza"
+            rating={4.5}
+            reviewSource="booking"
+            className="fade-in"
+          />
         </div>
       </Stack>
     </>

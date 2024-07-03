@@ -5,12 +5,14 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import "../HomePage/style.css";
 import "./style.css";
-import { TextSection } from "../../components/TextSection";
 import { Button } from "../../components/Button";
 import { initFadeInAnimation } from "../../animation";
 import { Header } from "../../components/Header";
 import { useSelector } from "react-redux";
 import { selectAllContent } from "../../features/apartments/selectors";
+import { TextImage } from "../../components/TextImage";
+import { aboutUsContent } from "../../constants/constants";
+import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,6 +21,7 @@ export const AboutUs = () => {
     initFadeInAnimation(".fade-in");
   });
   const content = useSelector(selectAllContent);
+  const { i18n } = useTranslation();
 
   return (
     <>
@@ -67,18 +70,25 @@ export const AboutUs = () => {
         </div>
         <Stack
           flexDirection="column"
-          gap={30}
+          gap={20}
           paddingvertical={50}
           className="second-about"
+          flex={1}
         >
-          <TextSection
-            title="Isola di Sant'Antioco"
-            subtitle="L'Isola di Sant'Antioco, situata nel sud-ovest della Sardegna, è la quarta isola italiana per estensione. Di origine vulcanica, presenta una costa rocciosa con falesie e grotte a ovest e una costa sabbiosa e lagunare a est. Divisa in due comuni, Sant'Antioco a sud e Calasetta a nord, l'isola è caratterizzata da una vegetazione mediterranea e coltivazioni di ortaggi e viti. Il clima è mediterraneo, con inverni freschi e estati calde e aride."
-          />
-          <TextSection
-            title="Isola di Sant'Antioco"
-            subtitle="L'Isola di Sant'Antioco, situata nel sud-ovest della Sardegna, è la quarta isola italiana per estensione. Di origine vulcanica, presenta una costa rocciosa con falesie e grotte a ovest e una costa sabbiosa e lagunare a est. Divisa in due comuni, Sant'Antioco a sud e Calasetta a nord, l'isola è caratterizzata da una vegetazione mediterranea e coltivazioni di ortaggi e viti. Il clima è mediterraneo, con inverni freschi e estati calde e aride."
-          />
+          {aboutUsContent.map(
+            ({ descriptionEN, descriptionIT, title }, index) => {
+              return (
+                <TextImage
+                  description={
+                    i18n.language === "it" ? descriptionIT : descriptionEN
+                  }
+                  title={title}
+                  imageSrc={content[index]?.url || ""}
+                  direction={index % 2 === 0 ? "row" : "reverse"}
+                />
+              );
+            }
+          )}
         </Stack>
       </Stack>
     </>

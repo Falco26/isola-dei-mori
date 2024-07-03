@@ -8,7 +8,8 @@ import { BurgerMenu } from "../BurgerMenu";
 import { useNavigate } from "react-router-dom";
 import { appRoutes } from "../../routes";
 import { useTranslation } from "react-i18next";
-import logoIsola from "../../assets/logo_isola_new.png";
+import { Select } from "../Select";
+import { languageSelectOptions } from "../../constants/constants";
 
 type Props = {
   headerClass?: string;
@@ -21,7 +22,7 @@ type Props = {
 
 export const Header = ({
   headerButtonClass = "header-button",
-  headerClass = "header-container fade-in",
+  headerClass = "header-container",
   logoClass = "logo-white",
   mainColor = "white",
   buttonTitle = "Contattaci",
@@ -31,7 +32,7 @@ export const Header = ({
   const navigate = useNavigate();
   const [isSticky, setIsSticky] = useState(false);
   const color = mainColor === "dark" ? theme.colors.black : theme.colors.white;
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -77,7 +78,12 @@ export const Header = ({
         className="header-container-padding"
         paddingvertical={45}
       >
-        <Stack gap={15}>
+        <Stack
+          gap={15}
+          flexDirection="row"
+          justifycontent="center"
+          alignitems="center"
+        >
           <button
             className={`${
               menuOpen
@@ -103,23 +109,24 @@ export const Header = ({
               />
             )}
           </button>
-          <select
-            onChange={(e) => changeLanguage(e.target.value)}
-            value={i18n.language}
-            className={isSticky ? "language-select" : "language-select"}
-          >
-            <option value="en">EN 🇬🇧</option>
-            <option value="it">IT 🇮🇹</option>
-          </select>
+          <Stack className="big-screen-select">
+            <Select options={languageSelectOptions} onChange={changeLanguage} />
+          </Stack>
         </Stack>
 
-        <a href="/">
-          <img
-            className={`${isSticky ? "logo-sticky" : logoClass}`}
-            src="http://www.isoladeimori.it/idm/templates/shape5_vertex/images/s5_logo.png"
-            alt="logo isola dei mori"
-          />
-        </a>
+        <Stack flex={1}>
+          <a href="/">
+            <img
+              className={`${isSticky ? "logo-sticky" : logoClass}`}
+              src="http://www.isoladeimori.it/idm/templates/shape5_vertex/images/s5_logo.png"
+              alt="logo isola dei mori"
+            />
+          </a>
+        </Stack>
+
+        <Stack className="small-screen-select">
+          <Select onChange={changeLanguage} options={languageSelectOptions} />
+        </Stack>
 
         <Button
           buttonTitle={buttonTitle}
@@ -129,6 +136,7 @@ export const Header = ({
           }
           fontSize="sm"
           onClick={() => handleNavigate(navLink)}
+          className="book-now-button"
         />
       </Stack>
       {menuOpen && <BurgerMenu isOpen={menuOpen} toggleMenu={toggleMenu} />}
