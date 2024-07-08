@@ -30,7 +30,7 @@ export const AboutUs = () => {
         buttonTitle="Prenota ora"
       />
       <HeroHeader
-        title="About Us"
+        title="Chi siamo"
         imgSrc={content[2]?.url}
         className="fade-in"
       />

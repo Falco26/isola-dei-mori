@@ -1,5 +1,5 @@
 import { axiosApi } from "./client";
-import { Apartment, Photo } from "./types";
+import { Apartment, Photo, Reviews } from "./types";
 
 export const getApartments = () => {
   console.log("Calling");
@@ -10,8 +10,13 @@ export const getVideo = () => {
     .get<string>("media/get-outdoor-video")
     .then((res) => res.data);
 };
+
 export const getPhotos = () => {
   return axiosApi
     .get<Photo[]>("media/get-outdoor-photo")
     .then((res) => res.data);
+};
+
+export const getReviews = () => {
+  return axiosApi.get<Reviews[]>("/reviews").then((res) => res.data);
 };

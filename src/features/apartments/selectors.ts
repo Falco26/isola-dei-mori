@@ -42,3 +42,8 @@ export const makeSelectApartment = (name: string) => {
     return apartment;
   });
 };
+
+export const selectReviews = createSelector(
+  apartmentsState,
+  (state) => state.reviews
+);

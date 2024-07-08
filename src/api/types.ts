@@ -39,3 +39,12 @@ export interface Photo {
   publicId: string;
   appartmentId: number;
 }
+
+export interface Reviews {
+  provider: "Booking" | "Google";
+  descriptionIT: string;
+  descriptionEN: string;
+  titleIT: string;
+  titleEN: string;
+  rating: number;
+}

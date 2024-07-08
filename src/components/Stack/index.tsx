@@ -1,6 +1,6 @@
 "use client";
 
-import { CSSProperties, PropsWithChildren } from "react";
+import { CSSProperties, PropsWithChildren, RefObject } from "react";
 import { StyledStack } from "./styled";
 
 type Props = PropsWithChildren<{
@@ -14,6 +14,7 @@ type Props = PropsWithChildren<{
   gap?: number;
   className?: string;
   onClick?: (params?: any) => void;
+  ref?: RefObject<HTMLDivElement>;
 }>;
 
 export const Stack = ({
@@ -28,6 +29,7 @@ export const Stack = ({
   className,
   children,
   onClick,
+  ref,
 }: Props) => {
   return (
     <StyledStack
@@ -41,6 +43,7 @@ export const Stack = ({
       paddinghorizontal={paddinghorizontal}
       paddingvertical={paddingvertical}
       onClick={onClick}
+      ref={ref}
     >
       {children}
     </StyledStack>

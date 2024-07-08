@@ -1,8 +1,9 @@
-import { useTranslation } from "react-i18next";
-import { Image } from "../Image";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 import { Stack } from "../Stack";
 import { Text } from "../Text";
 import "./textimage.css";
+import { initFadeInAnimation } from "../../animation";
 
 type Props = {
   direction: "row" | "reverse";
@@ -17,23 +18,36 @@ export const TextImage = ({
   direction,
   imageSrc,
 }: Props) => {
+  useEffect(() => {
+    initFadeInAnimation(".fade-in");
+  });
+
   return (
     <Stack
       flexDirection={direction === "reverse" ? "row-reverse" : "row"}
       justifycontent="space-between"
       alignitems="center"
       flex={1}
-      className="group-text-image"
+      className="group-text-image fade-in"
       wrap
     >
-      <Stack flex={2} flexDirection="column" gap={40}>
-        <Text fontSize="lg" bold>
-          {title}
+      <Stack
+        flex={2}
+        flexDirection="column"
+        gap={40}
+        className="text-container"
+      >
+        {title && (
+          <Text fontSize="lg" bold className="text-group-txt">
+            {title}
+          </Text>
+        )}
+        <Text fontSize="sm" className="text-group-txt">
+          {description}
         </Text>
-        <Text fontSize="sm">{description}</Text>
       </Stack>
       <Stack flex={2} className="img-container-group">
-        <Image src={imageSrc} alt="apartmentPic" />
+        <img src={imageSrc} alt="apartmentPic" />
       </Stack>
     </Stack>
   );

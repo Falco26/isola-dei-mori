@@ -1,16 +1,18 @@
 import { PayloadAction, createAction, createSlice } from "@reduxjs/toolkit";
 import { ApartmentState } from "./types";
-import { Apartment, Photo } from "../../api/types";
+import { Apartment, Photo, Reviews } from "../../api/types";
 import {
   apartmentResponse,
   imagesResponse,
   videoLink,
 } from "../../api/responses";
+import { reviewsMock } from "../../api/mocks";
 
 const initialState: ApartmentState = {
   apartmentsList: apartmentResponse,
   photos: imagesResponse,
   videoLink: videoLink,
+  reviews: reviewsMock,
 };
 
 const apartmentsSlice = createSlice({
@@ -29,6 +31,9 @@ const apartmentsSlice = createSlice({
     setPhotoContent: (state, { payload }: PayloadAction<Photo[]>) => {
       state.photos = payload;
     },
+    setReviews: (state, { payload }: PayloadAction<Reviews[]>) => {
+      state.reviews = payload;
+    },
   },
 });
 
@@ -37,6 +42,7 @@ export const apartmentActions = {
   getApartments: createAction("apartments/getApartments"),
   fetchVideos: createAction("apartments/fetchVideos"),
   fetchPhotos: createAction("apartments/fetchPhotos"),
+  fetchReviews: createAction("apartments/fetchReviews"),
   ...apartmentsSlice.actions,
 };
 

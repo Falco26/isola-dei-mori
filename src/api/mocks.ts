@@ -1,4 +1,4 @@
-import { Apartment } from "./types";
+import { Apartment, Reviews } from "./types";
 
 // export const apartments: Apartment[] = [
 //   {
@@ -269,3 +269,36 @@ export const homeCarouselDescription = {
   subtitle:
     "Comode e riservate, le case sono dotate di posto auto privato, di una bella terrazza panoramica e di spazi esterni in comune attrezzati con barbecue e doccia. Comode e riservate, le case sono dotate di posto auto privato, di una bella terrazza panoramica e di spazi esterni in comune attrezzati con barbecue e doccia.",
 };
+
+export const reviewsMock: Reviews[] = [
+  {
+    provider: "Booking",
+    descriptionIT:
+      "Tutto bene, precisa descrizione degli alloggi, nessuna sorpresa negativa, check-in cordiale ed esaustivo. Signora Cristina impeccabile. Alla prossima.",
+    descriptionEN:
+      "Everything was fine, accurate description of the accommodations, no negative surprises, friendly and thorough check-in. Mrs. Cristina was impeccable. Until next time.",
+    titleIT: "Grande esperienza",
+    titleEN: "Great experience",
+    rating: 4.5,
+  },
+  {
+    provider: "Google",
+    descriptionIT:
+      "L'hotel era fantastico, personale molto gentile e disponibile. Le camere erano pulite e confortevoli. Posizione perfetta per esplorare la città.",
+    descriptionEN:
+      "The hotel was fantastic, very friendly and helpful staff. The rooms were clean and comfortable. Perfect location for exploring the city.",
+    titleIT: "Soggiorno fantastico",
+    titleEN: "Fantastic stay",
+    rating: 5,
+  },
+  {
+    provider: "Booking",
+    descriptionIT:
+      "Buon rapporto qualità-prezzo, ma la colazione potrebbe migliorare. La posizione è eccellente, molto vicino ai principali punti di interesse.",
+    descriptionEN:
+      "Good value for money, but breakfast could be improved. The location is excellent, very close to main points of interest.",
+    titleIT: "Buon soggiorno",
+    titleEN: "Good stay",
+    rating: 4,
+  },
+];

@@ -23,7 +23,7 @@ export const BurgerMenu = ({ isOpen, toggleMenu }: Props) => {
 
   const menuOptions: MenuOption[] = [
     {
-      title: "About us",
+      title: "Chi siamo",
       navLink: appRoutes.ABOUT,
       image: appImages[0]?.url,
     },

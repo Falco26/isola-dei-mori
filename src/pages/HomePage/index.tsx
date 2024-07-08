@@ -12,11 +12,13 @@ import { Header } from "../../components/Header";
 import { useSelector } from "react-redux";
 import {
   selectAllApartments,
+  selectReviews,
   selectVideoContent,
 } from "../../features/apartments/selectors";
 import { useTranslation } from "react-i18next";
 import { ScrollToTop } from "../../components/ScrollToTop";
 import { Review } from "../../components/Review";
+import { reviewsMock } from "../../api/mocks";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,6 +63,9 @@ export const HomePage = () => {
   });
   const videoLink = useSelector(selectVideoContent);
   const apartments = useSelector(selectAllApartments);
+  const reviews = useSelector(selectReviews);
+  const reviewList = reviews ? reviews : reviewsMock;
+  const reviewsLength = reviewList.length;
   return (
     <>
       <ScrollToTop />
@@ -123,27 +128,22 @@ export const HomePage = () => {
           </Stack>
         </div>
         <div className="rating-carousel">
-          <Review
-            description="Tutto bene, precisa descrizione degli alloggi, nessuna sorpresa negativa,check-in cordiale ed esaustivo.sig ra Cristina impeccabile.alla prossima"
-            title="Grande esperienza"
-            rating={4.5}
-            className="fade-in"
-          />
-          <div className="line-gray-reviews" />
-          <Review
-            description="Tutto bene, precisa descrizione degli alloggi, nessuna sorpresa negativa,check-in cordiale ed esaustivo.sig ra Cristina impeccabile.alla prossima"
-            title="Grande esperienza"
-            rating={4.5}
-            className="fade-in"
-          />
-          <div className="line-gray-reviews" />
-          <Review
-            description="Tutto bene, precisa descrizione degli alloggi, nessuna sorpresa negativa,check-in cordiale ed esaustivo.sig ra Cristina impeccabile.alla prossima"
-            title="Grande esperienza"
-            rating={4.5}
-            reviewSource="booking"
-            className="fade-in"
-          />
+          {reviewList.map((review, index) => {
+            return (
+              <>
+                <Review
+                  description={review.descriptionIT}
+                  title={review.titleIT}
+                  rating={review.rating}
+                  reviewSource={review.provider}
+                  className="fade-in"
+                />
+                {index !== reviewsLength - 1 && (
+                  <div className="line-gray-reviews" />
+                )}
+              </>
+            );
+          })}
         </div>
       </Stack>
     </>

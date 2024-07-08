@@ -8,21 +8,20 @@ type Props = {
   title?: string;
   description?: string;
   rating?: number;
-  reviewSource?: "booking" | "google" | "bookweb";
+  reviewSource?: "Booking" | "Google";
   className?: string;
 };
 
-const reviewIconMap: Record<"booking" | "google" | "bookweb", any> = {
-  booking: <Booking />,
-  google: <Google />,
-  bookweb: <Google />,
+const reviewIconMap: Record<"Booking" | "Google", any> = {
+  Booking: <Booking />,
+  Google: <Google />,
 };
 
 export const Review = ({
   description,
   rating = 5,
   title,
-  reviewSource = "google",
+  reviewSource = "Google",
   className,
 }: Props) => {
   return (
