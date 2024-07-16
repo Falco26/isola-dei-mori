@@ -67,7 +67,7 @@
 
 .image-shadow {
   position: absolute;
-  background-color: antiquewhite;
+  background-color: rgb(240, 235, 229);
   border-radius: 0.5rem;
   width: 35rem;
   height: 27rem;

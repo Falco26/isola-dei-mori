@@ -13,8 +13,6 @@ const Footer = () => {
       className="footer"
       alignitems="center"
       justifycontent="space-between"
-      paddinghorizontal={200}
-      paddingvertical={100}
       wrap
     >
       <Stack flexDirection="row" gap={30}>

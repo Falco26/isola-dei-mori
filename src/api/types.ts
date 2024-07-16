@@ -41,10 +41,14 @@ export interface Photo {
 }
 
 export interface Reviews {
-  provider: "Booking" | "Google";
-  descriptionIT: string;
-  descriptionEN: string;
+  id: number;
+  provider: "Booking" | "Google" | "WuBook";
+  descrizioneIT: string;
+  descrizioneEN: string;
   titleIT: string;
   titleEN: string;
   rating: number;
+  link: string;
+  utente: string;
+  reviewDate: string;
 }

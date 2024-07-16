@@ -272,33 +272,45 @@ export const homeCarouselDescription = {
 
 export const reviewsMock: Reviews[] = [
   {
-    provider: "Booking",
-    descriptionIT:
-      "Tutto bene, precisa descrizione degli alloggi, nessuna sorpresa negativa, check-in cordiale ed esaustivo. Signora Cristina impeccabile. Alla prossima.",
-    descriptionEN:
-      "Everything was fine, accurate description of the accommodations, no negative surprises, friendly and thorough check-in. Mrs. Cristina was impeccable. Until next time.",
-    titleIT: "Grande esperienza",
-    titleEN: "Great experience",
-    rating: 4.5,
-  },
-  {
-    provider: "Google",
-    descriptionIT:
-      "L'hotel era fantastico, personale molto gentile e disponibile. Le camere erano pulite e confortevoli. Posizione perfetta per esplorare la città.",
-    descriptionEN:
-      "The hotel was fantastic, very friendly and helpful staff. The rooms were clean and comfortable. Perfect location for exploring the city.",
-    titleIT: "Soggiorno fantastico",
-    titleEN: "Fantastic stay",
+    id: 1,
+    titleIT: "Soggiorno Magnifico",
+    titleEN: "Magnificent Stay",
+    descrizioneIT:
+      "Soggiorno magnifico, tranquillità e vicinanza a bellissime spiagge. Appartamento in otime condizioni e comodo, giardino e spazi comuni fantastici consigliatissimo",
+    descrizioneEN:
+      "Magnificent stay, tranquility and proximity to beautiful beaches. Apartment in excellent condition and comfortable, fantastic garden and common areas, highly recommended",
     rating: 5,
+    provider: "WuBook",
+    link: "https://wubook.net/nneb/fds?ep=8c0ed861&lang=it&c=EUR&f=10%2F07%2F2024&t=11%2F07%2F2024&o=2.0.0.0",
+    utente: "Claudio",
+    reviewDate: "2022-09-20",
   },
   {
+    id: 3,
+    titleIT: "Eccezionale",
+    titleEN: "Exceptional !!!",
+    descrizioneIT:
+      "Posizione panoramica fantastica in un giardino mozzafiato con tramonti strepitosi.La struttura è molto ben tenuta ed accogliente.Consigliato",
+    descrizioneEN:
+      "Fantastic panoramic position in a breathtaking garden with amazing sunsets.The property is very well kept and welcoming.Advised",
+    rating: 10,
     provider: "Booking",
-    descriptionIT:
-      "Buon rapporto qualità-prezzo, ma la colazione potrebbe migliorare. La posizione è eccellente, molto vicino ai principali punti di interesse.",
-    descriptionEN:
-      "Good value for money, but breakfast could be improved. The location is excellent, very close to main points of interest.",
-    titleIT: "Buon soggiorno",
-    titleEN: "Good stay",
-    rating: 4,
+    link: "https://www.booking.com/hotel/it/complesso-residenziale-isola-dei-mori.it.html?aid=397594;label=gog235jc-1DCAEoggI46AdIFFgDaHGIAQGYARS4ARfIAQ_YAQPoAQH4AQKIAgGoAgO4Aue18Y4GwAIB0gIkZDVmYmYxMDUtZjEyMi00NjVkLTliZWUtNGMxNTYwMTI0M2Zl2AIE4AIB;sid=4bdde38df2f7894abbde809ec670250f;dest_id=420579;dest_type=hotel;dist=0;group_adults=2;group_children=0;hapos=1;hpos=1;no_rooms=1;req_adults=2;req_children=0;room1=A%2CA;sb_price_type=total;sr_order=popularity;srepoch=1641831211;srpvid=50be72157f210088;type=total;ucfs=1&#tab-reviews",
+    utente: "Ilaria",
+    reviewDate: "2024-06-08",
+  },
+  {
+    id: 7,
+    titleIT: "Un luogo di pace",
+    titleEN: "Peace place",
+    descrizioneIT:
+      "Un luogo di Pace, dove ammirare il tramonto sul mare, respirare i profumi della macchia mediterranea e ammirare la via lattea (vivendo in Emilia-Romagna eran anni che non la vedevo). Un accoglienza gentile, che ci ha fatto sentire a casa. Stanze e ambienti puliti e ben studiati. Grazie ",
+    descrizioneEN:
+      "A place of Peace, where you can admire the sunset over the sea, breathe in the scents of the Mediterranean scrub and admire the Milky Way (living in Emilia-Romagna I hadn't seen it for years). A kind welcome, which made us feel at home. Clean and well-designed rooms and environments. Thank you ",
+    rating: 5,
+    provider: "Google",
+    link: "https://www.google.com.sg/travel/hotels/entity/ChkI55-Oy-O1ibf_ARoML2cvMTFfal84cjRfEAE/reviews?ei=JOtXYbviHoW59wSS-5bIBw&sa=X&utm_campaign=sharing&utm_medium=link&utm_source=htls&ts=CAEaBAoCGgAqBAoAGgA",
+    utente: "Anita",
+    reviewDate: "2023-10-15",
   },
 ];

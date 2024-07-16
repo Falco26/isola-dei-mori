@@ -17,6 +17,7 @@ type Props = {
 };
 
 export const ApartmentsCarousel = memo(({ apartmentList }: Props) => {
+  console.log("🚀 ~ ApartmentsCarousel ~ apartmentList:", apartmentList);
   const [itemsPerSlide, setItemsPerSlide] = useState(
     calculateItemsPerSlide(window.innerWidth)
   );
@@ -96,7 +97,10 @@ export const ApartmentsCarousel = memo(({ apartmentList }: Props) => {
               doubleBeds={apartment.doubleBed}
               sofaBeds={apartment.sofaBed}
               laundry={apartment.hasAirConditioning}
-              imageSrc={apartment.photos[0].url}
+              imageSrc={
+                apartment.photos[2].url ||
+                "https://www.isoladeimori.it/idm/images/slide/esterno2.jpg?1720634081883"
+              }
               onClick={() => {
                 dispatch(apartmentActions.setCurrentApartment(apartment));
                 navigate(`/${apartment.appartmentType.toLowerCase()}`);

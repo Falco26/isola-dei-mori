@@ -65,6 +65,11 @@ export const AboutUs = () => {
               icon="ArrowForwardIosRounded"
               fontSize="md"
               className="button-home-book fade-in"
+              onClick={() =>
+                window.open(
+                  "https://wubook.net/nneb/bk/?ep=8c0ed861&lang=it&c=EUR&f=29%2F03%2F2024&t=30%2F03%2F2024&o=2.0.0.0"
+                )
+              }
             />
           </Stack>
         </div>

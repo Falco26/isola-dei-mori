@@ -11,6 +11,9 @@ import { initFadeInAnimation } from "../../animation";
 import { Header } from "../../components/Header";
 import { useSelector } from "react-redux";
 import { selectAllContent } from "../../features/apartments/selectors";
+import { aboutUsContent } from "../../constants/constants";
+import { TextImage } from "../../components/TextImage";
+import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,6 +22,8 @@ export const Sustainability = () => {
     initFadeInAnimation(".fade-in");
   });
   const content = useSelector(selectAllContent);
+  const { i18n } = useTranslation();
+
   return (
     <>
       <Header
@@ -61,23 +66,29 @@ export const Sustainability = () => {
               icon="ArrowForwardIosRounded"
               fontSize="md"
               className="button-home-book fade-in"
+              onClick={() =>
+                window.open(
+                  "https://wubook.net/nneb/bk/?ep=8c0ed861&lang=it&c=EUR&f=29%2F03%2F2024&t=30%2F03%2F2024&o=2.0.0.0"
+                )
+              }
             />
           </Stack>
         </div>
-        <Stack
-          flexDirection="column"
-          gap={30}
-          paddingvertical={50}
-          className="second-about"
-        >
-          <TextSection
-            title="Isola di Sant'Antioco"
-            subtitle="L'Isola di Sant'Antioco, situata nel sud-ovest della Sardegna, è la quarta isola italiana per estensione. Di origine vulcanica, presenta una costa rocciosa con falesie e grotte a ovest e una costa sabbiosa e lagunare a est. Divisa in due comuni, Sant'Antioco a sud e Calasetta a nord, l'isola è caratterizzata da una vegetazione mediterranea e coltivazioni di ortaggi e viti. Il clima è mediterraneo, con inverni freschi e estati calde e aride."
-          />
-          <TextSection
-            title="Isola di Sant'Antioco"
-            subtitle="L'Isola di Sant'Antioco, situata nel sud-ovest della Sardegna, è la quarta isola italiana per estensione. Di origine vulcanica, presenta una costa rocciosa con falesie e grotte a ovest e una costa sabbiosa e lagunare a est. Divisa in due comuni, Sant'Antioco a sud e Calasetta a nord, l'isola è caratterizzata da una vegetazione mediterranea e coltivazioni di ortaggi e viti. Il clima è mediterraneo, con inverni freschi e estati calde e aride."
-          />
+        <Stack flexDirection="column" gap={30} className="second-about">
+          {aboutUsContent.map(
+            ({ descriptionEN, descriptionIT, title }, index) => {
+              return (
+                <TextImage
+                  description={
+                    i18n.language === "it" ? descriptionIT : descriptionEN
+                  }
+                  title={title}
+                  imageSrc={content[index]?.url || ""}
+                  direction={index % 2 === 0 ? "row" : "reverse"}
+                />
+              );
+            }
+          )}
         </Stack>
       </Stack>
     </>

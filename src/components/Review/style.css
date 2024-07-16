@@ -1,0 +1,26 @@
+.text-size-review {
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Numero massimo di righe */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.booking-rating {
+  width: 60px;
+  height: 60px;
+  font-weight: bold;
+  background-color: transparent;
+  border: 1.5px solid black;
+  border-radius: 8px;
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-link-review {
+  :hover {
+    transform: scale(1.05);
+  }
+}

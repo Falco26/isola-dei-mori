@@ -12,6 +12,7 @@ import { Header } from "../../components/Header";
 import { useSelector } from "react-redux";
 import {
   selectAllApartments,
+  selectAllContent,
   selectReviews,
   selectVideoContent,
 } from "../../features/apartments/selectors";
@@ -19,6 +20,9 @@ import { useTranslation } from "react-i18next";
 import { ScrollToTop } from "../../components/ScrollToTop";
 import { Review } from "../../components/Review";
 import { reviewsMock } from "../../api/mocks";
+import { aboutUsContent } from "../../constants/constants";
+import { TextImage } from "../../components/TextImage";
+//@ts-ignore
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,11 +65,15 @@ export const HomePage = () => {
   useEffect(() => {
     initFadeInAnimation(".fade-in");
   });
-  const videoLink = useSelector(selectVideoContent);
+  const videoLinkAPI = useSelector(selectVideoContent);
+  const videoLink =
+    videoLinkAPI ||
+    "https://res.cloudinary.com/dcer0ek6h/video/upload/f_auto:video,q_auto/v1/Esterni/smfu7ur3j0bgmocelknd";
   const apartments = useSelector(selectAllApartments);
   const reviews = useSelector(selectReviews);
+  const content = useSelector(selectAllContent);
   const reviewList = reviews ? reviews : reviewsMock;
-  const reviewsLength = reviewList.length;
+
   return (
     <>
       <ScrollToTop />
@@ -73,14 +81,7 @@ export const HomePage = () => {
         navLink="https://wubook.net/nneb/bk/?ep=8c0ed861&lang=it&c=EUR&f=29%2F03%2F2024&t=30%2F03%2F2024&o=2.0.0.0"
         buttonTitle="Prenota ora"
       />
-      <HeroHeader
-        title=""
-        imgSrc={
-          videoLink ||
-          "http://www.isoladeimori.it/idm/images/slide/struttura2.jpg?1709153506378"
-        }
-        isVideo
-      />
+      <HeroHeader title="A due passi dal mare" imgSrc={videoLink} isVideo />
       <Stack flexDirection="column">
         <div className="first-home">
           <div className="text-container-centered">
@@ -106,7 +107,7 @@ export const HomePage = () => {
         </div>
 
         <div
-          className="apartments-carousel "
+          className="apartments-carousel"
           style={{ backgroundColor: "#f0ebe5" }}
           id="ref-carousel"
         >
@@ -132,18 +133,37 @@ export const HomePage = () => {
             return (
               <>
                 <Review
-                  description={review.descriptionIT}
+                  description={review.descrizioneIT}
                   title={review.titleIT}
                   rating={review.rating}
                   reviewSource={review.provider}
                   className="fade-in"
+                  reviewLink={review.link}
                 />
-                {index !== reviewsLength - 1 && (
+                {index !== reviewList.length - 1 && (
                   <div className="line-gray-reviews" />
                 )}
               </>
             );
           })}
+        </div>
+        <div>
+          <Stack flexDirection="column" gap={30} className="second-about">
+            {aboutUsContent?.map(
+              ({ descriptionEN, descriptionIT, title }, index) => {
+                return (
+                  <TextImage
+                    description={
+                      i18n.language === "it" ? descriptionIT : descriptionEN
+                    }
+                    title={title}
+                    imageSrc={content[index]?.url || ""}
+                    direction={index % 2 === 0 ? "row" : "reverse"}
+                  />
+                );
+              }
+            )}
+          </Stack>
         </div>
       </Stack>
     </>

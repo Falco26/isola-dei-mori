@@ -21,6 +21,7 @@ import {
   FacebookRounded,
   StarRateRounded,
   StarHalfRounded,
+  ArrowOutwardRounded,
 } from "@mui/icons-material";
 
 import { BedDouble, BedSingle, AirVent, Wifi, Sofa } from "lucide-react";
@@ -50,4 +51,5 @@ export const IconsList = {
   SofaLucide: Sofa,
   Star: StarRateRounded,
   HalfStar: StarHalfRounded,
+  LinkArrow: ArrowOutwardRounded,
 };
