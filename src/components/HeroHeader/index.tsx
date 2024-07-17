@@ -51,6 +51,9 @@ export const HeroHeader = ({
           autoPlay={true}
           loop
           muted
+          controls={false}
+          draggable={false}
+          disableRemotePlayback={false}
         />
       ) : (
         <StyledImageContainer className="hero-image" src={imgSrc} />
