@@ -41,7 +41,6 @@ export const HouseCard = ({
         <StyledCardImageContainer>
           <Image
             src={
-              imageSrc ||
               "https://s3-eu-west-1.amazonaws.com/house.italianway.production/apartment/images/attachments/001/099/619/medium/0B6A9302-Modifica.jpg?1681733056"
             }
             alt="Apparamento"
