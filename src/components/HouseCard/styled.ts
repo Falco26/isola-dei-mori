@@ -16,7 +16,5 @@ export const StyledHouseCard = styled.a`
 export const StyledCardImageContainer = styled.div`
   border-radius: 10px;
   overflow: hidden;
-  width: auto;
-  height: 400px;
-  object-fit: cover;
+  max
 `;
