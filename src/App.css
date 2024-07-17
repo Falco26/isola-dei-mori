@@ -7,6 +7,10 @@ body {
   overflow-x: hidden;
 }
 
+.root {
+  overflow-x: hidden;
+}
+
 @font-face {
   font-family: "Light"; /*Can be any text*/
   src: local("Taviraj"), url("./fonts/Taviraj-Regular.ttf") format("truetype");
