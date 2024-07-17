@@ -27,6 +27,7 @@
   flex-direction: column;
   gap: 20px;
   max-width: 50%;
+  padding: 1rem 6rem 1rem 6rem;
 }
 
 @media screen and (max-width: 1024px) {
@@ -56,4 +57,11 @@
 
 .img-container-group img {
   min-width: 250px;
+}
+
+@media screen and (max-width: 768px) {
+  .text-container {
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+  }
 }

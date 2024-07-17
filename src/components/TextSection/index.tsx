@@ -15,7 +15,6 @@ export const TextSection = ({ title, subtitle }: Props) => {
       wrap
       alignitems="flex-start"
       className="text-container"
-      paddinghorizontal={200}
       gap={20}
     >
       <Text bold fontSize="xl" className="text-animation">
