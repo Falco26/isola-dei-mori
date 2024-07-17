@@ -2,7 +2,6 @@ import { axiosApi } from "./client";
 import { Apartment, Photo, Reviews } from "./types";
 
 export const getApartments = () => {
-  console.log("Calling");
   return axiosApi.get<Apartment[]>("/appartment/index").then((res) => res.data);
 };
 export const getVideo = () => {

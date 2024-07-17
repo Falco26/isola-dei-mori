@@ -18,6 +18,7 @@
     "@types/react": "^18.2.57",
     "@types/react-dom": "^18.2.19",
     "axios": "^1.7.2",
+    "fitty": "^2.4.2",
     "i18next": "^23.11.5",
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-http-backend": "^2.5.2",

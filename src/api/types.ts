@@ -16,11 +16,7 @@
 
 export interface Apartment {
   id: number;
-  appartmentType:
-    | "Monolocale"
-    | "Bilocale"
-    | "Trilocale"
-    | "StandardAppartment";
+  appartmentType: "Monolocale" | "Bilocale" | "Trilocale" | "Trilocale Premium";
   descriptionIT: string;
   descriptionEN: string;
   doubleBed: number;

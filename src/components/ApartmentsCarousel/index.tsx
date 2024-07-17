@@ -98,7 +98,9 @@ export const ApartmentsCarousel = memo(({ apartmentList }: Props) => {
               sofaBeds={apartment.sofaBed}
               laundry={apartment.hasAirConditioning}
               imageSrc={
-                apartment.photos[2].url ||
+                apartment.photos[
+                  apartment.appartmentType === "Trilocale Premium" ? 1 : 2
+                ].url ||
                 "https://www.isoladeimori.it/idm/images/slide/esterno2.jpg?1720634081883"
               }
               onClick={() => {
