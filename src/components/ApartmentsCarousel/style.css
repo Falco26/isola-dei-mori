@@ -14,8 +14,8 @@
   top: 50%;
   transform: translateY(-50%);
   max-width: 25px;
-  @media (max-width: 768px) {
-    left: 1rem;
+  @media (max-width: 1200px) {
+    left: 80%;
   }
 }
 
@@ -27,16 +27,15 @@
   transform: translateY(-50%);
   max-width: 25px;
 
-  @media (max-width: 768px) {
-    left: 5rem;
+  @media (max-width: 1200px) {
+    top: 65%;
+    left: 80%;
   }
 }
 
 .carousel-container {
-  margin-left: 6.25rem;
-
-  @media (max-width: 1200px) {
-    margin-left: 6.25rem;
+  @media (max-width: 768px) {
+    margin-left: 10%;
   }
 }
 

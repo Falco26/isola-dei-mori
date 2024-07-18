@@ -24,7 +24,7 @@ export const ApartmentPage = () => {
   const imageCover = apartment?.photos[0].url;
   const imageList = apartment?.photos.slice(2, 9);
 
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   useEffect(() => {
     initFadeInAnimation(".fade-in");
@@ -33,7 +33,7 @@ export const ApartmentPage = () => {
   return (
     <>
       <Header
-        buttonTitle="Prenota ora"
+        buttonTitle={t("book-now")}
         navLink="https://wubook.net/nneb/bk/?ep=8c0ed861&lang=it&c=EUR&f=29%2F03%2F2024&t=30%2F03%2F2024&o=2.0.0.0"
       />
 
@@ -57,7 +57,7 @@ export const ApartmentPage = () => {
                 </span>
                 <Stack flex={1} justifycontent="center" paddingvertical={20}>
                   <Button
-                    buttonTitle="Prenota Ora"
+                    buttonTitle={t("book-now")}
                     icon="ArrowForwardIos"
                     onClick={() =>
                       window.open(

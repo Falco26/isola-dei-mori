@@ -7,7 +7,7 @@ import {
   StyledHeroGradient,
 } from "../../components/HeroHeader/styled";
 import "./style.css";
-import logoIsola from "../../assets/logo_isola_new.png";
+import logoIsola from "../../assets/logo_isola.png";
 
 export const ContactPage = () => {
   const content = useSelector(selectAllContent);

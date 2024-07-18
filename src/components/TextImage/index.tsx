@@ -42,7 +42,7 @@ export const TextImage = ({
             {title}
           </Text>
         )}
-        <Text fontSize="sm" className="text-group-txt">
+        <Text fontSize="xsm" className="text-group-txt">
           {description}
         </Text>
       </Stack>

@@ -1,0 +1,18 @@
+.container-card-desc {
+  background-color: white;
+  width: 350px;
+}
+
+.image-container-desc {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.image-container-desc img {
+  width: 100%;
+  height: 100%;
+}
+
+.content-desc {
+  min-height: 130px;
+}

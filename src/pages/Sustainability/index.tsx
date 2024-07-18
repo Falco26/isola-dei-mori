@@ -22,42 +22,27 @@ export const Sustainability = () => {
     initFadeInAnimation(".fade-in");
   });
   const content = useSelector(selectAllContent);
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   return (
     <>
       <Header
         navLink="https://wubook.net/nneb/bk/?ep=8c0ed861&lang=it&c=EUR&f=29%2F03%2F2024&t=30%2F03%2F2024&o=2.0.0.0"
-        buttonTitle="Prenota ora"
+        buttonTitle={t("book-now")}
       />
       <HeroHeader
-        title="Sostenibilità"
+        title={t("sus-title")}
         imgSrc={content[5]?.url}
         className="fade-in"
       />
       <Stack flexDirection="column">
         <div className="first-home">
           <div className="text-container-centered">
-            <h1 className="fade-in">Su di noi</h1>
+            <h1 className="fade-in">{t("sus-title")}</h1>
             <div className="description-first-home ">
-              <span className="fade-in">
-                Le case, con i loro caratteristici arredi dalle tinte chiare,
-                realizzati in tipico stile sardo, sono costituite da una zona
-                giorno con angolo cottura e zona soggiorno-pranzo, due camere da
-                letto ed un bagno. Dotate di ampio porticato indipendente e da
-                un grande giardino con prato, offrono la possibilità di godere
-                delle cene all’aperto ammirando i meravigliosi tramonti sul
-                mare. Comode e riservate, le case sono dotate di posto auto
-                privato, di una bella terrazza panoramica e di spazi esterni in
-                comune attrezzati con barbecue e doccia.
-              </span>
-              <span className="fade-in">
-                Soggiornare nel complesso dell’Isola dei Mori è un’occasione
-                unica per vivere la natura incontaminata dell ‘Isola di
-                Sant’Antioco in un ambiente piacevole e dotato di tutti i
-                confort. Non perdere l’opportunità di sentirti parte di un mondo
-                tutto da scoprire.
-              </span>
+              <span className="fade-in">{t("sus-1")}</span>
+              <span className="fade-in">{t("sus-2")}</span>
+              <span className="fade-in">{t("sus-3")}</span>
             </div>
           </div>
           <Stack className="button-group">
@@ -74,22 +59,6 @@ export const Sustainability = () => {
             />
           </Stack>
         </div>
-        <Stack flexDirection="column" gap={30} className="second-about">
-          {aboutUsContent.map(
-            ({ descriptionEN, descriptionIT, title }, index) => {
-              return (
-                <TextImage
-                  description={
-                    i18n.language === "it" ? descriptionIT : descriptionEN
-                  }
-                  title={title}
-                  imageSrc={content[index]?.url || ""}
-                  direction={index % 2 === 0 ? "row" : "reverse"}
-                />
-              );
-            }
-          )}
-        </Stack>
       </Stack>
     </>
   );

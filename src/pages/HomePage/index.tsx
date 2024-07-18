@@ -79,7 +79,7 @@ export const HomePage = () => {
       <ScrollToTop />
       <Header
         navLink="https://wubook.net/nneb/bk/?ep=8c0ed861&lang=it&c=EUR&f=29%2F03%2F2024&t=30%2F03%2F2024&o=2.0.0.0"
-        buttonTitle="Prenota ora"
+        buttonTitle={t("book-now")}
       />
       <HeroHeader title="A due passi dal mare" imgSrc={videoLink} isVideo />
       <Stack flexDirection="column">
@@ -93,7 +93,7 @@ export const HomePage = () => {
           </div>
           <Stack className="button-group">
             <Button
-              buttonTitle="Prenota ora"
+              buttonTitle={t("book-now")}
               icon="ArrowForwardIosRounded"
               fontSize="md"
               className="button-home-book fade-in"
@@ -111,7 +111,7 @@ export const HomePage = () => {
           style={{ backgroundColor: "#f0ebe5" }}
           id="ref-carousel"
         >
-          <Stack flexDirection="column">
+          <Stack flexDirection="column" paddinghorizontal={60}>
             <Stack
               flex={1}
               justifycontent="flex-start"
@@ -153,10 +153,10 @@ export const HomePage = () => {
               ({ descriptionEN, descriptionIT, title }, index) => {
                 return (
                   <TextImage
-                    description={
-                      i18n.language === "it" ? descriptionIT : descriptionEN
-                    }
-                    title={title}
+                    description={t(
+                      `about-us-content.content-${index + 1}-description`
+                    )}
+                    title={t(`about-us-content.content-${index + 1}-title`)}
                     imageSrc={content[index]?.url || ""}
                     direction={index % 2 === 0 ? "row" : "reverse"}
                   />

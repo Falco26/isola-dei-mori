@@ -51,6 +51,10 @@
   display: flex;
   gap: 50px;
   flex-wrap: wrap;
+
+  @media screen and (max-width: 786px) {
+    padding: 2rem;
+  }
 }
 
 .line-gray-reviews {
