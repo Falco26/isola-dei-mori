@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import "./style.css";
 import { ContactGroup } from "../ContactGroup";
+import { useTranslation } from "react-i18next";
 
 export type MenuOption = {
   title: string;
+  titleEN: string;
   navLink: string;
   childPages?: any[];
   image: string;
@@ -19,6 +21,7 @@ export const MenuLinks = ({ menuOptions }: Props) => {
   const [showImage, setShowImage] = useState(false);
   const [currentImage, setCurrentImage] = useState("");
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -69,7 +72,7 @@ export const MenuLinks = ({ menuOptions }: Props) => {
             className="list-element"
           >
             <span onClick={() => handleClick(option.navLink)}>
-              {option.title}
+              {i18n.language === "it" ? option.title : option.titleEN}
             </span>
             {(windowWidth < 768 || showChildPages === option.navLink) &&
               option.childPages && (

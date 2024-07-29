@@ -27,9 +27,9 @@ export const selectApartmentsLink = createSelector(
   selectAllApartments,
   (apartments) => {
     return apartments.map((apartment) => ({
-      name: apartment.appartmentType,
+      name: apartment.appartmentTypeIT,
       picture: apartment.photos[0].url,
-      navLink: `/${apartment.appartmentType}`,
+      navLink: `/${apartment.appartmentTypeIT}`,
     }));
   }
 );
@@ -37,7 +37,7 @@ export const selectApartmentsLink = createSelector(
 export const makeSelectApartment = (name: string) => {
   return createSelector(selectAllApartments, (apartments) => {
     const apartment = apartments.find(
-      (ap) => ap.appartmentType.toLowerCase() === name
+      (ap) => ap.appartmentTypeIT.toLowerCase() === name
     );
     return apartment;
   });

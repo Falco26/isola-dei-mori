@@ -11,13 +11,15 @@ import { theme } from "../../style/theme";
 import { useNavigate } from "react-router-dom";
 import { apartmentActions } from "../../features/apartments/reducer";
 import { useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   apartmentList: Apartment[];
 };
 
 export const ApartmentsCarousel = memo(({ apartmentList }: Props) => {
-  console.log("🚀 ~ ApartmentsCarousel ~ apartmentList:", apartmentList);
+  const { i18n } = useTranslation();
+
   const [itemsPerSlide, setItemsPerSlide] = useState(
     calculateItemsPerSlide(window.innerWidth)
   );
@@ -80,7 +82,7 @@ export const ApartmentsCarousel = memo(({ apartmentList }: Props) => {
         </div>
       )}
     >
-      {groupedApartments.map((apartmentGroup, index) => (
+      {groupedApartments?.map((apartmentGroup, index) => (
         <Stack
           key={index}
           justifycontent="flex-start"
@@ -91,7 +93,11 @@ export const ApartmentsCarousel = memo(({ apartmentList }: Props) => {
           {apartmentGroup.map((apartment, innerIndex) => (
             <HouseCard
               key={innerIndex}
-              houseName={apartment.appartmentType}
+              houseName={
+                i18n.language === "it"
+                  ? apartment.appartmentTypeIT
+                  : apartment.appartmentTypeEN
+              }
               wifi={apartment.hasWifi}
               singleBeds={apartment.singleBed}
               doubleBeds={apartment.doubleBed}
@@ -99,13 +105,13 @@ export const ApartmentsCarousel = memo(({ apartmentList }: Props) => {
               laundry={apartment.hasAirConditioning}
               imageSrc={
                 apartment.photos[
-                  apartment.appartmentType === "Trilocale Premium" ? 1 : 2
+                  apartment.appartmentTypeIT === "Trilocale Premium" ? 1 : 2
                 ].url ||
                 "https://www.isoladeimori.it/idm/images/slide/esterno2.jpg?1720634081883"
               }
               onClick={() => {
                 dispatch(apartmentActions.setCurrentApartment(apartment));
-                navigate(`/${apartment.appartmentType.toLowerCase()}`);
+                navigate(`/${apartment.appartmentTypeIT.toLowerCase()}`);
               }}
             />
           ))}

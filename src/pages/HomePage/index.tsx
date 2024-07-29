@@ -133,8 +133,14 @@ export const HomePage = () => {
             return (
               <>
                 <Review
-                  description={review.descrizioneIT}
-                  title={review.titleIT}
+                  description={
+                    i18n.language === "it"
+                      ? review.descrizioneIT
+                      : review.descrizioneEN
+                  }
+                  title={
+                    i18n.language === "it" ? review.titleIT : review.titleEN
+                  }
                   rating={review.rating}
                   reviewSource={review.provider}
                   className="fade-in"

@@ -47,7 +47,7 @@ export const Sustainability = () => {
           </div>
           <Stack className="button-group">
             <Button
-              buttonTitle="Scopri la disponibilità"
+              buttonTitle={t("discover-btn")}
               icon="ArrowForwardIosRounded"
               fontSize="md"
               className="button-home-book fade-in"

@@ -24,21 +24,25 @@ export const BurgerMenu = ({ isOpen, toggleMenu }: Props) => {
   const menuOptions: MenuOption[] = [
     {
       title: "Chi siamo",
+      titleEN: "About us",
       navLink: appRoutes.ABOUT,
       image: appImages[0]?.url,
     },
     {
       title: "Contatti",
+      titleEN: "Contact us",
       navLink: appRoutes.CONTACT,
       image: appImages[1]?.url,
     },
     {
       title: "Sostenibilità",
+      titleEN: "Sustainability",
       navLink: appRoutes.SUSTENIBILITY,
       image: appImages[2]?.url,
     },
     {
       title: "Appartamenti",
+      titleEN: "Apartments",
       navLink: appRoutes.HOME,
       image: appImages[3]?.url,
       childPages: apartmentLinks,

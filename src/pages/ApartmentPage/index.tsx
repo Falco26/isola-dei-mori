@@ -40,7 +40,11 @@ export const ApartmentPage = () => {
       {apartment && (
         <Stack flexDirection="column">
           <HeroHeader
-            title={apartment?.appartmentType}
+            title={
+              i18n.language === "it"
+                ? apartment?.appartmentTypeIT
+                : apartment?.appartmentTypeEN
+            }
             imgSrc={
               imageCover ||
               "http://www.isoladeimori.it/idm/images/slide/ingresso.jpg?1710616009801"
