@@ -103,12 +103,7 @@ export const ApartmentsCarousel = memo(({ apartmentList }: Props) => {
               doubleBeds={apartment.doubleBed}
               sofaBeds={apartment.sofaBed}
               laundry={apartment.hasAirConditioning}
-              imageSrc={
-                apartment.photos[
-                  apartment.appartmentTypeIT === "Trilocale Premium" ? 1 : 2
-                ].url ||
-                "https://www.isoladeimori.it/idm/images/slide/esterno2.jpg?1720634081883"
-              }
+              imageSrc={apartment.photos[1].url}
               onClick={() => {
                 dispatch(apartmentActions.setCurrentApartment(apartment));
                 navigate(`/${apartment.appartmentTypeIT.toLowerCase()}`);

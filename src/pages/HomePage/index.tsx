@@ -85,7 +85,7 @@ export const HomePage = () => {
       <Stack flexDirection="column">
         <div className="first-home">
           <div className="text-container-centered">
-            <h1 className="fade-in">Immergiti nella vera Sardegna</h1>
+            <h1 className="fade-in">{t("home-title-1")}</h1>
             <div className="description-first-home ">
               <span className="fade-in">{t("home-1")}</span>
               <span className="fade-in">{t("home-2")}</span>

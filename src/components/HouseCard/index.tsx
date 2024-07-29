@@ -6,6 +6,7 @@ import { Stack } from "../Stack";
 import { Text } from "../Text";
 import { StyledCardImageContainer, StyledHouseCard } from "./styled";
 import "./style.css";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   houseName?: string;
@@ -30,6 +31,7 @@ export const HouseCard = ({
   imageSrc,
   onClick,
 }: Props) => {
+  const { t } = useTranslation();
   return (
     <StyledHouseCard onClick={onClick}>
       <Stack
@@ -41,6 +43,7 @@ export const HouseCard = ({
         <StyledCardImageContainer>
           <Image
             src={
+              imageSrc ||
               "https://s3-eu-west-1.amazonaws.com/house.italianway.production/apartment/images/attachments/001/099/619/medium/0B6A9302-Modifica.jpg?1681733056"
             }
             alt="Apparamento"
@@ -111,7 +114,7 @@ export const HouseCard = ({
             )}
           </Stack>
           <Button
-            buttonTitle="Scopri"
+            buttonTitle={t("button-discover")}
             icon="ArrowForwardIos"
             onClick={onClick}
           />
