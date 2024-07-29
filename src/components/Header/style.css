@@ -95,9 +95,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
+  overflow-x: hidden !important;
   background-color: rgb(72, 70, 65, 0.8);
-
   z-index: 1000; /* Ensure it's above other content */
   padding-top: 5px !important;
 }

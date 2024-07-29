@@ -7,6 +7,8 @@
   padding-bottom: 2.5rem;
   padding-bottom: 0px !important;
   max-height: 900px;
+  width: 100vw !important;
+  overflow-x: hidden !important;
 }
 
 .first-home {
