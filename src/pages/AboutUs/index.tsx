@@ -76,6 +76,7 @@ export const AboutUs = () => {
                 title={t(`about-us-content.content-${index + 1}-title`)}
                 imageSrc={content?.[index]?.url || imagesResponse[4].url}
                 direction={index % 2 === 0 ? "row" : "reverse"}
+                key={index}
               />
             );
           })}

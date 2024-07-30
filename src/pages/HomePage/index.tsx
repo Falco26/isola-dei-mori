@@ -148,6 +148,7 @@ export const HomePage = () => {
                   reviewSource={review.provider}
                   className="fade-in"
                   reviewLink={review.link}
+                  key={review.id}
                 />
                 {index !== reviewList.length - 1 && (
                   <div className="line-gray-reviews" />
@@ -168,6 +169,7 @@ export const HomePage = () => {
                     title={t(`about-us-content.content-${index + 1}-title`)}
                     imageSrc={content?.[index]?.url || imagesResponse[3].url}
                     direction={index % 2 === 0 ? "row" : "reverse"}
+                    key={title}
                   />
                 );
               }

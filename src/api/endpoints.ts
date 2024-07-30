@@ -17,5 +17,5 @@ export const getPhotos = () => {
 };
 
 export const getReviews = () => {
-  return axiosApi.get<Reviews[]>("/reviews").then((res) => res.data);
+  return axiosApi.get<Reviews[]>("/review/index").then((res) => res.data);
 };

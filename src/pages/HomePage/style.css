@@ -9,6 +9,8 @@
   max-height: 900px;
   width: 100vw !important;
   overflow-x: hidden !important;
+  overflow-y: hidden !important;
+  padding-bottom: 2.5rem !important;
 }
 
 .first-home {

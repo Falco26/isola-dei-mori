@@ -48,6 +48,7 @@ function* initSaga() {
   // yield call(getApartmentsSaga);
   // yield call(getPhotosSaga);
   // yield call(getVideosSaga);
+  yield call(getReviewsSaga);
 }
 
 export function* homeSaga() {

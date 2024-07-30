@@ -56,7 +56,9 @@ export const Select = ({ onChange, options }: Props) => {
       onChange={handleChange}
     >
       {options.map((opt) => (
-        <MenuItem value={opt.value}>{opt.label}</MenuItem>
+        <MenuItem value={opt.value} key={opt.value}>
+          {opt.label}
+        </MenuItem>
       ))}
     </StyledSelect>
   );
