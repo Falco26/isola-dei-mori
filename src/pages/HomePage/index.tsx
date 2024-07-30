@@ -82,7 +82,7 @@ export const HomePage = () => {
         navLink="https://wubook.net/nneb/bk/?ep=8c0ed861&lang=it&c=EUR&f=29%2F03%2F2024&t=30%2F03%2F2024&o=2.0.0.0"
         buttonTitle={t("book-now")}
       />
-      <HeroHeader title="A due passi dal mare" imgSrc={videoLink} isVideo />
+      <HeroHeader title={t("main-title")} imgSrc={videoLink} isVideo />
       <Stack flexDirection="column">
         <div className="first-home">
           <div className="text-container-centered">
