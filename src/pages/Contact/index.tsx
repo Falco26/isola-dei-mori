@@ -8,6 +8,7 @@ import {
 } from "../../components/HeroHeader/styled";
 import "./style.css";
 import logoIsola from "../../assets/logo_isola.png";
+import { imagesResponse } from "../../api/responses";
 
 export const ContactPage = () => {
   const content = useSelector(selectAllContent);
@@ -25,7 +26,7 @@ export const ContactPage = () => {
         </a>
       </div>
       {/* Hero image */}
-      <StyledImageContainer src={content[0]?.url} />
+      <StyledImageContainer src={content?.[0]?.url || imagesResponse[0].url} />
       <StyledHeroGradient className="hero-image-contacts" />
 
       {/* Contact form */}

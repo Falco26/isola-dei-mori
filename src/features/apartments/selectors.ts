@@ -1,5 +1,6 @@
 import { createSelector } from "@reduxjs/toolkit";
 import { RootState } from "../store";
+import { imagesResponse } from "../../api/responses";
 
 export const apartmentsState = (state: RootState) => state.apartments;
 
@@ -15,7 +16,7 @@ export const selectCurrentApartment = createSelector(
 
 export const selectAllContent = createSelector(
   apartmentsState,
-  (state) => state.photos
+  (state) => state?.photos || imagesResponse
 );
 
 export const selectVideoContent = createSelector(
@@ -26,7 +27,7 @@ export const selectVideoContent = createSelector(
 export const selectApartmentsLink = createSelector(
   selectAllApartments,
   (apartments) => {
-    return apartments.map((apartment) => ({
+    return apartments?.map((apartment) => ({
       name: apartment.appartmentTypeIT,
       picture: apartment.photos[0].url,
       navLink: `/${apartment.appartmentTypeIT}`,
@@ -36,7 +37,7 @@ export const selectApartmentsLink = createSelector(
 
 export const makeSelectApartment = (name: string) => {
   return createSelector(selectAllApartments, (apartments) => {
-    const apartment = apartments.find(
+    const apartment = apartments?.find(
       (ap) => ap.appartmentTypeIT.toLowerCase() === name
     );
     return apartment;

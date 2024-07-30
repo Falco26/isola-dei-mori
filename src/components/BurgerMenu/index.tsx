@@ -10,6 +10,7 @@ import {
 } from "../../features/apartments/selectors";
 import { ApartmentLink } from "../../features/apartments/types";
 import { Photo } from "../../api/types";
+import { imagesResponse } from "../../api/responses";
 
 type Props = {
   isOpen: boolean;
@@ -18,7 +19,9 @@ type Props = {
 
 export const BurgerMenu = ({ isOpen, toggleMenu }: Props) => {
   const menuRef = useRef(null);
+  //@ts-ignore
   const apartmentLinks: ApartmentLink[] = useSelector(selectApartmentsLink);
+  //@ts-ignore
   const appImages: Photo[] = useSelector(selectAllContent);
 
   const menuOptions: MenuOption[] = [
@@ -45,7 +48,9 @@ export const BurgerMenu = ({ isOpen, toggleMenu }: Props) => {
       titleEN: "Apartments",
       navLink: appRoutes.HOME,
       image: appImages[3]?.url,
-      childPages: apartmentLinks,
+      childPages: apartmentLinks ?? [
+        { name: "Isola", image: imagesResponse[2].url },
+      ],
     },
   ];
 

@@ -54,6 +54,7 @@ export const HeroHeader = ({
           controls={false}
           draggable={false}
           disableRemotePlayback={false}
+          playsInline
         />
       ) : (
         <StyledImageContainer className="hero-image" src={imgSrc} />

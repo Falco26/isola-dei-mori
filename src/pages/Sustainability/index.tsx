@@ -14,6 +14,7 @@ import { selectAllContent } from "../../features/apartments/selectors";
 import { aboutUsContent } from "../../constants/constants";
 import { TextImage } from "../../components/TextImage";
 import { useTranslation } from "react-i18next";
+import { imagesResponse } from "../../api/responses";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,7 +33,7 @@ export const Sustainability = () => {
       />
       <HeroHeader
         title={t("sus-title")}
-        imgSrc={content[5]?.url}
+        imgSrc={content?.[5]?.url || imagesResponse[0].url}
         className="fade-in"
       />
       <Stack flexDirection="column">

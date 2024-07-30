@@ -22,6 +22,7 @@ import { Review } from "../../components/Review";
 import { reviewsMock } from "../../api/mocks";
 import { aboutUsContent } from "../../constants/constants";
 import { TextImage } from "../../components/TextImage";
+import { apartmentResponse, imagesResponse } from "../../api/responses";
 //@ts-ignore
 
 gsap.registerPlugin(ScrollTrigger);
@@ -124,7 +125,9 @@ export const HomePage = () => {
                 subtitle={t("home-carousel-description")}
               />
 
-              <ApartmentsCarousel apartmentList={apartments} />
+              <ApartmentsCarousel
+                apartmentList={apartments ?? apartmentResponse}
+              />
             </Stack>
           </Stack>
         </div>
@@ -163,7 +166,7 @@ export const HomePage = () => {
                       `about-us-content.content-${index + 1}-description`
                     )}
                     title={t(`about-us-content.content-${index + 1}-title`)}
-                    imageSrc={content[index]?.url || ""}
+                    imageSrc={content?.[index]?.url || imagesResponse[3].url}
                     direction={index % 2 === 0 ? "row" : "reverse"}
                   />
                 );

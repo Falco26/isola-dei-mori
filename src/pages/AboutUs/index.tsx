@@ -14,6 +14,7 @@ import { TextImage } from "../../components/TextImage";
 import { aboutUsContent } from "../../constants/constants";
 import { useTranslation } from "react-i18next";
 import { DescriptionCard } from "../../components/DescriptionCard";
+import { imagesResponse } from "../../api/responses";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,7 +33,7 @@ export const AboutUs = () => {
       />
       <HeroHeader
         title="Chi siamo"
-        imgSrc={content[2]?.url}
+        imgSrc={content?.[2]?.url || imagesResponse[4].url}
         className="fade-in"
       />
       <Stack flexDirection="column">
@@ -73,7 +74,7 @@ export const AboutUs = () => {
                   `about-us-content.content-${index + 1}-description`
                 )}
                 title={t(`about-us-content.content-${index + 1}-title`)}
-                imageSrc={content[index]?.url || ""}
+                imageSrc={content?.[index]?.url || imagesResponse[4].url}
                 direction={index % 2 === 0 ? "row" : "reverse"}
               />
             );
