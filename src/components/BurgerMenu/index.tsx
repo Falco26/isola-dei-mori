@@ -11,6 +11,7 @@ import {
 import { ApartmentLink } from "../../features/apartments/types";
 import { Photo } from "../../api/types";
 import { imagesResponse } from "../../api/responses";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   isOpen: boolean;
@@ -23,6 +24,7 @@ export const BurgerMenu = ({ isOpen, toggleMenu }: Props) => {
   const apartmentLinks: ApartmentLink[] = useSelector(selectApartmentsLink);
   //@ts-ignore
   const appImages: Photo[] = useSelector(selectAllContent);
+  const { t } = useTranslation();
 
   const menuOptions: MenuOption[] = [
     {

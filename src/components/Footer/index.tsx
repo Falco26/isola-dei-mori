@@ -5,9 +5,11 @@ import { handleCallButtonClick, phoneNumber } from "../ContactGroup";
 import { Icon } from "../Icon/Index";
 import { Text } from "../Text";
 import logo from "../../assets/bookingrating.png";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
   const windowWidth = window.innerWidth;
+  const { t } = useTranslation();
   return (
     <Stack
       className="footer"
@@ -35,15 +37,13 @@ const Footer = () => {
         className="contacts-footer"
       >
         <Text bold fontSize="md">
-          Contattaci
+          {t("contact-us")}
         </Text>
         <button className="link-reference" onClick={handleCallButtonClick}>
           <Text fontSize="sm">{phoneNumber}</Text>
         </button>
         <button className="link-reference">
-          <Text fontSize="sm">
-            Per info e prenotazioni, info@isoladeimori.it
-          </Text>
+          <Text fontSize="sm">{t("info-book")}, info@isoladeimori.it</Text>
         </button>
         <div className="line-gray"></div>
         <Stack gap={25} alignitems="center">

@@ -8,7 +8,7 @@ import { ImageCarousel } from "../../components/ImageCarousel";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "../../components/Button";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { initFadeInAnimation } from "../../animation";
 import { Header } from "../../components/Header";
 import { HouseServices } from "../../components/HouseServices";
@@ -19,6 +19,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const ApartmentPage = () => {
   const params = useParams();
+  const [loading, setLoading] = useState(true); // Add loading state
+
   const { id } = params;
   const apartment = useSelector(makeSelectApartment(id ?? "monolocali"));
   const imageCover = apartment?.photos[0].url;
@@ -27,8 +29,20 @@ export const ApartmentPage = () => {
   const { i18n, t } = useTranslation();
 
   useEffect(() => {
+    if (apartment) {
+      setLoading(false); // Data loaded, set loading to false
+      initFadeInAnimation(".fade-in");
+    }
+  }, [apartment]);
+
+  useEffect(() => {
     initFadeInAnimation(".fade-in");
   });
+
+  if (loading)
+    return (
+      <div style={{ width: 10000, height: 10000, background: "#000" }}></div>
+    );
 
   return (
     <>
@@ -94,7 +108,7 @@ export const ApartmentPage = () => {
                 gap={40}
               >
                 <Text fontSize="lg" bold>
-                  Cosa Troverai
+                  {t("find")}
                 </Text>
                 <HouseServices
                   doubleBeds={apartment.doubleBed}

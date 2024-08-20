@@ -7,8 +7,15 @@ import it_translate from "./locales/it/translation.json"; // Corrected path and 
 i18n.use(initReactI18next).init({
   fallbackLng: "it", // Fallback to English if the desired language is not available
   detection: {
-    order: ["queryString", "cookie"],
-    caches: ["cookie"],
+    order: [
+      "localStorage",
+      "cookie",
+      "querystring",
+      "sessionStorage",
+      "navigator",
+      "htmlTag",
+    ],
+    caches: ["localStorage", "cookie"],
   },
   resources: {
     en: {

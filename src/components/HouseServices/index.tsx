@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Stack } from "../Stack";
 import { Service } from "./Service";
 import "./style.css";
@@ -17,6 +18,7 @@ export const HouseServices = ({
   hasAirConditioning,
   wifi,
 }: Services) => {
+  const { t } = useTranslation();
   return (
     <Stack
       flexDirection="row"
@@ -34,21 +36,21 @@ export const HouseServices = ({
       {doubleBeds > 0 && (
         <Service
           iconName="DoubleBed"
-          serviceDescription="Letto Matrimoniale"
+          serviceDescription={t("double-bed")}
           quantity={doubleBeds}
         />
       )}
       {singleBeds > 0 && (
         <Service
           iconName="SingleBed"
-          serviceDescription="Letto Singolo"
+          serviceDescription={t("single-bed")}
           quantity={singleBeds}
         />
       )}
       {sofaBeds > 0 && (
         <Service
           iconName="SofaLucide"
-          serviceDescription="Divano Letto"
+          serviceDescription={t("sofa-bed")}
           quantity={sofaBeds}
         />
       )}
