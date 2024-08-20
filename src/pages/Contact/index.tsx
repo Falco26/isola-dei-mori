@@ -11,32 +11,21 @@ import logoIsola from "../../assets/logo_isola.png";
 import { imagesResponse } from "../../api/responses";
 import { Icon } from "../../components/Icon/Index";
 import { theme } from "../../style/theme";
+import { Header } from "../../components/Header";
+import { useTranslation } from "react-i18next";
 
 export const ContactPage = () => {
   const content = useSelector(selectAllContent);
+  const { t } = useTranslation();
+
 
   return (
     <div className="main-container-contacts">
-      {/* Floating transparent header */}
       <div className="header-content">
-        <div className="button-container-back">
-          <button className="back-button" onClick={() => window.history.back()}>
-            <Icon
-              iconName="ArrowBackIosRounded"
-              iconColor={theme.colors.white}
-              iconSize={20}
-            />
-          </button>
-        </div>
-
-        <a href="/">
-          <img
-            className="logo-white"
-            src={logoIsola}
-            alt="logo isola dei mori"
-          />
-        </a>
-        <div style={{ flex: 1, width: "100%" }} />
+      <Header
+        navLink="https://wubook.net/nneb/bk/?ep=8c0ed861&lang=it&c=EUR&f=29%2F03%2F2024&t=30%2F03%2F2024&o=2.0.0.0"
+        buttonTitle={t("book-now")}
+      />
       </div>
       {/* Hero image */}
       <StyledImageContainer src={content?.[0]?.url || imagesResponse[0].url} />

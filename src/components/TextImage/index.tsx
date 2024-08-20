@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { memo, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Stack } from "../Stack";
 import { Text } from "../Text";
@@ -12,7 +12,7 @@ type Props = {
   title?: string;
 };
 
-export const TextImage = ({
+export const TextImage = memo(({
   title,
   description,
   direction,
@@ -51,4 +51,4 @@ export const TextImage = ({
       </Stack>
     </Stack>
   );
-};
+});

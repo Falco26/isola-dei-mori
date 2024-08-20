@@ -12,6 +12,11 @@
   "about-us-2": "Since 2007, we have grown from our roots as a Boutique Residence, evolving to meet the changing needs of our guests while staying true to our characteristic Isola dei Mori experience. You can expect a charming place to enjoy a stay in maximum comfort, surrounded by the colors and scents of the Mediterranean maquis, in an oasis of peace and tranquility.",
   "about-us-3": "Sustainability is part of our DNA. Each house is carefully maintained and furnished in harmony with the local environment and culture to offer you a unique stay experience.",
   "about-us-title": "About us",
+  "form-name":"Name",
+  "form-email":"Mail",
+  "form-object":"Subject",
+  "form-message":"Message",
+  "find-us":"Find Us!",
   "about-us-content": {
     "content-1-title": "Mission",
     "content-1-description": "Our mission is to continuously elevate the quality standards of hospitality, interpreted through a lens of exclusivity and diversity.",

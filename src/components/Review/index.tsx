@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Icon } from "../Icon/Index";
 import { Rating } from "../Rating";
 import { Booking } from "../SVG/Booking";
@@ -22,7 +23,7 @@ const reviewIconMap: Record<"Booking" | "Google" | "WuBook", any> = {
   WuBook: <WuBook />,
 };
 
-export const Review = ({
+export const Review =memo( ({
   description,
   rating = 5,
   title,
@@ -65,4 +66,4 @@ export const Review = ({
       </div>
     </Stack>
   );
-};
+});

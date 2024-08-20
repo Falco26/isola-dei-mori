@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "../../components/Button";
 import { theme } from "../../style/theme";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   themeButtons: "white" | "black";
@@ -9,6 +10,8 @@ type Props = {
 export const GoogleMapsButton = ({ themeButtons }: Props) => {
   const mainColor =
     themeButtons === "black" ? theme.colors.black : theme.colors.white;
+    const { t } = useTranslation();
+
   const redirectToGoogleMaps = () => {
     // Replace latitude and longitude with the coordinates of the place you want to redirect to
     const latitude = 40.7128; // Example latitude (e.g., New York City)
@@ -21,10 +24,12 @@ export const GoogleMapsButton = ({ themeButtons }: Props) => {
     window.open(googleMapsUrl);
   };
 
+
+
   return (
     <Button
       onClick={redirectToGoogleMaps}
-      buttonTitle="Trovaci!"
+      buttonTitle={t("find-us")}
       fontSize="lg"
       color={mainColor}
       hovercolor={theme.colors.grey[300]}

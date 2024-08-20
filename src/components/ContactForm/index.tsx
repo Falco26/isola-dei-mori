@@ -1,6 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import "./style.css"; // Make sure this includes the Paper Input Style CSS
 import { Stack } from "../Stack";
+import { useTranslation } from "react-i18next";
 
 type FormData = {
   name: string;
@@ -16,6 +17,9 @@ export const ContactForm = () => {
     subject: "",
     message: "",
   });
+
+  const { t, i18n } = useTranslation();
+
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -50,7 +54,7 @@ export const ContactForm = () => {
           onChange={handleChange}
           required
         />
-        <label htmlFor="name">Nome</label>
+        <label htmlFor="name">{t("form-name")}</label>
       </div>
 
       <div className="form-group">
@@ -63,7 +67,7 @@ export const ContactForm = () => {
           onChange={handleChange}
           required
         />
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">{t("form-email")}</label>
       </div>
 
       <div className="form-group">
@@ -76,7 +80,7 @@ export const ContactForm = () => {
           onChange={handleChange}
           required
         />
-        <label htmlFor="subject">Oggetto</label>
+        <label htmlFor="subject">{t("form-object")}</label>
       </div>
 
       <div className="form-group">
@@ -89,7 +93,7 @@ export const ContactForm = () => {
           onChange={handleChange}
           required
         ></textarea>
-        <label htmlFor="message">Messaggio</label>
+        <label htmlFor="message">{t("form-message")}</label>
       </div>
 
       <input type="submit" value="Send Email" />

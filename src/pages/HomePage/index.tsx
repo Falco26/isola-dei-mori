@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 import { ApartmentsCarousel } from "../../components/ApartmentsCarousel";
 import { HeroHeader } from "../../components/HeroHeader";
 import { Stack } from "../../components/Stack";
@@ -60,12 +60,12 @@ gsap.registerPlugin(ScrollTrigger);
 //   });
 // };
 
-export const HomePage = () => {
+export const HomePage = memo( () => {
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
     initFadeInAnimation(".fade-in");
-  });
+  },[]);
   const videoLinkAPI = useSelector(selectVideoContent);
   const videoLink =
     videoLinkAPI ||
@@ -74,6 +74,7 @@ export const HomePage = () => {
   const reviews = useSelector(selectReviews);
   const content = useSelector(selectAllContent);
   const reviewList = reviews ? reviews : reviewsMock;
+
 
   return (
     <>
@@ -179,4 +180,4 @@ export const HomePage = () => {
       </Stack>
     </>
   );
-};
+});
