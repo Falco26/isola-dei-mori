@@ -21,7 +21,7 @@ gsap.registerPlugin(ScrollTrigger);
 export const AboutUs = () => {
   useEffect(() => {
     initFadeInAnimation(".fade-in");
-  });
+  }, []);
   const content = useSelector(selectAllContent);
   const { i18n, t } = useTranslation();
 
