@@ -9,10 +9,10 @@ import {
 import { reviewsMock } from "../../api/mocks";
 
 const initialState: ApartmentState = {
-  apartmentsList: null,
-  photos: null,
+  apartmentsList: apartmentResponse,
+  photos: imagesResponse,
   videoLink: videoLink,
-  reviews: null,
+  reviews: reviewsMock,
 };
 
 const apartmentsSlice = createSlice({
