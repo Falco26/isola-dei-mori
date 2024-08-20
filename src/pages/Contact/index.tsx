@@ -19,13 +19,16 @@ export const ContactPage = () => {
     <div className="main-container-contacts">
       {/* Floating transparent header */}
       <div className="header-content">
-        <button className="back-button" onClick={() => window.history.back()}>
-          <Icon
-            iconName="ArrowBackIosRounded"
-            iconColor={theme.colors.white}
-            iconSize={20}
-          />
-        </button>
+        <div className="button-container-back">
+          <button className="back-button" onClick={() => window.history.back()}>
+            <Icon
+              iconName="ArrowBackIosRounded"
+              iconColor={theme.colors.white}
+              iconSize={20}
+            />
+          </button>
+        </div>
+
         <a href="/">
           <img
             className="logo-white"
@@ -33,7 +36,7 @@ export const ContactPage = () => {
             alt="logo isola dei mori"
           />
         </a>
-        <div style={{ width: 20 }} />
+        <div style={{ flex: 1, width: "100%" }} />
       </div>
       {/* Hero image */}
       <StyledImageContainer src={content?.[0]?.url || imagesResponse[0].url} />

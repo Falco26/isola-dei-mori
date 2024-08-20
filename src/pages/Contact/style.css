@@ -2,17 +2,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   position: absolute;
   top: 0;
   background-color: transparent;
   z-index: 1000; /* Ensure the header is on top of other elements */
-  padding-left: 6.25rem;
-  padding-right: 6.25rem;
 }
 
 .logo-white {
   max-width: 150px; /* Adjust the size of the logo */
+  flex: 1;
+}
+
+.button-container-back {
+  flex: 1;
 }
 
 .back-button {
