@@ -65,8 +65,11 @@
 }
 
 .carousel-container img {
-  min-height: 100px !important;
   max-height: 350px !important;
   object-fit: cover !important;
   width: 100% !important;
+
+  @media (max-width: 600px) {
+    height: 200px !important;
+  }
 }
