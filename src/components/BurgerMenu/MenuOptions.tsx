@@ -59,6 +59,7 @@ export const MenuLinks = ({ menuOptions }: Props) => {
 
   const handleClick = (navLink: string) => {
     navigate(navLink);
+    setShowChildPages(null);
   };
 
   return (
