@@ -30,7 +30,7 @@ export const selectApartmentsLink = createSelector(
     return apartments?.map((apartment) => ({
       name: apartment.appartmentTypeIT,
       picture: apartment.photos[0].url,
-      navLink: `/${apartment.appartmentTypeIT}`,
+      navLink: `${apartment.appartmentTypeIT}`,
     }));
   }
 );

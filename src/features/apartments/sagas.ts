@@ -57,10 +57,10 @@ function* getReviewsSaga() {
 function* initSaga() {
   yield put(apartmentActions.toggleLoading(true));
 
-  yield call(getApartmentsSaga);
-  yield call(getPhotosSaga);
-  yield call(getVideosSaga);
-  yield call(getReviewsSaga);
+  // yield call(getApartmentsSaga);
+  // yield call(getPhotosSaga);
+  // yield call(getVideosSaga);
+  // yield call(getReviewsSaga);
 
   yield put(apartmentActions.toggleLoading(false));
 }
