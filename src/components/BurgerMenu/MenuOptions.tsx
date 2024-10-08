@@ -3,6 +3,7 @@ import gsap from "gsap";
 import "./style.css";
 import { ContactGroup } from "../ContactGroup";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 export type MenuOption = {
   title: string;
@@ -22,6 +23,7 @@ export const MenuLinks = ({ menuOptions }: Props) => {
   const [currentImage, setCurrentImage] = useState("");
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const { i18n } = useTranslation();
+  const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -56,7 +58,7 @@ export const MenuLinks = ({ menuOptions }: Props) => {
   };
 
   const handleClick = (navLink: string) => {
-    window.location.href = navLink;
+    navigate(navLink);
   };
 
   return (
