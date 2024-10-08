@@ -67,7 +67,7 @@ export const BurgerMenu = ({ isOpen, toggleMenu }: Props) => {
 
   return (
     <div ref={menuRef} className={`menu ${isOpen ? "open" : ""}`}>
-      <MenuLinks menuOptions={menuOptions} />
+      <MenuLinks menuOptions={menuOptions} toggleMenu={toggleMenu} />{" "}
     </div>
   );
 };

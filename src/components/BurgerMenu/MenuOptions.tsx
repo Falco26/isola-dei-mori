@@ -15,9 +15,10 @@ export type MenuOption = {
 
 type Props = {
   menuOptions: MenuOption[];
+  toggleMenu: () => void; // Add toggleMenu prop
 };
 
-export const MenuLinks = ({ menuOptions }: Props) => {
+export const MenuLinks = ({ menuOptions, toggleMenu }: Props) => {
   const [showChildPages, setShowChildPages] = useState<string | null>(null);
   const [showImage, setShowImage] = useState(false);
   const [currentImage, setCurrentImage] = useState("");
@@ -58,8 +59,9 @@ export const MenuLinks = ({ menuOptions }: Props) => {
   };
 
   const handleClick = (navLink: string) => {
-    navigate(navLink);
+    navigate(`/${navLink}`);
     setShowChildPages(null);
+    toggleMenu();
   };
 
   return (
