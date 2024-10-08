@@ -8,6 +8,7 @@ export type ApartmentState = {
   photos: Nullable<Photo[]>;
   reviews: Nullable<Reviews[]>;
   isLoading: boolean;
+  errorAPI: boolean;
 };
 
 export type ApartmentLink = {

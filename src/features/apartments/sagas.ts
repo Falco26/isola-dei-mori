@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, put, takeLatest, retry } from "redux-saga/effects";
 import { apartmentActions } from "./reducer";
 import { Apartment, Photo, Reviews } from "../../api/types";
 import {
@@ -8,42 +8,49 @@ import {
   getVideo,
 } from "../../api/endpoints";
 
+const RETRY_LIMIT = 2;
+const RETRY_DELAY = 2000; // 2 seconds delay between retries
+
 function* getApartmentsSaga() {
   try {
-    const res: Apartment[] = yield call(getApartments);
-
+    const res: Apartment[] = yield retry(
+      RETRY_LIMIT,
+      RETRY_DELAY,
+      getApartments
+    );
     yield put(apartmentActions.setApartments(res));
   } catch (error) {
-    console.log("🚀 ~ function*getApartments ~ error:", error);
-  } finally {
+    yield put(apartmentActions.toggleError(true));
+    console.log("🚀 ~ function*getApartmentsSaga ~ error:", error);
   }
 }
 
 function* getVideosSaga() {
   try {
-    const res: string = yield call(getVideo);
+    const res: string = yield retry(RETRY_LIMIT, RETRY_DELAY, getVideo);
     yield put(apartmentActions.setVideoLink(res));
   } catch (error) {
+    yield put(apartmentActions.toggleError(true));
     console.log("🚀 ~ function*getVideosSaga ~ error:", error);
   }
 }
 
 function* getPhotosSaga() {
   try {
-    const res: Photo[] = yield call(getPhotos);
+    const res: Photo[] = yield retry(RETRY_LIMIT, RETRY_DELAY, getPhotos);
     yield put(apartmentActions.setPhotoContent(res));
   } catch (error) {
-    console.log("🚀 ~ function*getVideosSaga ~ error:", error);
-  } finally {
+    yield put(apartmentActions.toggleError(true));
   }
 }
 
 function* getReviewsSaga() {
   try {
-    const res: Reviews[] = yield call(getReviews);
+    const res: Reviews[] = yield retry(RETRY_LIMIT, RETRY_DELAY, getReviews);
     yield put(apartmentActions.setReviews(res));
   } catch (error) {
-    console.log("🚀 ~ function*getVideosSaga ~ error:", error);
+    yield put(apartmentActions.toggleError(true));
+    console.log("🚀 ~ function*getReviewsSaga ~ error:", error);
   }
 }
 

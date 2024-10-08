@@ -13,18 +13,25 @@ import { apartmentActions } from "./features/apartments/reducer";
 import Footer from "./components/Footer";
 import { Sustainability } from "./pages/Sustainability";
 import { ScrollToTop } from "./components/ScrollToTop";
-import { selectIsLoading } from "./features/apartments/selectors";
+import { selectError, selectIsLoading } from "./features/apartments/selectors";
 import { Loading } from "./pages/Loader";
+import { Error } from "./pages/Error";
+import { useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
+  const isErrorAPI = useSelector(selectError);
 
-  dispatch(apartmentActions.initApp());
+  // Trigger the initApp action only on component mount
+  useEffect(() => {
+    dispatch(apartmentActions.initApp());
+  }, [dispatch]);
 
   if (isLoading) return <Loading />;
+  if (isErrorAPI) return <Error />;
 
   return (
     <div className="App">

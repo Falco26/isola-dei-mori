@@ -14,6 +14,7 @@ const initialState: ApartmentState = {
   videoLink: videoLink,
   reviews: reviewsMock,
   isLoading: false,
+  errorAPI: false,
 };
 
 const apartmentsSlice = createSlice({
@@ -37,6 +38,9 @@ const apartmentsSlice = createSlice({
     },
     toggleLoading: (state, { payload }: PayloadAction<boolean>) => {
       state.isLoading = payload;
+    },
+    toggleError: (state, { payload }: PayloadAction<boolean>) => {
+      state.errorAPI = payload;
     },
   },
 });
