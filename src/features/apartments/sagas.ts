@@ -1,4 +1,4 @@
-import { call, put, takeLatest, retry } from "redux-saga/effects";
+import { call, put, takeLatest, retry, all } from "redux-saga/effects";
 import { apartmentActions } from "./reducer";
 import { Apartment, Photo, Reviews } from "../../api/types";
 import {
@@ -57,10 +57,7 @@ function* getReviewsSaga() {
 function* initSaga() {
   yield put(apartmentActions.toggleLoading(true));
 
-  yield call(getApartmentsSaga);
-  yield call(getPhotosSaga);
-  yield call(getVideosSaga);
-  yield call(getReviewsSaga);
+  yield all([getApartmentsSaga, getPhotosSaga, getVideosSaga, getReviewsSaga]);
 
   yield put(apartmentActions.toggleLoading(false));
 }

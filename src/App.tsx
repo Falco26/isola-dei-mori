@@ -8,15 +8,9 @@ import { appRoutes } from "./routes";
 import { ApartmentPage } from "./pages/ApartmentPage";
 import { ContactPage } from "./pages/Contact";
 import { AboutUs } from "./pages/AboutUs";
-import { useDispatch, useSelector } from "react-redux";
-import { apartmentActions } from "./features/apartments/reducer";
 import Footer from "./components/Footer";
 import { Sustainability } from "./pages/Sustainability";
 import { ScrollToTop } from "./components/ScrollToTop";
-import { selectError, selectIsLoading } from "./features/apartments/selectors";
-import { Loading } from "./pages/Loader";
-import { Error } from "./pages/Error";
-import { useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
