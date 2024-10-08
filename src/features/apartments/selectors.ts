@@ -48,3 +48,8 @@ export const selectReviews = createSelector(
   apartmentsState,
   (state) => state.reviews
 );
+
+export const selectIsLoading = createSelector(
+  apartmentsState,
+  (state) => state.isLoading
+);

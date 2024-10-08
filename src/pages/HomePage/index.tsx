@@ -13,6 +13,7 @@ import { useSelector } from "react-redux";
 import {
   selectAllApartments,
   selectAllContent,
+  selectIsLoading,
   selectReviews,
   selectVideoContent,
 } from "../../features/apartments/selectors";
@@ -23,6 +24,7 @@ import { reviewsMock } from "../../api/mocks";
 import { aboutUsContent } from "../../constants/constants";
 import { TextImage } from "../../components/TextImage";
 import { apartmentResponse, imagesResponse } from "../../api/responses";
+import { Loading } from "../Loader";
 //@ts-ignore
 
 gsap.registerPlugin(ScrollTrigger);
@@ -60,12 +62,12 @@ gsap.registerPlugin(ScrollTrigger);
 //   });
 // };
 
-export const HomePage = memo( () => {
+export const HomePage = memo(() => {
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
     initFadeInAnimation(".fade-in");
-  },[]);
+  }, []);
   const videoLinkAPI = useSelector(selectVideoContent);
   const videoLink =
     videoLinkAPI ||
@@ -74,7 +76,6 @@ export const HomePage = memo( () => {
   const reviews = useSelector(selectReviews);
   const content = useSelector(selectAllContent);
   const reviewList = reviews ? reviews : reviewsMock;
-
 
   return (
     <>
@@ -158,6 +159,7 @@ export const HomePage = memo( () => {
             );
           })}
         </div>
+
         <div>
           <Stack flexDirection="column" gap={30} className="second-about">
             {aboutUsContent?.map(

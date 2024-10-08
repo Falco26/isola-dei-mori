@@ -1,4 +1,4 @@
-import { axiosApi } from "./client";
+import { axiosApi, fakeApi } from "./client";
 import { Apartment, Photo, Reviews } from "./types";
 
 export const getApartments = () => {
@@ -18,4 +18,8 @@ export const getPhotos = () => {
 
 export const getReviews = () => {
   return axiosApi.get<Reviews[]>("/review/index").then((res) => res.data);
+};
+
+export const getComments = () => {
+  return fakeApi.get<any[]>("/comments").then((res) => res.data);
 };

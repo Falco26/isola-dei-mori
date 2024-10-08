@@ -1,6 +1,9 @@
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { makeSelectApartment } from "../../features/apartments/selectors";
+import {
+  makeSelectApartment,
+  selectIsLoading,
+} from "../../features/apartments/selectors";
 import { HeroHeader } from "../../components/HeroHeader";
 import { Stack } from "../../components/Stack";
 import "./style.css";
@@ -19,27 +22,20 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const ApartmentPage = () => {
   const params = useParams();
-  const [loading, setLoading] = useState(true); // Add loading state
 
   const { id } = params;
   const apartment = useSelector(makeSelectApartment(id ?? "monolocali"));
   const imageCover = apartment?.photos[0].url;
   const imageList = apartment?.photos.slice(2, 9);
+  const isLoading = useSelector(selectIsLoading);
 
   const { i18n, t } = useTranslation();
-
-  useEffect(() => {
-    if (apartment) {
-      setLoading(false); // Data loaded, set loading to false
-      initFadeInAnimation(".fade-in");
-    }
-  }, [apartment]);
 
   useEffect(() => {
     initFadeInAnimation(".fade-in");
   });
 
-  if (loading)
+  if (isLoading)
     return (
       <div style={{ width: 10000, height: 10000, background: "#000" }}></div>
     );

@@ -7,6 +7,7 @@ export type ApartmentState = {
   videoLink: Nullable<string>;
   photos: Nullable<Photo[]>;
   reviews: Nullable<Reviews[]>;
+  isLoading: boolean;
 };
 
 export type ApartmentLink = {

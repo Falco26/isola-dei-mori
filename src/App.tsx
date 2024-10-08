@@ -8,18 +8,24 @@ import { appRoutes } from "./routes";
 import { ApartmentPage } from "./pages/ApartmentPage";
 import { ContactPage } from "./pages/Contact";
 import { AboutUs } from "./pages/AboutUs";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { apartmentActions } from "./features/apartments/reducer";
 import Footer from "./components/Footer";
 import { Sustainability } from "./pages/Sustainability";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { selectIsLoading } from "./features/apartments/selectors";
+import { Loading } from "./pages/Loader";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsLoading);
 
   dispatch(apartmentActions.initApp());
+
+  if (isLoading) return <Loading />;
+
   return (
     <div className="App">
       <ScrollToTop />

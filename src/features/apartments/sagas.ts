@@ -3,6 +3,7 @@ import { apartmentActions } from "./reducer";
 import { Apartment, Photo, Reviews } from "../../api/types";
 import {
   getApartments,
+  getComments,
   getPhotos,
   getReviews,
   getVideo,
@@ -10,10 +11,15 @@ import {
 
 function* getApartmentsSaga() {
   try {
+    yield put(apartmentActions.toggleLoading(true));
     const res: Apartment[] = yield call(getApartments);
+
     yield put(apartmentActions.setApartments(res));
   } catch (error) {
+    yield put(apartmentActions.toggleLoading(false));
     console.log("🚀 ~ function*getApartments ~ error:", error);
+  } finally {
+    yield put(apartmentActions.toggleLoading(false));
   }
 }
 
@@ -28,10 +34,14 @@ function* getVideosSaga() {
 
 function* getPhotosSaga() {
   try {
+    yield put(apartmentActions.toggleLoading(true));
     const res: Photo[] = yield call(getPhotos);
     yield put(apartmentActions.setPhotoContent(res));
   } catch (error) {
+    yield put(apartmentActions.toggleLoading(false));
     console.log("🚀 ~ function*getVideosSaga ~ error:", error);
+  } finally {
+    yield put(apartmentActions.toggleLoading(false));
   }
 }
 

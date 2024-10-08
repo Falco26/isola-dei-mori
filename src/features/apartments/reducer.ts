@@ -13,6 +13,7 @@ const initialState: ApartmentState = {
   photos: imagesResponse,
   videoLink: videoLink,
   reviews: reviewsMock,
+  isLoading: false,
 };
 
 const apartmentsSlice = createSlice({
@@ -33,6 +34,9 @@ const apartmentsSlice = createSlice({
     },
     setReviews: (state, { payload }: PayloadAction<Reviews[]>) => {
       state.reviews = payload;
+    },
+    toggleLoading: (state, { payload }: PayloadAction<boolean>) => {
+      state.isLoading = payload;
     },
   },
 });
