@@ -48,14 +48,20 @@ function* getReviewsSaga() {
 }
 
 function* initSaga() {
-  yield put(apartmentActions.toggleLoading(true));
+  try {
+    yield put(apartmentActions.toggleLoading(true));
 
-  yield call(getApartmentsSaga);
-  yield call(getPhotosSaga);
-  yield call(getVideosSaga);
-  yield call(getReviewsSaga);
-
-  yield put(apartmentActions.toggleLoading(false));
+    yield call(getApartmentsSaga);
+    yield call(getPhotosSaga);
+    yield call(getVideosSaga);
+    yield call(getReviewsSaga);
+  } catch (error) {
+    yield put(apartmentActions.toggleLoading(false));
+    return;
+  } finally {
+    yield put(apartmentActions.toggleLoading(false));
+    return;
+  }
 }
 
 export function* homeSaga() {
