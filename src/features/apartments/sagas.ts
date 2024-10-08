@@ -57,7 +57,12 @@ function* getReviewsSaga() {
 function* initSaga() {
   yield put(apartmentActions.toggleLoading(true));
 
-  yield all([getApartmentsSaga, getPhotosSaga, getVideosSaga, getReviewsSaga]);
+  yield all([
+    getApartmentsSaga(),
+    getPhotosSaga(),
+    getVideosSaga(),
+    getReviewsSaga(),
+  ]);
 
   yield put(apartmentActions.toggleLoading(false));
 }
