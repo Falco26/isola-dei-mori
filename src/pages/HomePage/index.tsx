@@ -9,10 +9,11 @@ import { TextSection } from "../../components/TextSection";
 import { Button } from "../../components/Button";
 import { initFadeInAnimation } from "../../animation";
 import { Header } from "../../components/Header";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   selectAllApartments,
   selectAllContent,
+  selectError,
   selectIsLoading,
   selectReviews,
   selectVideoContent,
@@ -25,6 +26,8 @@ import { aboutUsContent } from "../../constants/constants";
 import { TextImage } from "../../components/TextImage";
 import { apartmentResponse, imagesResponse } from "../../api/responses";
 import { Loading } from "../Loader";
+import { apartmentActions } from "../../features/apartments/reducer";
+import { Error } from "../Error";
 //@ts-ignore
 
 gsap.registerPlugin(ScrollTrigger);
@@ -65,9 +68,9 @@ gsap.registerPlugin(ScrollTrigger);
 export const HomePage = memo(() => {
   const { t, i18n } = useTranslation();
 
-  useEffect(() => {
-    initFadeInAnimation(".fade-in");
-  }, []);
+  const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsLoading);
+  const isErrorAPI = useSelector(selectError);
   const videoLinkAPI = useSelector(selectVideoContent);
   const videoLink =
     videoLinkAPI ||
@@ -76,6 +79,15 @@ export const HomePage = memo(() => {
   const reviews = useSelector(selectReviews);
   const content = useSelector(selectAllContent);
   const reviewList = reviews ? reviews : reviewsMock;
+
+  // Trigger the initApp action only on component mount
+  useEffect(() => {
+    dispatch(apartmentActions.initApp());
+    initFadeInAnimation(".fade-in");
+  }, [dispatch]);
+
+  if (isLoading) return <Loading />;
+  if (isErrorAPI) return <Error />;
 
   return (
     <>
