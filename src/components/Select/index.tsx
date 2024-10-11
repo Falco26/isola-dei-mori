@@ -16,10 +16,10 @@ type Props = {
 const StyledSelect = styled(MaterialSelect)({
   width: 100,
   backgroundColor: "transparent",
-  borderRadius: "4px",
+  borderRadius: "0px !important", // Squared corners (no border radius)
   color: theme.colors.white,
   fontWeight: "bold",
-  transition: "border 0.1s ease-in-out",
+  transition: "border 0.1s ease-in-out, box-shadow 0.1s ease-in-out",
   "& .MuiSelect-select": {
     padding: "10px",
     color: theme.colors.white,
@@ -33,6 +33,21 @@ const StyledSelect = styled(MaterialSelect)({
   "&:hover .MuiOutlinedInput-notchedOutline": {
     borderColor: `${theme.colors.white} !important`,
     borderWidth: "2px",
+  },
+  "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+    borderColor: `${theme.colors.white} !important`,
+    borderWidth: "2px",
+    boxShadow: "none",
+  },
+  "& .Mui-focused": {
+    backgroundColor: "transparent",
+    boxShadow: "none",
+  },
+  "&.MuiSelect-select:focus": {
+    backgroundColor: "transparent",
+  },
+  "& .MuiSelect-icon": {
+    color: theme.colors.white, // White arrow
   },
 });
 

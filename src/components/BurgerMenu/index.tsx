@@ -46,8 +46,8 @@ export const BurgerMenu = ({ isOpen, toggleMenu }: Props) => {
       image: appImages[2]?.url,
     },
     {
-      title: "Appartamenti",
-      titleEN: "Apartments",
+      title: "Case",
+      titleEN: "Homes",
       navLink: appRoutes.HOME,
       image: appImages[3]?.url,
       childPages: apartmentLinks ?? [

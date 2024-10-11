@@ -38,3 +38,19 @@ export const initFadeInAnimation = (className: string) => {
     });
   });
 };
+
+export const initFadeOutAnimation = (className: string) => {
+  const fadeOutElements = document.querySelectorAll(className);
+
+  fadeOutElements.forEach((element) => {
+    gsap.to(element, {
+      opacity: 0, // Fade out to zero
+      duration: 2, // 2 seconds fade-out duration
+      delay: 2, // Start fading out after 5 seconds
+      ease: "power2.out", // Smooth easing effect
+      onComplete: () => {
+        gsap.set(element, { visibility: "hidden" }); // Hide the element after fading out
+      },
+    });
+  });
+};

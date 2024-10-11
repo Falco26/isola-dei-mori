@@ -41,9 +41,9 @@ export const Header = ({
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 500) {
+      if (window.scrollY > 113) {
         setIsSticky(true);
-      } else if (window.scrollY < 200) {
+      } else if (window.scrollY < 114) {
         setIsSticky(false);
       }
     };
@@ -96,14 +96,14 @@ export const Header = ({
           >
             {!menuOpen && (
               <Icon
-                iconName="MenuRounded"
+                iconName="Menu"
                 iconColor={isSticky ? theme.colors.white : color}
                 iconSize={25}
               />
             )}
             {menuOpen && (
               <Icon
-                iconName="CloseRounded"
+                iconName="Close"
                 iconColor={theme.colors.white}
                 iconSize={25}
               />

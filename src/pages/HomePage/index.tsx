@@ -7,7 +7,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import "./style.css";
 import { TextSection } from "../../components/TextSection";
 import { Button } from "../../components/Button";
-import { initFadeInAnimation } from "../../animation";
+import { initFadeInAnimation, initFadeOutAnimation } from "../../animation";
 import { Header } from "../../components/Header";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -84,6 +84,7 @@ export const HomePage = memo(() => {
   useEffect(() => {
     dispatch(apartmentActions.initApp());
     initFadeInAnimation(".fade-in");
+    initFadeOutAnimation(".fade-out");
   }, [dispatch]);
 
   if (isLoading) return <Loading />;

@@ -62,7 +62,7 @@ export const HeroHeader = ({
 
       <StyledHeroGradient className="hero-image" />
       <StyledHeroTextContainer>
-        <Stack flexDirection="column" gap={15} className="fade-in">
+        <Stack flexDirection="column" gap={15} className="fade-out">
           <StyledHeroTitle>{title}</StyledHeroTitle>
         </Stack>
       </StyledHeroTextContainer>

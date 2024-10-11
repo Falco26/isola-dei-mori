@@ -12,6 +12,8 @@ import {
   SingleBedRounded,
   ChairRounded,
   MapRounded,
+  Menu,
+  Close,
   MailRounded,
   PhoneRounded,
   BedroomParentOutlined,
@@ -52,4 +54,6 @@ export const IconsList = {
   Star: StarRateRounded,
   HalfStar: StarHalfRounded,
   LinkArrow: ArrowOutwardRounded,
+  Menu,
+  Close,
 };
