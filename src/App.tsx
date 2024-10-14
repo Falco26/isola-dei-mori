@@ -11,6 +11,7 @@ import { AboutUs } from "./pages/AboutUs";
 import Footer from "./components/Footer";
 import { Sustainability } from "./pages/Sustainability";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { PrivacyPolicy } from "./pages/Legal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,6 +26,7 @@ function App() {
           <Route path={appRoutes.CONTACT} element={<ContactPage />} />
           <Route path={appRoutes.ABOUT} element={<AboutUs />} />
           <Route path={appRoutes.SUSTENIBILITY} element={<Sustainability />} />
+          <Route path={appRoutes.PRIVACY} element={<PrivacyPolicy />} />
         </Route>
       </Routes>
       <Footer />

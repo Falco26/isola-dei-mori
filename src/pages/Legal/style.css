@@ -1,0 +1,48 @@
+.second-about {
+  background-color: #ffffff;
+}
+
+.background-white {
+  background-color: #ffffff;
+}
+
+.select-container {
+  width: 100px;
+  background-color: transparent;
+  border-radius: 0px !important; /* Squared corners (no border radius) */
+  color: white; /* Will be overridden by the class below */
+  font-weight: bold;
+  transition: border 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+
+.select-container .MuiSelect-select {
+  padding: 10px;
+  color: white; /* Override default color */
+  font-weight: bold;
+}
+
+.select-container .MuiOutlinedInput-notchedOutline {
+  border-color: white !important; /* Default border color */
+  border-width: 1px;
+  transition: border-width 0.1s ease-in-out;
+}
+
+.select-container:hover .MuiOutlinedInput-notchedOutline {
+  border-color: white !important; /* Hover border color */
+  border-width: 2px;
+}
+
+.select-container.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: white !important; /* Focused border color */
+  border-width: 2px;
+  box-shadow: none;
+}
+
+.select-container .Mui-focused {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.select-container .MuiSelect-icon {
+  color: white; /* White arrow */
+}

@@ -6,9 +6,12 @@ import { Icon } from "../Icon/Index";
 import { Text } from "../Text";
 import logo from "../../assets/bookingrating.png";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { appRoutes } from "../../routes";
 
 const Footer = () => {
   const windowWidth = window.innerWidth;
+  const navigate = useNavigate();
   const { t } = useTranslation();
   return (
     <Stack
@@ -26,7 +29,22 @@ const Footer = () => {
               className="booking-logo"
             />
           </a>
-          <Text fontSize="xs">Copyright © 2024. Isola dei Mori.</Text>
+          <Stack
+            flexDirection="column"
+            justifycontent="flex-start"
+            alignitems="flex-start"
+            gap={5}
+          >
+            <Text fontSize="xs">Copyright © 2024. Isola dei Mori.</Text>
+            <button
+              className="link-reference"
+              onClick={() => navigate(`${appRoutes.PRIVACY}`)}
+            >
+              <Text fontSize="xs" bold>
+                Privacy Policy
+              </Text>
+            </button>
+          </Stack>
         </Stack>
       </Stack>
 

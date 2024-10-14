@@ -4,4 +4,5 @@ export const appRoutes = {
   SUSTENIBILITY: "sustenibility",
   APARTMENTS: "apartments",
   CONTACT: "contact-us",
+  PRIVACY: "privacy-policy",
 };

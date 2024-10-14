@@ -54,6 +54,13 @@
   background-color: transparent;
   border: transparent;
   padding: 0;
+  cursor: pointer;
+}
+.link-reference-bold {
+  background-color: transparent;
+  border: transparent;
+  padding: 0;
+  cursor: pointer;
 }
 
 .line-gray {
