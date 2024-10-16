@@ -6,6 +6,7 @@ import {
 import { useCallback, useState } from "react";
 import { theme } from "../../style/theme";
 import styled from "styled-components";
+import "./style.css";
 
 type Props = {
   onChange: (props: any) => void;

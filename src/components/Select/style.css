@@ -1,0 +1,8 @@
+@media (max-width: 768px) {
+  .small-screen-select .MuiSelect-select {
+    width: 60px !important; /* Reduce width */
+  }
+  .cZvKLk {
+    width: 60px !important; /* Reduce width */
+  }
+}

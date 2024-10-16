@@ -119,7 +119,16 @@
     display: none !important;
   }
 
+  .header-container {
+    justify-content: space-between; /* Ensure proper layout */
+  }
+
+  .logo {
+    flex: 1; /* Allow logo to take available space */
+    text-align: center;
+  }
+
   .book-now-button {
-    display: none !important;
+    display: none !important; /* Hide button on smaller screens */
   }
 }
