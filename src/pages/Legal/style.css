@@ -15,6 +15,10 @@
   transition: border 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 
+p {
+  text-align: justify;
+}
+
 .select-container .MuiSelect-select {
   padding: 10px;
   color: white; /* Override default color */

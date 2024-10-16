@@ -2,11 +2,8 @@ import { useState, useEffect } from "react";
 import { Stack } from "../../components/Stack";
 import { initFadeInAnimation } from "../../animation";
 import { SimpleHeader } from "../../components/Header/HeaderSimple";
-import { useSelector } from "react-redux";
-import { selectAllContent } from "../../features/apartments/selectors";
 import { useTranslation } from "react-i18next";
 import "./style.css";
-import { languageSelectOptions } from "../../constants/constants";
 import { Select } from "../../components/Select";
 import { Text } from "../../components/Text";
 
