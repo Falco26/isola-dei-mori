@@ -17,6 +17,12 @@
 
 p {
   text-align: justify;
+  margin-top: 5px;
+  margin-bottom: 1px;
+}
+
+ul {
+  text-align: justify;
 }
 
 .select-container .MuiSelect-select {

@@ -54,11 +54,37 @@ export const PrivacyPolicy = () => {
         />
 
         {/* Render the selected policy */}
-        <Text bold fontSize="md">
+        <Text bold fontSize="lg">
           <br></br> Privacy Policy
         </Text>
         {renderPolicy()}
+
+        <Text bold fontSize="lg">
+          <br></br> Isola dei Mori S.r.l.
+        </Text>
+        <LegalInfo />
+        <br></br>
       </Stack>
+    </>
+  );
+};
+
+const LegalInfo = () => {
+  return (
+    <>
+      <p>Sede legale: Via Nazionale 199, 09017 Sant’Antioco (SU)</p>
+      <p>
+        Registro delle Imprese di Cagliari, codice fiscale e partita IVA
+        03140250923
+      </p>
+      <p>CCIAA di Cagliari e Oristano, REA n. CA-249494</p>
+      <p>Capitale sociale 100.000,00 € i.v.</p>
+      <p>
+        Email: <a href="mailto:info@isoladeimori.it">info@isoladeimori.it</a>
+      </p>
+      <p>
+        PEC: <a href="mailto:isoladeimori@pec.it">isoladeimori@pec.it</a>
+      </p>
     </>
   );
 };
