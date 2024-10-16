@@ -5,7 +5,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center; /* Center the logo */
-  padding: 1rem 5vw; /* Responsive padding */
+  padding: 1rem 3.984vw; /* Responsive padding */
   box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
@@ -30,6 +30,11 @@
 .logo {
   width: 12.625rem; /* Default logo size */
   max-width: 100%; /* Prevent overflow */
+}
+
+.fake-div {
+  width: auto;
+  min-width: 48.75px;
 }
 
 @media (max-width: 768px) {

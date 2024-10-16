@@ -44,7 +44,7 @@ export const PrivacyPolicy = () => {
       <Stack
         flexDirection="column"
         paddinghorizontal={60}
-        className="background-white"
+        className="background-white section-legal"
       >
         {/* Language Selector */}
         <Select

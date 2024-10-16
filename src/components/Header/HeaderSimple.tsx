@@ -1,15 +1,8 @@
-import { useEffect, useState } from "react";
-import { theme } from "../../style/theme";
 import { Button } from "../Button";
-import { Icon } from "../Icon/Index";
 import { Stack } from "../Stack";
 import "./headerstylesimples.css";
-import { BurgerMenu } from "../BurgerMenu";
 import { useNavigate } from "react-router-dom";
 import { appRoutes } from "../../routes";
-import { useTranslation } from "react-i18next";
-import { Select } from "../Select";
-import { languageSelectOptions } from "../../constants/constants";
 
 type Props = {
   headerClass?: string;
@@ -24,24 +17,10 @@ export const SimpleHeader = ({
   buttonTitle = "Contattaci",
   navLink = "CONTACT",
 }: Props) => {
-  const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
-  const { i18n } = useTranslation();
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-    document.body.style.overflow = menuOpen ? "auto" : "hidden";
-  };
-
-  useEffect(() => {
-    // Close the menu when navigating to a new page
-    setMenuOpen(false);
-  }, [navLink]); // Re-run effect when the navRoute changes
-
-  const handleNavigate = (navLink: string) => {
-    appRoutes[navLink as keyof typeof appRoutes]
-      ? navigate(appRoutes[navLink as keyof typeof appRoutes])
-      : window.open(navLink);
+  const handleGoBack = () => {
+    navigate(-1); // This will navigate back to the previous page
   };
 
   return (
@@ -54,6 +33,9 @@ export const SimpleHeader = ({
       paddinghorizontal={60}
       className="header"
     >
+      <Stack className="fake-div" onClick={handleGoBack}>
+        <Button icon="ArrowBackIosNew" direction="reverse" />
+      </Stack>
       <Stack flex={1}>
         <a href="/">
           <img
@@ -63,6 +45,8 @@ export const SimpleHeader = ({
           />
         </a>
       </Stack>
+
+      <Stack className="fake-div"></Stack>
     </Stack>
   );
 };

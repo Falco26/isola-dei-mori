@@ -15,6 +15,7 @@ type Props = PropsWithChildren<{
   icon?: IconsName;
   iconSize?: number;
   className?: string;
+  direction?: "reverse" | "row";
 }>;
 
 export const Button = ({
@@ -25,6 +26,7 @@ export const Button = ({
   onClick,
   hovercolor = theme.colors.black,
   color = theme.colors.grey[300],
+  direction = "row",
   className,
 }: Props) => {
   return (
@@ -37,6 +39,7 @@ export const Button = ({
         <Stack
           justifycontent="center"
           alignitems="center"
+          flexDirection={direction === "row" ? "row" : "row-reverse"}
           gap={10}
           paddinghorizontal={30 * theme.fontSizes[fontSize ?? "sm"]}
           paddingvertical={20 * theme.fontSizes[fontSize ?? "sm"]}

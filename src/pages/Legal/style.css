@@ -15,6 +15,18 @@
   transition: border 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 
+.section-legal {
+  padding-left: 3.984vw !important;
+  padding-right: 3.984vw;
+}
+
+@media (max-width: 768px) {
+  .section-legal {
+    padding-left: 3vw !important;
+    padding-right: 3vw;
+  }
+}
+
 p {
   text-align: justify;
   margin-top: 5px;
