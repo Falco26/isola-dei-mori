@@ -9,6 +9,7 @@ export type ApartmentState = {
   reviews: Nullable<Reviews[]>;
   isLoading: boolean;
   errorAPI: boolean;
+  language: string;
 };
 
 export type ApartmentLink = {

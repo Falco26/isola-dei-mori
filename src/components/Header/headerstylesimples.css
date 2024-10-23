@@ -5,7 +5,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: center; /* Center the logo */
-  padding: 1rem 3.984vw; /* Responsive padding */
+  padding-left: 5vw !important;
+  padding-right: 8vw !important;
   box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
@@ -38,10 +39,6 @@
 }
 
 @media (max-width: 768px) {
-  .header {
-    padding: 1rem 3vw; /* Reduce padding for smaller screens */
-  }
-
   .logo {
     width: 8.625rem; /* Smaller logo size for mobile */
   }

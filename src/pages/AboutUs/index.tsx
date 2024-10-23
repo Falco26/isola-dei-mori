@@ -67,7 +67,7 @@ export const AboutUs = () => {
           className="second-about"
           flex={1}
         >
-          {aboutUsContent.map((_, index) => {
+          {aboutUsContent?.map((_, index) => {
             return (
               <TextImage
                 description={t(

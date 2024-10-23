@@ -67,7 +67,7 @@ export const MenuLinks = ({ menuOptions, toggleMenu }: Props) => {
   return (
     <div className="menu-container">
       <ul className="list-container">
-        {menuOptions.map((option) => (
+        {menuOptions?.map((option) => (
           <li
             key={`${option.navLink}+${windowWidth}`}
             onMouseEnter={(e) =>
@@ -82,7 +82,7 @@ export const MenuLinks = ({ menuOptions, toggleMenu }: Props) => {
             {(windowWidth < 768 || showChildPages === option.navLink) &&
               option.childPages && (
                 <ul className="sub-menu">
-                  {option.childPages.map((childOption) => (
+                  {option.childPages?.map((childOption) => (
                     <li
                       key={childOption.name}
                       onClick={() =>

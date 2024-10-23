@@ -90,7 +90,7 @@ export const ApartmentsCarousel = memo(({ apartmentList }: Props) => {
           gap={50}
           className="carousel-container"
         >
-          {apartmentGroup.map((apartment, innerIndex) => (
+          {apartmentGroup?.map((apartment, innerIndex) => (
             <HouseCard
               key={innerIndex}
               houseName={

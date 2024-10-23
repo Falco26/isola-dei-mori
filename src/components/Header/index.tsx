@@ -10,6 +10,10 @@ import { appRoutes } from "../../routes";
 import { useTranslation } from "react-i18next";
 import { Select } from "../Select";
 import { languageSelectOptions } from "../../constants/constants";
+import { useDispatch, useSelector } from "react-redux";
+import { selectLanguage } from "../../features/apartments/selectors";
+import { apartmentActions } from "../../features/apartments/reducer";
+import { SelectChangeEvent } from "@mui/material";
 
 type Props = {
   headerClass?: string;
@@ -33,6 +37,8 @@ export const Header = ({
   const [isSticky, setIsSticky] = useState(false);
   const color = mainColor === "dark" ? theme.colors.black : theme.colors.white;
   const { i18n } = useTranslation();
+  const lang = useSelector(selectLanguage);
+  const dispatch = useDispatch();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -66,8 +72,11 @@ export const Header = ({
       : window.open(navLink);
   };
 
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
+  const changeLanguage = (e: SelectChangeEvent) => {
+    console.log("🚀 ~ changeLanguage ~ e:", e);
+    const val = e.target.value;
+    i18n.changeLanguage(val);
+    dispatch(apartmentActions.setLanguage(val));
   };
   return (
     <div className={`${headerClass} ${isSticky ? "sticky" : ""}`}>
@@ -110,7 +119,11 @@ export const Header = ({
             )}
           </button>
           <Stack className="big-screen-select">
-            <Select options={languageSelectOptions} onChange={changeLanguage} />
+            <Select
+              options={languageSelectOptions}
+              onChange={changeLanguage}
+              valueR={lang}
+            />
           </Stack>
         </Stack>
 
@@ -125,7 +138,11 @@ export const Header = ({
         </Stack>
 
         <Stack className="small-screen-select">
-          <Select onChange={changeLanguage} options={languageSelectOptions} />
+          <Select
+            options={languageSelectOptions}
+            onChange={changeLanguage}
+            valueR={lang}
+          />
         </Stack>
 
         <Button

@@ -15,6 +15,7 @@ const initialState: ApartmentState = {
   reviews: reviewsMock,
   isLoading: false,
   errorAPI: false,
+  language: "it",
 };
 
 const apartmentsSlice = createSlice({
@@ -41,6 +42,9 @@ const apartmentsSlice = createSlice({
     },
     toggleError: (state, { payload }: PayloadAction<boolean>) => {
       state.errorAPI = payload;
+    },
+    setLanguage: (state, { payload }: PayloadAction<string>) => {
+      state.language = payload;
     },
   },
 });

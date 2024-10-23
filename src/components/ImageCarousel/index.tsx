@@ -67,7 +67,7 @@ export const ImageCarousel = ({ imageList }: Props) => {
         </div>
       )}
     >
-      {groupedImages.map((imageGroup, index) => (
+      {groupedImages?.map((imageGroup, index) => (
         <Stack
           key={index}
           justifycontent="center"
@@ -75,7 +75,7 @@ export const ImageCarousel = ({ imageList }: Props) => {
           gap={50}
           className="carousel-container-apartments fade-in"
         >
-          {imageGroup.map((image, innerIndex) => (
+          {imageGroup?.map((image, innerIndex) => (
             <div className="apartment-image" key={image.id}>
               <img src={image.url} alt={image.id} />
             </div>

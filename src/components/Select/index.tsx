@@ -13,6 +13,7 @@ type Props = {
   options: { value: string; label: string }[];
   className?: string;
   variant?: "white" | "black";
+  valueR?: any;
 };
 
 const StyledSelectWhite = styled(MaterialSelect)({
@@ -94,16 +95,16 @@ const StyledSelectBlack = styled(MaterialSelect)({
   },
 });
 
-export const Select = ({ onChange, options, variant }: Props) => {
+export const Select = ({ valueR, onChange, options, variant }: Props) => {
   const [value, setValue] = useState(options[0].value);
 
-  const handleChange = useCallback(
-    (event: SelectChangeEvent) => {
-      setValue(event.target.value as string);
-      onChange(event.target.value);
-    },
-    [onChange]
-  );
+  // const handleChange = useCallback(
+  //   (event: SelectChangeEvent) => {
+  //     setValue(event.target.value as string);
+  //     onChange(event.target.value);
+  //   },
+  //   [onChange]
+  // );
 
   const StyledSelect =
     variant === "black" ? StyledSelectBlack : StyledSelectWhite;
@@ -112,11 +113,11 @@ export const Select = ({ onChange, options, variant }: Props) => {
     <StyledSelect
       label="Language"
       defaultValue={options[0].value}
-      value={value}
+      value={valueR}
       //@ts-ignore
-      onChange={handleChange}
+      onChange={onChange}
     >
-      {options.map((opt) => (
+      {options?.map((opt) => (
         <MenuItem value={opt.value} key={opt.value}>
           {opt.label}
         </MenuItem>

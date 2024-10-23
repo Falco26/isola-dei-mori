@@ -57,3 +57,8 @@ export const selectError = createSelector(
   apartmentsState,
   (state) => state.errorAPI
 );
+
+export const selectLanguage = createSelector(
+  apartmentsState,
+  (st) => st.language
+);

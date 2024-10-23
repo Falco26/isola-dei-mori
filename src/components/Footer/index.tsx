@@ -8,6 +8,7 @@ import logo from "../../assets/bookingrating.png";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { appRoutes } from "../../routes";
+import logoVisit from "../../assets/LOGO-SAN-1024x419.png";
 
 const Footer = () => {
   const windowWidth = window.innerWidth;
@@ -68,7 +69,7 @@ const Footer = () => {
           <Stack>
             <a href="https://www.welcometosantantioco.it/">
               <img
-                src="https://welcometosantantioco.it/wp-content/uploads/2020/05/logo-welcome-to-sant-antioco.png"
+                src={logoVisit}
                 alt="logo-sulki-ccn"
                 className="logo-sulky"
               />

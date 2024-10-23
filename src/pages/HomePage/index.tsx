@@ -147,7 +147,7 @@ export const HomePage = memo(() => {
           </Stack>
         </div>
         <div className="rating-carousel">
-          {reviewList.map((review, index) => {
+          {reviewList?.map((review, index) => {
             return (
               <>
                 <Review
